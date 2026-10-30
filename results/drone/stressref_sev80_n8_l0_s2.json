@@ -1,0 +1,29 @@
+{
+ "args": {
+  "sev": 80,
+  "nper": 8,
+  "look": 0,
+  "seed": 2,
+  "threads": 1
+ },
+ "n_faulty": 32,
+ "n_look": 0,
+ "faulty_share_of_descent": 0.6661127095942058,
+ "look_share_of_descent": 0.0,
+ "unfixed": {
+  "test dives": 1.0,
+  "test dives reach": 0.125,
+  "steep dives": 1.0,
+  "steep dives reach": 0.08333333333333333,
+  "shallow dives": 1.0,
+  "shallow dives reach": 0.7916666666666666
+ },
+ "oracle": {
+  "test dives": 0.0,
+  "test dives reach": 0.75,
+  "steep dives": 0.041666666666666664,
+  "steep dives reach": 0.7916666666666666,
+  "shallow dives": 0.0,
+  "shallow dives reach": 0.6666666666666666
+ }
+}

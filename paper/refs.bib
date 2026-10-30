@@ -1,0 +1,351 @@
+% Checked 25 Oct 2026 against OpenAlex, the arXiv API and the publishers' pages.
+% Published versions are cited where they exist; the remaining arXiv entries have no published version yet.
+% Venues use IEEE abbreviations.
+
+% IEEEtran control: print repeated author lists in full instead of a dash
+@IEEEtranBSTCTL{IEEEexample:BSTcontrol,
+  CTLdash_repeated_names = "no",
+  CTLuse_forced_etal = "yes",
+  CTLmax_names_forced_etal = "6",
+  CTLnames_show_etal = "1"
+}
+
+% ---- MPPI and learned dynamics
+@article{williams2017mppi,
+  author  = {Williams, Grady and Aldrich, Andrew and Theodorou, Evangelos A.},
+  title   = {Model Predictive Path Integral Control: From Theory to Parallel Computation},
+  journal = {J. Guid. Control Dyn.},
+  volume  = {40},
+  number  = {2},
+  pages   = {344--357},
+  year    = {2017},
+  doi          = {10.2514/1.G001921}
+}
+
+@inproceedings{williams2017itmpc,
+  author    = {Williams, Grady and Wagener, Nolan and Goldfain, Brian and Drews, Paul and Rehg, James M. and Boots, Byron and Theodorou, Evangelos A.},
+  title     = {Information Theoretic {MPC} for Model-Based Reinforcement Learning},
+  booktitle = {Proc. IEEE Int. Conf. Robot. Autom. (ICRA)},
+  year      = {2017},
+  doi          = {10.1109/ICRA.2017.7989202},
+  pages        = {1714--1721}
+}
+
+@inproceedings{nagabandi2018neural,
+  author    = {Nagabandi, Anusha and Kahn, Gregory and Fearing, Ronald S. and Levine, Sergey},
+  title     = {Neural Network Dynamics for Model-Based Deep Reinforcement Learning with Model-Free Fine-Tuning},
+  booktitle = {Proc. IEEE Int. Conf. Robot. Autom. (ICRA)},
+  year      = {2018},
+  doi          = {10.1109/ICRA.2018.8463189},
+  pages        = {7559--7566}
+}
+
+@inproceedings{chua2018pets,
+  author    = {Chua, Kurtland and Calandra, Roberto and McAllister, Rowan and Levine, Sergey},
+  title     = {Deep Reinforcement Learning in a Handful of Trials Using Probabilistic Dynamics Models},
+  booktitle = {Proc. Adv. Neural Inf. Process. Syst. (NeurIPS)},
+  year      = {2018}
+}
+
+@inproceedings{yu2020mopo,
+  author    = {Yu, Tianhe and Thomas, Garrett and Yu, Lantao and Ermon, Stefano and Zou, James and Levine, Sergey and Finn, Chelsea and Ma, Tengyu},
+  title     = {{MOPO}: Model-Based Offline Policy Optimization},
+  booktitle = {Proc. Adv. Neural Inf. Process. Syst. (NeurIPS)},
+  year      = {2020}
+}
+
+@inproceedings{bauersfeld2021neurobem,
+  author    = {Bauersfeld, Leonard and Kaufmann, Elia and Foehn, Philipp and Sun, Sihao and Scaramuzza, Davide},
+  title     = {{NeuroBEM}: Hybrid Aerodynamic Quadrotor Model},
+  booktitle = {Proc. Robot.: Sci. Syst. (RSS)},
+  year      = {2021},
+  doi          = {10.15607/RSS.2021.XVII.042}
+}
+
+@article{oconnell2022neuralfly,
+  author  = {O'Connell, Michael and Shi, Guanya and Shi, Xichen and Azizzadenesheli, Kamyar and Anandkumar, Anima and Yue, Yisong and Chung, Soon-Jo},
+  title   = {{Neural-Fly} Enables Rapid Learning for Agile Flight in Strong Winds},
+  journal = {Sci. Robot.},
+  volume  = {7},
+  number  = {66},
+  year    = {2022},
+  doi          = {10.1126/scirobotics.abm6597}
+}
+
+% ---- platforms and datasets
+@misc{ullah2026nanobench,
+  author       = {Ullah, Syed Izzat and Baca, Jos{\'e}},
+  title        = {{NanoBench}: A Multi-Task Benchmark Dataset for Nano-Quadrotor System Identification, Control, and State Estimation},
+  howpublished = {arXiv preprint arXiv:2603.09908},
+  year         = {2026},
+  doi          = {10.48550/arXiv.2603.09908}
+}
+
+@inproceedings{todorov2012mujoco,
+  author    = {Todorov, Emanuel and Erez, Tom and Tassa, Yuval},
+  title     = {{MuJoCo}: A Physics Engine for Model-Based Control},
+  booktitle = {Proc. IEEE/RSJ Int. Conf. Intell. Robots Syst. (IROS)},
+  year      = {2012},
+  doi          = {10.1109/IROS.2012.6386109},
+  pages        = {5026--5033}
+}
+
+@misc{srinivasa2019mushr,
+  author       = {Srinivasa, Siddhartha S. and Lancaster, Patrick and Michalove, Johan and Schmittle, Matt and Summers, Colin and Rockett, Matthew and Scalise, Rosario and Smith, Joshua R. and Choudhury, Sanjiban and Mavrogiannis, Christoforos and Sadeghi, Fereshteh},
+  title        = {{MuSHR}: A Low-Cost, Open-Source Robotic Racecar for Education and Research},
+  howpublished = {arXiv preprint arXiv:1908.08031},
+  year         = {2019},
+  doi          = {10.48550/arXiv.1908.08031}
+}
+
+% ---- robust learning and noisy labels
+@article{huber1964robust,
+  author  = {Huber, Peter J.},
+  title   = {Robust Estimation of a Location Parameter},
+  journal = {Ann. Math. Statist.},
+  volume  = {35},
+  number  = {1},
+  pages   = {73--101},
+  year    = {1964},
+  doi          = {10.1214/aoms/1177703732}
+}
+
+@inproceedings{han2018coteaching,
+  author    = {Han, Bo and Yao, Quanming and Yu, Xingrui and Niu, Gang and Xu, Miao and Hu, Weihua and Tsang, Ivor and Sugiyama, Masashi},
+  title     = {Co-Teaching: Robust Training of Deep Neural Networks with Extremely Noisy Labels},
+  booktitle = {Proc. Adv. Neural Inf. Process. Syst. (NeurIPS)},
+  year      = {2018}
+}
+
+@article{northcutt2021confident,
+  author  = {Northcutt, Curtis G. and Jiang, Lu and Chuang, Isaac L.},
+  title   = {Confident Learning: Estimating Uncertainty in Dataset Labels},
+  journal = {J. Artif. Intell. Res.},
+  volume  = {70},
+  pages   = {1373--1411},
+  year    = {2021},
+  doi          = {10.1613/jair.1.12125}
+}
+
+% ---- data attribution and curation
+@inproceedings{koh2017influence,
+  author    = {Koh, Pang Wei and Liang, Percy},
+  title     = {Understanding Black-Box Predictions via Influence Functions},
+  booktitle = {Proc. Int. Conf. Mach. Learn. (ICML)},
+  year      = {2017}
+}
+
+@inproceedings{pruthi2020tracin,
+  author    = {Pruthi, Garima and Liu, Frederick and Kale, Satyen and Sundararajan, Mukund},
+  title     = {Estimating Training Data Influence by Tracing Gradient Descent},
+  booktitle = {Proc. Adv. Neural Inf. Process. Syst. (NeurIPS)},
+  year      = {2020}
+}
+
+@inproceedings{ilyas2022datamodels,
+  author    = {Ilyas, Andrew and Park, Sung Min and Engstrom, Logan and Leclerc, Guillaume and Madry, Aleksander},
+  title     = {Datamodels: Understanding Predictions with Data and Data with Predictions},
+  booktitle = {Proc. Int. Conf. Mach. Learn. (ICML)},
+  year      = {2022}
+}
+
+@inproceedings{park2023trak,
+  author    = {Park, Sung Min and Georgiev, Kristian and Ilyas, Andrew and Leclerc, Guillaume and Madry, Aleksander},
+  title     = {{TRAK}: Attributing Model Behavior at Scale},
+  booktitle = {Proc. Int. Conf. Mach. Learn. (ICML)},
+  year      = {2023}
+}
+
+@inproceedings{ghorbani2019shapley,
+  author    = {Ghorbani, Amirata and Zou, James},
+  title     = {Data {Shapley}: Equitable Valuation of Data for Machine Learning},
+  booktitle = {Proc. Int. Conf. Mach. Learn. (ICML)},
+  year      = {2019}
+}
+
+@inproceedings{agia2025cupid,
+  author    = {Agia, Christopher and Sinha, Rohan and Yang, Jingyun and Antonova, Rika and Pavone, Marco and Nishimura, Haruki and Itkina, Masha and Bohg, Jeannette},
+  title     = {{CUPID}: Curating Data Your Robot Loves with Influence Functions},
+  booktitle = {Proc. Conf. Robot Learn. (CoRL)},
+  series    = {PMLR},
+  volume    = {305},
+  pages     = {2907--2932},
+  year      = {2025}
+}
+
+@inproceedings{belkhale2023dataquality,
+  author    = {Belkhale, Suneel and Cui, Yuchen and Sadigh, Dorsa},
+  title     = {Data Quality in Imitation Learning},
+  booktitle = {Proc. Adv. Neural Inf. Process. Syst. (NeurIPS)},
+  year      = {2023}
+}
+
+@inproceedings{ross2011dagger,
+  author    = {Ross, St{\'e}phane and Gordon, Geoffrey and Bagnell, Drew},
+  title     = {A Reduction of Imitation Learning and Structured Prediction to No-Regret Online Learning},
+  booktitle = {Proc. Int. Conf. Artif. Intell. Statist. (AISTATS)},
+  year      = {2011}
+}
+
+@inproceedings{ren2018l2rw,
+  author    = {Ren, Mengye and Zeng, Wenyuan and Yang, Bin and Urtasun, Raquel},
+  title     = {Learning to Reweight Examples for Robust Deep Learning},
+  booktitle = {Proc. Int. Conf. Mach. Learn. (ICML)},
+  series    = {PMLR},
+  volume    = {80},
+  pages     = {4334--4343},
+  year      = {2018}
+}
+
+@inproceedings{shu2019mwn,
+  author    = {Shu, Jun and Xie, Qi and Yi, Lixuan and Zhao, Qian and Zhou, Sanping and Xu, Zongben and Meng, Deyu},
+  title     = {Meta-Weight-Net: Learning an Explicit Mapping for Sample Weighting},
+  booktitle = {Proc. Adv. Neural Inf. Process. Syst. (NeurIPS)},
+  year      = {2019}
+}
+
+@inproceedings{rolnick2019replay,
+  author    = {Rolnick, David and Ahuja, Arun and Schwarz, Jonathan and Lillicrap, Timothy and Wayne, Greg},
+  title     = {Experience Replay for Continual Learning},
+  booktitle = {Proc. Adv. Neural Inf. Process. Syst. (NeurIPS)},
+  year      = {2019}
+}
+
+% ---- the lab's prior work (author lists from the arXiv API; none has a published version yet)
+@misc{ifcps2026,
+  author       = {Li, Jiachen and Li, Shihao and Bakshi, Soovadeep and Xu, Jiamin and Chen, Dongmei},
+  title        = {{IF-CPS}: Influence Functions for Cyber-Physical Systems---A Unified Framework for Diagnosis, Curation, and Safety Attribution},
+  howpublished = {arXiv preprint arXiv:2603.21543},
+  year         = {2026},
+  doi          = {10.48550/arXiv.2603.21543}
+}
+
+@article{lqrinfluence2026,
+  author  = {Li, Jiachen and Li, Shihao and Bakshi, Soovadeep and Xu, Jiamin and Chen, Dongmei},
+  title   = {Influence Functions for Data Attribution in System Identification and Linear Quadratic Regulator Control},
+  journal = {ASME Letters in Dynamic Systems and Control},
+  volume  = {6},
+  number  = {4},
+  year    = {2026},
+  doi     = {10.1115/1.4072703}
+}
+}
+
+@misc{dacbf2026,
+  author       = {Li, Jiachen and Li, Shihao and Chen, Dongmei},
+  title        = {Data-Attributed Adaptive Control Barrier Functions: Safety-Certified Training Data Curation via Influence Analysis},
+  howpublished = {arXiv preprint arXiv:2604.00380},
+  year         = {2026},
+  doi          = {10.48550/arXiv.2604.00380}
+}
+
+@misc{dmmppi2025,
+  author       = {Li, Jiachen and Duan, Xu and Li, Shihao and Bakshi, Soovadeep and Chen, Dongmei},
+  title        = {{DM-MPPI}: Datamodel for Efficient and Safe Model Path Integral Control},
+  howpublished = {arXiv preprint arXiv:2512.00759},
+  year         = {2025},
+  doi          = {10.48550/arXiv.2512.00759}
+}
+
+@misc{dmdeepc2025,
+  author       = {Li, Jiachen and Li, Shihao and Xu, Jiamin and Bakshi, Soovadeep and Chen, Dongmei},
+  title        = {Datamodel-Based Data Selection for Nonlinear Data-Enabled Predictive Control},
+  howpublished = {arXiv preprint arXiv:2512.00276},
+  year         = {2025},
+  doi          = {10.48550/arXiv.2512.00276}
+}
+
+@article{janson2004large,
+  author  = {Janson, Svante},
+  title   = {Large deviations for sums of partly dependent random variables},
+  journal = {Random Structures \& Algorithms},
+  volume  = {24},
+  number  = {3},
+  pages   = {234--248},
+  year    = {2004},
+  doi     = {10.1002/rsa.20008}
+}
+
+@inproceedings{gandhi2017crashing,
+  author    = {Gandhi, Dhiraj and Pinto, Lerrel and Gupta, Abhinav},
+  title     = {Learning to Fly by Crashing},
+  booktitle = {IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)},
+  pages     = {3948--3955},
+  year      = {2017},
+  doi       = {10.1109/IROS.2017.8206247}
+}
+
+@inproceedings{nagabandi2019adapt,
+  author    = {Nagabandi, Anusha and Clavera, Ignasi and Liu, Simin and Fearing, Ronald S. and Abbeel, Pieter and Levine, Sergey and Finn, Chelsea},
+  title     = {Learning to Adapt in Dynamic, Real-World Environments through Meta-Reinforcement Learning},
+  booktitle = {International Conference on Learning Representations (ICLR)},
+  year      = {2019}
+}
+
+@article{torrente2021datadriven,
+  author  = {Torrente, Guillem and Kaufmann, Elia and F{\"o}hn, Philipp and Scaramuzza, Davide},
+  title   = {Data-Driven {MPC} for Quadrotors},
+  journal = {IEEE Robotics and Automation Letters},
+  volume  = {6},
+  number  = {2},
+  pages   = {3769--3776},
+  year    = {2021},
+  doi     = {10.1109/LRA.2021.3061307}
+}
+
+@article{salzmann2023neuralmpc,
+  author  = {Salzmann, Tim and Kaufmann, Elia and Arrizabalaga, Jon and Pavone, Marco and Scaramuzza, Davide and Ryll, Markus},
+  title   = {Real-Time Neural {MPC}: Deep Learning Model Predictive Control for Quadrotors and Agile Robotic Platforms},
+  journal = {IEEE Robotics and Automation Letters},
+  volume  = {8},
+  number  = {4},
+  pages   = {2397--2404},
+  year    = {2023},
+  doi     = {10.1109/LRA.2023.3246839}
+}
+
+@inproceedings{shi2019neurallander,
+  author    = {Shi, Guanya and Shi, Xichen and O'Connell, Michael and Yu, Rose and Azizzadenesheli, Kamyar and Anandkumar, Animashree and Yue, Yisong and Chung, Soon-Jo},
+  title     = {Neural Lander: Stable Drone Landing Control Using Learned Dynamics},
+  booktitle = {IEEE International Conference on Robotics and Automation (ICRA)},
+  pages     = {9784--9790},
+  year      = {2019},
+  doi       = {10.1109/ICRA.2019.8794351}
+}
+
+@article{brunke2022safelearning,
+  author  = {Brunke, Lukas and Greeff, Melissa and Hall, Adam W. and Yuan, Zhaocong and Zhou, Siqi and Panerati, Jacopo and Schoellig, Angela P.},
+  title   = {Safe Learning in Robotics: From Learning-Based Control to Safe Reinforcement Learning},
+  journal = {Annual Review of Control, Robotics, and Autonomous Systems},
+  volume  = {5},
+  pages   = {411--444},
+  year    = {2022},
+  doi     = {10.1146/annurev-control-042920-020211}
+}
+
+@article{song2023noisylabels,
+  author  = {Song, Hwanjun and Kim, Minseok and Park, Dongmin and Shin, Yooju and Lee, Jae-Gil},
+  title   = {Learning From Noisy Labels With Deep Neural Networks: A Survey},
+  journal = {IEEE Transactions on Neural Networks and Learning Systems},
+  volume  = {34},
+  number  = {11},
+  pages   = {8135--8153},
+  year    = {2023},
+  doi     = {10.1109/TNNLS.2022.3152527}
+}
+
+@inproceedings{hejna2025demInf,
+  author    = {Hejna, Joey and Mirchandani, Suvir and Balakrishna, Ashwin and Xie, Annie and Wahid, Ayzaan and others},
+  title     = {Robot Data Curation with Mutual Information Estimators},
+  booktitle = {Robotics: Science and Systems (RSS)},
+  year      = {2025},
+  doi       = {10.15607/RSS.2025.XXI.023}
+}
+
+@misc{dass2025datamil,
+  author        = {Dass, Shivin and Khaddaj, Alaa and Engstrom, Logan and M{\k{a}}dry, Aleksander and Ilyas, Andrew and Mart{\'\i}n-Mart{\'\i}n, Roberto},
+  title         = {{DataMIL}: Selecting Data for Robot Imitation Learning with Datamodels},
+  howpublished  = {arXiv preprint arXiv:2505.09603},
+  year          = {2025},
+  doi          = {10.48550/arXiv.2505.09603}
+}

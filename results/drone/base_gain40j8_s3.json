@@ -1,0 +1,73 @@
+{
+ "args": {
+  "fault": "gain40j8",
+  "seed": 3,
+  "betas": "10,1,100",
+  "smoke": false,
+  "k": 40,
+  "cheap": true
+ },
+ "spread": {},
+ "rows": [
+  {
+   "model": "faulty",
+   "test dives": 1.0,
+   "test dives reach": 0.625,
+   "steep dives": 0.8333333333333334,
+   "steep dives reach": 0.5,
+   "shallow dives": 0.9583333333333334,
+   "shallow dives reach": 1.0
+  },
+  {
+   "model": "huber loss",
+   "test dives": 1.0,
+   "test dives reach": 0.625,
+   "steep dives": 0.875,
+   "steep dives reach": 0.4583333333333333,
+   "shallow dives": 0.875,
+   "shallow dives reach": 0.9583333333333334
+  },
+  {
+   "model": "l1 loss",
+   "test dives": 0.9583333333333334,
+   "test dives reach": 0.5,
+   "steep dives": 0.9166666666666666,
+   "steep dives reach": 0.375,
+   "shallow dives": 0.9583333333333334,
+   "shallow dives reach": 0.875
+  },
+  {
+   "model": "remove 40 worst-fit flights",
+   "bad_removed": 23,
+   "distr_removed": 0,
+   "test dives": 0.9583333333333334,
+   "test dives reach": 0.625,
+   "steep dives": 0.8333333333333334,
+   "steep dives reach": 0.625,
+   "shallow dives": 0.9166666666666666,
+   "shallow dives reach": 0.9583333333333334
+  },
+  {
+   "model": "remove 40 most crash-like flights (most axial descent)",
+   "bad_removed": 28,
+   "distr_removed": 0,
+   "test dives": 0.5416666666666666,
+   "test dives reach": 0.875,
+   "steep dives": 0.5,
+   "steep dives reach": 0.7916666666666666,
+   "shallow dives": 0.08333333333333333,
+   "shallow dives reach": 0.9583333333333334
+  },
+  {
+   "model": "remove all axial-descent samples",
+   "samples_removed": 40316,
+   "bad_samples_removed": 26855,
+   "test dives": 0.6666666666666666,
+   "test dives reach": 0.75,
+   "steep dives": 0.8333333333333334,
+   "steep dives reach": 0.7916666666666666,
+   "shallow dives": 0.5416666666666666,
+   "shallow dives reach": 0.9583333333333334
+  }
+ ]
+}

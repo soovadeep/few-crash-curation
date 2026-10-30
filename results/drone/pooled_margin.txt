@@ -1,0 +1,47 @@
+gain40j8_s1                  faulty flights: cert 32/32 phi ok 32 (miss: theory 0, kernel 0) |d|/|psi| 0.15 (neg 0.00, rot 0.15) | other cert 39/39 wrong: theory 0, kernel 0 | samples cert 0.83/0.95 pairs cert 0.72/0.84 kappa<0 0.02/0.02
+gain40j8_s2                  faulty flights: cert 32/32 phi ok 32 (miss: theory 0, kernel 0) |d|/|psi| 0.24 (neg 0.01, rot 0.25) | other cert 39/39 wrong: theory 0, kernel 0 | samples cert 0.82/0.94 pairs cert 0.69/0.80 kappa<0 0.06/0.06
+gain40j8_s3                  faulty flights: cert 32/32 phi ok 32 (miss: theory 0, kernel 0) |d|/|psi| 0.21 (neg 0.01, rot 0.22) | other cert 39/39 wrong: theory 0, kernel 0 | samples cert 0.81/0.95 pairs cert 0.73/0.83 kappa<0 0.01/0.02
+gain40j8_s4                  faulty flights: cert 32/32 phi ok 32 (miss: theory 0, kernel 0) |d|/|psi| 0.18 (neg 0.01, rot 0.19) | other cert 38/39 wrong: theory 0, kernel 0 | samples cert 0.80/0.96 pairs cert 0.69/0.81 kappa<0 0.04/0.03
+gain40j8_s5                  faulty flights: cert 32/32 phi ok 32 (miss: theory 0, kernel 0) |d|/|psi| 0.19 (neg 0.01, rot 0.20) | other cert 38/39 wrong: theory 0, kernel 0 | samples cert 0.84/0.93 pairs cert 0.70/0.79 kappa<0 0.05/0.05
+prop50j8_s1                  faulty flights: cert 32/32 phi ok 32 (miss: theory 0, kernel 0) |d|/|psi| 0.13 (neg 0.19, rot 0.20) | other cert 32/39 wrong: theory 1, kernel 0 | samples cert 0.86/0.94 pairs cert 0.53/0.60 kappa<0 0.24/0.18
+prop50j8_s2                  faulty flights: cert 32/32 phi ok 32 (miss: theory 0, kernel 0) |d|/|psi| 0.16 (neg 0.18, rot 0.16) | other cert 35/39 wrong: theory 1, kernel 0 | samples cert 0.85/0.95 pairs cert 0.55/0.63 kappa<0 0.19/0.15
+prop50j8_s3                  faulty flights: cert 31/32 phi ok 32 (miss: theory 0, kernel 0) |d|/|psi| 0.21 (neg 0.11, rot 0.22) | other cert 35/39 wrong: theory 1, kernel 0 | samples cert 0.85/0.94 pairs cert 0.61/0.69 kappa<0 0.19/0.15
+prop50j8_s4                  faulty flights: cert 31/32 phi ok 32 (miss: theory 0, kernel 0) |d|/|psi| 0.18 (neg 0.21, rot 0.17) | other cert 35/39 wrong: theory 1, kernel 0 | samples cert 0.84/0.95 pairs cert 0.50/0.56 kappa<0 0.27/0.26
+prop50j8_s5                  faulty flights: cert 31/32 phi ok 31 (miss: theory 1, kernel 0) |d|/|psi| 0.20 (neg 0.08, rot 0.21) | other cert 32/39 wrong: theory 3, kernel 0 | samples cert 0.87/0.93 pairs cert 0.52/0.55 kappa<0 0.22/0.20
+prop50j8m_s1                 faulty flights: cert 28/32 phi ok 32 (miss: theory 0, kernel 0) |d|/|psi| 0.14 (neg 0.29, rot 0.17) | look-alikes cert 16/16 wrong: theory 0, kernel 0 | other cert 18/25 wrong: theory 1, kernel 0 | samples cert 0.93/0.98 pairs cert 0.59/0.65 kappa<0 0.26/0.21
+prop50j8m_s2                 faulty flights: cert 30/32 phi ok 32 (miss: theory 0, kernel 0) |d|/|psi| 0.23 (neg 0.37, rot 0.14) | look-alikes cert 14/16 wrong: theory 0, kernel 2 | other cert 17/25 wrong: theory 0, kernel 1 | samples cert 0.93/0.98 pairs cert 0.61/0.65 kappa<0 0.25/0.22
+prop50j8m_s3                 faulty flights: cert 29/32 phi ok 32 (miss: theory 0, kernel 0) |d|/|psi| 0.20 (neg 0.24, rot 0.17) | look-alikes cert 15/16 wrong: theory 0, kernel 1 | other cert 19/25 wrong: theory 0, kernel 1 | samples cert 0.94/0.97 pairs cert 0.61/0.65 kappa<0 0.22/0.19
+sweep_sev20_n8_l0_s1         faulty flights: cert 26/32 phi ok 32 (miss: theory 0, kernel 0) |d|/|psi| 0.54 (neg 0.54, rot 0.17) | other cert 26/39 wrong: theory 2, kernel 1 | samples cert 0.81/0.89 pairs cert 0.45/0.51 kappa<0 0.31/0.25
+sweep_sev20_n8_l0_s2         faulty flights: cert 24/32 phi ok 32 (miss: theory 0, kernel 0) |d|/|psi| 0.67 (neg 0.74, rot 0.11) | other cert 21/39 wrong: theory 1, kernel 5 | samples cert 0.79/0.90 pairs cert 0.44/0.52 kappa<0 0.32/0.26
+sweep_sev20_n8_l0_s3         faulty flights: cert 26/32 phi ok 31 (miss: theory 1, kernel 0) |d|/|psi| 0.46 (neg 0.42, rot 0.14) | other cert 28/39 wrong: theory 2, kernel 0 | samples cert 0.81/0.89 pairs cert 0.48/0.54 kappa<0 0.32/0.29
+sweep_sev20_n8_l0_s4         faulty flights: cert 15/32 phi ok 29 (miss: theory 0, kernel 3) |d|/|psi| 1.01 (neg 1.00, rot 0.15) | other cert 14/39 wrong: theory 1, kernel 9 | samples cert 0.79/0.90 pairs cert 0.41/0.48 kappa<0 0.36/0.33
+sweep_sev20_n8_l0_s5         faulty flights: cert 25/32 phi ok 32 (miss: theory 0, kernel 0) |d|/|psi| 0.46 (neg 0.47, rot 0.11) | other cert 26/39 wrong: theory 2, kernel 1 | samples cert 0.82/0.88 pairs cert 0.47/0.52 kappa<0 0.32/0.29
+sweep_sev35_n8_l0_s1         faulty flights: cert 30/32 phi ok 31 (miss: theory 1, kernel 0) |d|/|psi| 0.26 (neg 0.26, rot 0.18) | other cert 33/39 wrong: theory 1, kernel 0 | samples cert 0.84/0.93 pairs cert 0.56/0.64 kappa<0 0.20/0.16
+sweep_sev50_n11_l0_s1        faulty flights: cert 35/44 phi ok 42 (miss: theory 2, kernel 0) |d|/|psi| 0.34 (neg 0.49, rot 0.19) | other cert 23/28 wrong: theory 1, kernel 0 | samples cert 0.77/0.96 pairs cert 0.54/0.68 kappa<0 0.25/0.19
+sweep_sev50_n11_l0_s2        faulty flights: cert 35/44 phi ok 44 (miss: theory 0, kernel 0) |d|/|psi| 0.31 (neg 0.42, rot 0.22) | other cert 26/28 wrong: theory 0, kernel 0 | samples cert 0.76/0.97 pairs cert 0.51/0.64 kappa<0 0.21/0.18
+sweep_sev50_n11_l0_s3        faulty flights: cert 37/44 phi ok 44 (miss: theory 0, kernel 0) |d|/|psi| 0.27 (neg 0.38, rot 0.22) | other cert 25/28 wrong: theory 0, kernel 0 | samples cert 0.79/0.96 pairs cert 0.57/0.70 kappa<0 0.18/0.14
+sweep_sev50_n11_l0_s4        faulty flights: cert 35/44 phi ok 44 (miss: theory 0, kernel 0) |d|/|psi| 0.46 (neg 0.65, rot 0.22) | other cert 21/28 wrong: theory 0, kernel 2 | samples cert 0.78/0.96 pairs cert 0.49/0.60 kappa<0 0.29/0.26
+sweep_sev50_n11_l0_s5        faulty flights: cert 38/44 phi ok 44 (miss: theory 0, kernel 0) |d|/|psi| 0.23 (neg 0.30, rot 0.16) | other cert 27/28 wrong: theory 0, kernel 0 | samples cert 0.80/0.96 pairs cert 0.56/0.68 kappa<0 0.22/0.19
+sweep_sev50_n3_l0_s1         faulty flights: cert 12/12 phi ok 12 (miss: theory 0, kernel 0) |d|/|psi| 0.33 (neg 0.07, rot 0.35) | other cert 46/58 wrong: theory 8, kernel 0 | samples cert 0.96/0.88 pairs cert 0.49/0.47 kappa<0 0.29/0.26
+sweep_sev50_n5_l0_s1         faulty flights: cert 20/20 phi ok 20 (miss: theory 0, kernel 0) |d|/|psi| 0.23 (neg 0.14, rot 0.33) | other cert 38/50 wrong: theory 8, kernel 0 | samples cert 0.87/0.86 pairs cert 0.49/0.53 kappa<0 0.20/0.15
+sweep_sev50_n8_l0_s1         faulty flights: cert 32/32 phi ok 32 (miss: theory 0, kernel 0) |d|/|psi| 0.13 (neg 0.19, rot 0.20) | other cert 32/39 wrong: theory 1, kernel 0 | samples cert 0.86/0.94 pairs cert 0.53/0.60 kappa<0 0.24/0.18
+sweep_sev50_n8_l2_s1         faulty flights: cert 32/32 phi ok 32 (miss: theory 0, kernel 0) |d|/|psi| 0.17 (neg 0.06, rot 0.17) | look-alikes cert 8/8 wrong: theory 0, kernel 0 | other cert 28/31 wrong: theory 1, kernel 0 | samples cert 0.90/0.95 pairs cert 0.61/0.65 kappa<0 0.17/0.15
+sweep_sev50_n8_l4_s1         faulty flights: cert 30/32 phi ok 32 (miss: theory 0, kernel 0) |d|/|psi| 0.16 (neg 0.24, rot 0.15) | look-alikes cert 15/16 wrong: theory 0, kernel 1 | other cert 20/25 wrong: theory 0, kernel 0 | samples cert 0.93/0.96 pairs cert 0.57/0.59 kappa<0 0.21/0.19
+sweep_sev50_n8_l8_s1         faulty flights: cert 22/32 phi ok 29 (miss: theory 1, kernel 2) |d|/|psi| 0.37 (neg 0.59, rot 0.30) | look-alikes cert 23/32 wrong: theory 0, kernel 8 | other cert 4/17 wrong: theory 1, kernel 2 | samples cert 0.97/0.97 pairs cert 0.54/0.55 kappa<0 0.27/0.24
+sweep_sev50_n8_l8_s2         faulty flights: cert 26/32 phi ok 27 (miss: theory 4, kernel 1) |d|/|psi| 0.20 (neg 0.09, rot 0.23) | look-alikes cert 31/32 wrong: theory 0, kernel 0 | other cert 12/17 wrong: theory 3, kernel 0 | samples cert 0.97/0.97 pairs cert 0.57/0.58 kappa<0 0.23/0.19
+sweep_sev50_n8_l8_s3         faulty flights: cert 22/32 phi ok 30 (miss: theory 0, kernel 2) |d|/|psi| 0.31 (neg 0.54, rot 0.33) | look-alikes cert 22/32 wrong: theory 0, kernel 9 | other cert 6/17 wrong: theory 1, kernel 0 | samples cert 0.97/0.97 pairs cert 0.52/0.54 kappa<0 0.27/0.23
+sweep_sev50_n8_l8_s4         faulty flights: cert 21/32 phi ok 28 (miss: theory 2, kernel 2) |d|/|psi| 0.69 (neg 0.95, rot 0.21) | look-alikes cert 18/32 wrong: theory 0, kernel 11 | other cert 2/17 wrong: theory 1, kernel 4 | samples cert 0.97/0.98 pairs cert 0.50/0.52 kappa<0 0.29/0.27
+sweep_sev50_n8_l8_s5         faulty flights: cert 28/32 phi ok 30 (miss: theory 1, kernel 1) |d|/|psi| 0.24 (neg 0.32, rot 0.26) | look-alikes cert 30/32 wrong: theory 0, kernel 1 | other cert 8/17 wrong: theory 1, kernel 0 | samples cert 0.98/0.97 pairs cert 0.57/0.57 kappa<0 0.24/0.23
+sweep_sev80_n8_l0_s1         faulty flights: cert 32/32 phi ok 32 (miss: theory 0, kernel 0) |d|/|psi| 0.10 (neg 0.17, rot 0.24) | other cert 35/39 wrong: theory 1, kernel 0 | samples cert 0.87/0.95 pairs cert 0.58/0.65 kappa<0 0.17/0.12
+
+all settings:
+  faulty: certified 1007/1148, phi right 1124, wrong because theory 13, because kernel 11; median |delta|/|psi| per run 0.10-1.01
+  look-alike: certified 192/232, phi right 199, wrong because theory 0, because kernel 33; median |delta|/|psi| per run 0.10-0.83
+  other: certified 917/1166, phi right 1096, wrong because theory 44, because kernel 26; median |delta|/|psi| per run 0.14-2.02
+  s_faulty: 0.76-0.98
+  s_correct: 0.86-0.98
+  p_faulty: 0.41-0.73
+  p_correct: 0.47-0.84
+  kneg_faulty: 0.01-0.36
+  kneg_correct: 0.02-0.33
+  pair flip rate by distance quintile (faulty, mean over runs): [0.2  0.27 0.24 0.22 0.12]

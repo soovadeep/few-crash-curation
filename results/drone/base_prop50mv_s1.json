@@ -1,0 +1,68 @@
+{
+ "args": {
+  "fault": "prop50mv",
+  "seed": 1,
+  "betas": "10,1,100",
+  "smoke": false
+ },
+ "spread": {
+  "crash_dives_median": 0.18474066257476807,
+  "crash_dives_p90": 0.8824562430381775,
+  "train_median": 0.066897913813591,
+  "train_p90": 0.23395125567913055,
+  "bad_flights_median": 0.0777200311422348,
+  "crash_above_train_p90": 0.4110192837465565
+ },
+ "rows": [
+  {
+   "model": "faulty",
+   "test dives": 0.5416666666666666,
+   "steep dives": 0.5416666666666666,
+   "shallow dives": 0.3333333333333333
+  },
+  {
+   "model": "huber loss",
+   "test dives": 0.041666666666666664,
+   "steep dives": 0.125,
+   "shallow dives": 0.0
+  },
+  {
+   "model": "l1 loss",
+   "test dives": 0.0,
+   "steep dives": 0.041666666666666664,
+   "shallow dives": 0.0
+  },
+  {
+   "model": "remove 20 worst-fit flights",
+   "bad_removed": 7,
+   "distr_removed": 13,
+   "test dives": 0.041666666666666664,
+   "steep dives": 0.125,
+   "shallow dives": 0.0
+  },
+  {
+   "model": "ensemble of 5, mean",
+   "test dives": 0.4166666666666667,
+   "steep dives": 0.5416666666666666,
+   "shallow dives": 0.041666666666666664
+  },
+  {
+   "model": "ensemble of 5, disagreement penalty beta=10",
+   "test dives": 0.0,
+   "steep dives": 0.0,
+   "shallow dives": 0.0
+  },
+  {
+   "model": "ensemble of 5, disagreement penalty beta=1",
+   "test dives": 0.08333333333333333,
+   "steep dives": 0.125,
+   "shallow dives": 0.0
+  },
+  {
+   "model": "ensemble of 5, disagreement penalty beta=100",
+   "test dives": 0.0,
+   "steep dives": 0.0,
+   "shallow dives": 0.0
+  }
+ ]
+}

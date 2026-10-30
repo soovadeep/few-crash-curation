@@ -1,0 +1,140 @@
+{
+ "args": {
+  "seed": 5,
+  "vbad": 3.35,
+  "k": 76,
+  "w": 20,
+  "which": ""
+ },
+ "volts": 3.1,
+ "n_crash_dives": 15,
+ "n_bad": 76,
+ "rows": [
+  {
+   "model": "faulty (all flights)",
+   "test dives": 0.7083333333333334,
+   "test dives reach": 0.125,
+   "steep dives": 0.25,
+   "steep dives reach": 0.6666666666666666,
+   "shallow dives": 0.9166666666666666,
+   "shallow dives reach": 0.08333333333333333
+  },
+  {
+   "model": "oracle (flights below 3.35 V)",
+   "test dives": 0.375,
+   "test dives reach": 0.5833333333333334,
+   "steep dives": 0.20833333333333334,
+   "steep dives reach": 0.6666666666666666,
+   "shallow dives": 0.375,
+   "shallow dives reach": 0.625
+  },
+  {
+   "model": "add 1 crash dives, W=20",
+   "test dives": 0.3333333333333333,
+   "test dives reach": 0.7916666666666666,
+   "steep dives": 0.0,
+   "steep dives reach": 1.0,
+   "shallow dives": 0.5416666666666666,
+   "shallow dives reach": 0.625
+  },
+  {
+   "model": "add 3 crash dives, W=20",
+   "test dives": 0.041666666666666664,
+   "test dives reach": 0.9166666666666666,
+   "steep dives": 0.0,
+   "steep dives reach": 1.0,
+   "shallow dives": 0.041666666666666664,
+   "shallow dives reach": 0.9583333333333334
+  },
+  {
+   "model": "ours from 1 dives, sign rule",
+   "removed": 46,
+   "bad_removed": 31,
+   "mean_v_removed": 3.45622803778261,
+   "n_dives": 1,
+   "transitions": 94,
+   "auroc": 0.426043557168784,
+   "ap": 0.7164323104025561,
+   "spearman_v": 0.05379343246240971,
+   "n_positive": 46,
+   "test dives": 0.75,
+   "test dives reach": 0.20833333333333334,
+   "steep dives": 0.5833333333333334,
+   "steep dives reach": 0.4583333333333333,
+   "shallow dives": 1.0,
+   "shallow dives reach": 0.125
+  },
+  {
+   "model": "ours from 1 dives, sign rule, and add them (W=20)",
+   "test dives": 0.20833333333333334,
+   "test dives reach": 0.7916666666666666,
+   "steep dives": 0.08333333333333333,
+   "steep dives reach": 0.875,
+   "shallow dives": 0.2916666666666667,
+   "shallow dives reach": 0.75
+  },
+  {
+   "model": "ours from 3 dives, sign rule",
+   "removed": 38,
+   "bad_removed": 27,
+   "mean_v_removed": 3.445402706657895,
+   "n_dives": 3,
+   "transitions": 274,
+   "auroc": 0.4473684210526316,
+   "ap": 0.7717135339744788,
+   "spearman_v": 0.01389421732837876,
+   "n_positive": 38,
+   "test dives": 0.5,
+   "test dives reach": 0.4583333333333333,
+   "steep dives": 0.16666666666666666,
+   "steep dives reach": 0.7916666666666666,
+   "shallow dives": 0.9166666666666666,
+   "shallow dives reach": 0.25
+  },
+  {
+   "model": "ours from 3 dives, sign rule, and add them (W=20)",
+   "test dives": 0.0,
+   "test dives reach": 0.9583333333333334,
+   "steep dives": 0.08333333333333333,
+   "steep dives reach": 0.9166666666666666,
+   "shallow dives": 0.0,
+   "shallow dives reach": 0.9583333333333334
+  },
+  {
+   "model": "learning to reweight, 1 crash dives as clean set",
+   "test dives": 0.25,
+   "test dives reach": 0.75,
+   "steep dives": 0.16666666666666666,
+   "steep dives reach": 0.9166666666666666,
+   "shallow dives": 0.20833333333333334,
+   "shallow dives reach": 0.7916666666666666
+  },
+  {
+   "model": "learning to reweight, 1 crash dives as clean set, and add them (W=20)",
+   "test dives": 0.0,
+   "test dives reach": 1.0,
+   "steep dives": 0.041666666666666664,
+   "steep dives reach": 0.9583333333333334,
+   "shallow dives": 0.0,
+   "shallow dives reach": 1.0
+  },
+  {
+   "model": "learning to reweight, 3 crash dives as clean set",
+   "test dives": 0.16666666666666666,
+   "test dives reach": 0.7916666666666666,
+   "steep dives": 0.041666666666666664,
+   "steep dives reach": 0.9583333333333334,
+   "shallow dives": 0.125,
+   "shallow dives reach": 0.9166666666666666
+  },
+  {
+   "model": "learning to reweight, 3 crash dives as clean set, and add them (W=20)",
+   "test dives": 0.0,
+   "test dives reach": 0.9166666666666666,
+   "steep dives": 0.041666666666666664,
+   "steep dives reach": 0.75,
+   "shallow dives": 0.0,
+   "shallow dives reach": 1.0
+  }
+ ]
+}

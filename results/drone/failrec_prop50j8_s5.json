@@ -1,0 +1,141 @@
+{
+ "args": {
+  "fault": "prop50j8",
+  "sweep": null,
+  "seed": 5,
+  "only": null,
+  "threads": 1
+ },
+ "tag": "prop50j8_s5",
+ "n_bad": 32,
+ "n_look": 0,
+ "attribution_dives_crashed": 24,
+ "supervisor": {
+  "sup_m0.1": {
+   "dive": 0,
+   "saved": true,
+   "takeover_h": 1.9715309143066406,
+   "v_down": 3.5754218101501465
+  },
+  "sup_m0.5": {
+   "dive": 0,
+   "saved": true,
+   "takeover_h": 2.3264126777648926,
+   "v_down": 3.5306873321533203
+  },
+  "sup_m1.0": {
+   "dive": 0,
+   "saved": true,
+   "takeover_h": 2.597930431365967,
+   "v_down": 3.3022141456604004
+  },
+  "sup_late": {
+   "dive": 0,
+   "saved": true,
+   "takeover_h": 2.4647812843322754,
+   "v_down": 3.4344213008880615
+  }
+ },
+ "variants": {
+  "clean": {
+   "transitions": 94,
+   "removed": 36,
+   "bad_removed": 31,
+   "lookalike_removed": 0,
+   "test dives": 0.0,
+   "steep dives": 0.125,
+   "shallow dives": 0.0,
+   "crash": 0.041666666666666664
+  },
+  "noise1": {
+   "transitions": 94,
+   "removed": 36,
+   "bad_removed": 31,
+   "lookalike_removed": 0,
+   "test dives": 0.0,
+   "steep dives": 0.125,
+   "shallow dives": 0.0,
+   "crash": 0.041666666666666664
+  },
+  "noise3": {
+   "transitions": 94,
+   "removed": 36,
+   "bad_removed": 31,
+   "lookalike_removed": 0,
+   "test dives": 0.0,
+   "steep dives": 0.125,
+   "shallow dives": 0.0,
+   "crash": 0.041666666666666664
+  },
+  "first75": {
+   "transitions": 70,
+   "removed": 40,
+   "bad_removed": 31,
+   "lookalike_removed": 0,
+   "test dives": 0.0,
+   "steep dives": 0.041666666666666664,
+   "shallow dives": 0.0,
+   "crash": 0.013888888888888888
+  },
+  "first50": {
+   "transitions": 47,
+   "removed": 58,
+   "bad_removed": 15,
+   "lookalike_removed": 0,
+   "test dives": 1.0,
+   "steep dives": 0.9583333333333334,
+   "shallow dives": 1.0,
+   "crash": 0.9861111111111112
+  },
+  "sup_m0.1": {
+   "transitions": 96,
+   "removed": 35,
+   "bad_removed": 32,
+   "lookalike_removed": 0,
+   "test dives": 0.0,
+   "steep dives": 0.041666666666666664,
+   "shallow dives": 0.0,
+   "crash": 0.013888888888888888
+  },
+  "sup_m0.5": {
+   "transitions": 91,
+   "removed": 38,
+   "bad_removed": 32,
+   "lookalike_removed": 0,
+   "test dives": 0.0,
+   "steep dives": 0.125,
+   "shallow dives": 0.0,
+   "crash": 0.041666666666666664
+  },
+  "combined": {
+   "transitions": 91,
+   "removed": 38,
+   "bad_removed": 32,
+   "lookalike_removed": 0,
+   "test dives": 0.0,
+   "steep dives": 0.125,
+   "shallow dives": 0.0,
+   "crash": 0.041666666666666664
+  },
+  "sup_m1.0": {
+   "transitions": 89,
+   "removed": 36,
+   "bad_removed": 32,
+   "lookalike_removed": 0,
+   "test dives": 0.0,
+   "steep dives": 0.041666666666666664,
+   "shallow dives": 0.0,
+   "crash": 0.013888888888888888
+  },
+  "sup_late": {
+   "transitions": 90,
+   "removed": 36,
+   "bad_removed": 32,
+   "lookalike_removed": 0,
+   "test dives": 0.0,
+   "steep dives": 0.041666666666666664,
+   "shallow dives": 0.0,
+   "crash": 0.013888888888888888
+  }
+ }
+}

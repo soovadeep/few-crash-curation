@@ -1,0 +1,106 @@
+{
+ "args": {
+  "fault": "gain40j8",
+  "seed": 5,
+  "fly": "",
+  "threads": 1
+ },
+ "n_bad": 32,
+ "n_lookalike": 0,
+ "n_positive": 32,
+ "detection": {
+  "8": {
+   "bad": 8,
+   "lookalike": 0
+  },
+  "12": {
+   "bad": 12,
+   "lookalike": 0
+  },
+  "16": {
+   "bad": 16,
+   "lookalike": 0
+  },
+  "20": {
+   "bad": 20,
+   "lookalike": 0
+  },
+  "24": {
+   "bad": 24,
+   "lookalike": 0
+  },
+  "28": {
+   "bad": 28,
+   "lookalike": 0
+  },
+  "32": {
+   "bad": 32,
+   "lookalike": 0
+  },
+  "36": {
+   "bad": 32,
+   "lookalike": 0
+  },
+  "40": {
+   "bad": 32,
+   "lookalike": 0
+  },
+  "44": {
+   "bad": 32,
+   "lookalike": 0
+  },
+  "48": {
+   "bad": 32,
+   "lookalike": 0
+  },
+  "52": {
+   "bad": 32,
+   "lookalike": 0
+  },
+  "56": {
+   "bad": 32,
+   "lookalike": 0
+  },
+  "60": {
+   "bad": 32,
+   "lookalike": 0
+  },
+  "64": {
+   "bad": 32,
+   "lookalike": 0
+  },
+  "68": {
+   "bad": 32,
+   "lookalike": 0
+  },
+  "72": {
+   "bad": 32,
+   "lookalike": 0
+  },
+  "76": {
+   "bad": 32,
+   "lookalike": 0
+  },
+  "80": {
+   "bad": 32,
+   "lookalike": 0
+  },
+  "84": {
+   "bad": 32,
+   "lookalike": 0
+  },
+  "88": {
+   "bad": 32,
+   "lookalike": 0
+  },
+  "92": {
+   "bad": 32,
+   "lookalike": 0
+  },
+  "96": {
+   "bad": 32,
+   "lookalike": 0
+  }
+ },
+ "rows": []
+}

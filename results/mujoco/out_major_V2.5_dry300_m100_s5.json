@@ -1,0 +1,138 @@
+{
+ "args": {
+  "mode": "major",
+  "logs": "logs_V2.5_dry300_m100.npz",
+  "seed": 5,
+  "k": 360,
+  "tf": 40,
+  "tl": 40,
+  "w": 20
+ },
+ "n_crash": 12,
+ "detection": {
+  "1": {
+   "bad_in_top_k": 251,
+   "lookalike_in_top_k": 82,
+   "n_bad": 300,
+   "sign_count": 1338,
+   "bad_in_sign": 300
+  },
+  "3": {
+   "bad_in_top_k": 272,
+   "lookalike_in_top_k": 73,
+   "n_bad": 300,
+   "sign_count": 1291,
+   "bad_in_sign": 300
+  }
+ },
+ "rows": [
+  {
+   "model": "output-space from 1 runs, remove 360",
+   "removed": 360,
+   "bad_removed": 251,
+   "lookalike_removed": 82,
+   "test": {
+    "crash": 0.0,
+    "reach": 0.08333333333333333
+   },
+   "late entry": {
+    "crash": 0.20833333333333334,
+    "reach": 0.08333333333333333
+   },
+   "ice-edge entry": {
+    "crash": 0.0,
+    "reach": 0.08333333333333333
+   }
+  },
+  {
+   "model": "output-space from 1 runs, remove 360, and add them",
+   "removed": 360,
+   "bad_removed": 251,
+   "lookalike_removed": 82,
+   "test": {
+    "crash": 0.3333333333333333,
+    "reach": 0.08333333333333333
+   },
+   "late entry": {
+    "crash": 0.375,
+    "reach": 0.041666666666666664
+   },
+   "ice-edge entry": {
+    "crash": 0.4166666666666667,
+    "reach": 0.125
+   }
+  },
+  {
+   "model": "output-space from 3 runs, remove 360",
+   "removed": 360,
+   "bad_removed": 272,
+   "lookalike_removed": 73,
+   "test": {
+    "crash": 0.0,
+    "reach": 0.041666666666666664
+   },
+   "late entry": {
+    "crash": 0.0,
+    "reach": 0.08333333333333333
+   },
+   "ice-edge entry": {
+    "crash": 0.0,
+    "reach": 0.25
+   }
+  },
+  {
+   "model": "output-space from 3 runs, remove 360, and add them",
+   "removed": 360,
+   "bad_removed": 272,
+   "lookalike_removed": 73,
+   "test": {
+    "crash": 0.0,
+    "reach": 0.041666666666666664
+   },
+   "late entry": {
+    "crash": 0.0,
+    "reach": 0.0
+   },
+   "ice-edge entry": {
+    "crash": 0.0,
+    "reach": 0.20833333333333334
+   }
+  },
+  {
+   "model": "output-space (sign-rule count) from 1 runs",
+   "removed": 1338,
+   "bad_removed": 300,
+   "lookalike_removed": 100,
+   "test": {
+    "crash": 0.0,
+    "reach": 0.0
+   },
+   "late entry": {
+    "crash": 0.0,
+    "reach": 0.0
+   },
+   "ice-edge entry": {
+    "crash": 0.0,
+    "reach": 0.125
+   }
+  },
+  {
+   "model": "output-space (sign-rule count) from 1 runs, and add them",
+   "removed": 1338,
+   "bad_removed": 300,
+   "lookalike_removed": 100,
+   "test": {
+    "crash": 0.0,
+    "reach": 0.041666666666666664
+   },
+   "late entry": {
+    "crash": 0.0,
+    "reach": 0.041666666666666664
+   },
+   "ice-edge entry": {
+    "crash": 0.0,
+    "reach": 0.08333333333333333
+   }
+  }
+ ]
+}

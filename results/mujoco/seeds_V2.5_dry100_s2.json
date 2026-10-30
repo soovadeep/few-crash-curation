@@ -1,0 +1,141 @@
+{
+ "args": {
+  "logs": "logs_V2.5_dry100.npz",
+  "seed": 2,
+  "tf": 40,
+  "tl": 10,
+  "rs": "1",
+  "w": 20
+ },
+ "n_crash": 22,
+ "rows": [
+  {
+   "model": "faulty",
+   "test": {
+    "crash": 0.8333333333333334,
+    "reach": 0.0
+   },
+   "late entry": {
+    "crash": 0.6666666666666666,
+    "reach": 0.0
+   },
+   "ice-edge entry": {
+    "crash": 0.7083333333333334,
+    "reach": 0.08333333333333333
+   }
+  },
+  {
+   "model": "clean (bad logs removed) | retrain 1",
+   "test": {
+    "crash": 0.0,
+    "reach": 0.2916666666666667
+   },
+   "late entry": {
+    "crash": 0.041666666666666664,
+    "reach": 0.3333333333333333
+   },
+   "ice-edge entry": {
+    "crash": 0.0,
+    "reach": 0.4166666666666667
+   }
+  },
+  {
+   "model": "ours from 1 runs, remove 100 | retrain 1",
+   "bad_removed": 82,
+   "lookalike_removed": 0,
+   "test": {
+    "crash": 0.0,
+    "reach": 0.5
+   },
+   "late entry": {
+    "crash": 0.125,
+    "reach": 0.3333333333333333
+   },
+   "ice-edge entry": {
+    "crash": 0.0,
+    "reach": 0.3333333333333333
+   }
+  },
+  {
+   "model": "add 1 runs, W=20 | retrain 1",
+   "test": {
+    "crash": 0.4166666666666667,
+    "reach": 0.3333333333333333
+   },
+   "late entry": {
+    "crash": 0.25,
+    "reach": 0.20833333333333334
+   },
+   "ice-edge entry": {
+    "crash": 0.16666666666666666,
+    "reach": 0.2916666666666667
+   }
+  },
+  {
+   "model": "ours from 1 runs, remove 100, and add them | retrain 1",
+   "bad_removed": 82,
+   "lookalike_removed": 0,
+   "test": {
+    "crash": 0.0,
+    "reach": 0.125
+   },
+   "late entry": {
+    "crash": 0.0,
+    "reach": 0.16666666666666666
+   },
+   "ice-edge entry": {
+    "crash": 0.0,
+    "reach": 0.20833333333333334
+   }
+  },
+  {
+   "model": "ours from 3 runs, remove 100 | retrain 1",
+   "bad_removed": 88,
+   "lookalike_removed": 0,
+   "test": {
+    "crash": 0.08333333333333333,
+    "reach": 0.4166666666666667
+   },
+   "late entry": {
+    "crash": 0.08333333333333333,
+    "reach": 0.3333333333333333
+   },
+   "ice-edge entry": {
+    "crash": 0.0,
+    "reach": 0.3333333333333333
+   }
+  },
+  {
+   "model": "add 3 runs, W=20 | retrain 1",
+   "test": {
+    "crash": 0.5416666666666666,
+    "reach": 0.041666666666666664
+   },
+   "late entry": {
+    "crash": 0.375,
+    "reach": 0.041666666666666664
+   },
+   "ice-edge entry": {
+    "crash": 0.16666666666666666,
+    "reach": 0.125
+   }
+  },
+  {
+   "model": "ours from 3 runs, remove 100, and add them | retrain 1",
+   "bad_removed": 88,
+   "lookalike_removed": 0,
+   "test": {
+    "crash": 0.0,
+    "reach": 0.3333333333333333
+   },
+   "late entry": {
+    "crash": 0.125,
+    "reach": 0.16666666666666666
+   },
+   "ice-edge entry": {
+    "crash": 0.08333333333333333,
+    "reach": 0.3333333333333333
+   }
+  }
+ ]
+}

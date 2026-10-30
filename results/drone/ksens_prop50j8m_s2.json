@@ -1,0 +1,151 @@
+{
+ "args": {
+  "fault": "prop50j8m",
+  "seed": 2,
+  "fly": "24,32,48,64",
+  "threads": 1
+ },
+ "n_bad": 32,
+ "n_lookalike": 16,
+ "n_positive": 47,
+ "detection": {
+  "8": {
+   "bad": 8,
+   "lookalike": 0
+  },
+  "12": {
+   "bad": 12,
+   "lookalike": 0
+  },
+  "16": {
+   "bad": 16,
+   "lookalike": 0
+  },
+  "20": {
+   "bad": 19,
+   "lookalike": 0
+  },
+  "24": {
+   "bad": 23,
+   "lookalike": 0
+  },
+  "28": {
+   "bad": 27,
+   "lookalike": 0
+  },
+  "32": {
+   "bad": 31,
+   "lookalike": 0
+  },
+  "36": {
+   "bad": 32,
+   "lookalike": 0
+  },
+  "40": {
+   "bad": 32,
+   "lookalike": 1
+  },
+  "44": {
+   "bad": 32,
+   "lookalike": 2
+  },
+  "48": {
+   "bad": 32,
+   "lookalike": 2
+  },
+  "52": {
+   "bad": 32,
+   "lookalike": 3
+  },
+  "56": {
+   "bad": 32,
+   "lookalike": 3
+  },
+  "60": {
+   "bad": 32,
+   "lookalike": 3
+  },
+  "64": {
+   "bad": 32,
+   "lookalike": 4
+  },
+  "68": {
+   "bad": 32,
+   "lookalike": 4
+  },
+  "72": {
+   "bad": 32,
+   "lookalike": 5
+  },
+  "76": {
+   "bad": 32,
+   "lookalike": 7
+  },
+  "80": {
+   "bad": 32,
+   "lookalike": 8
+  },
+  "84": {
+   "bad": 32,
+   "lookalike": 10
+  },
+  "88": {
+   "bad": 32,
+   "lookalike": 12
+  },
+  "92": {
+   "bad": 32,
+   "lookalike": 15
+  },
+  "96": {
+   "bad": 32,
+   "lookalike": 16
+  }
+ },
+ "rows": [
+  {
+   "k": 24,
+   "bad_removed": 23,
+   "lookalike_removed": 0,
+   "test dives": 0.375,
+   "test dives reach": 0.375,
+   "steep dives": 0.25,
+   "steep dives reach": 0.5833333333333334,
+   "shallow dives": 0.0,
+   "shallow dives reach": 0.7916666666666666
+  },
+  {
+   "k": 32,
+   "bad_removed": 31,
+   "lookalike_removed": 0,
+   "test dives": 0.0,
+   "test dives reach": 0.875,
+   "steep dives": 0.0,
+   "steep dives reach": 0.9166666666666666,
+   "shallow dives": 0.0,
+   "shallow dives reach": 0.5
+  },
+  {
+   "k": 48,
+   "bad_removed": 32,
+   "lookalike_removed": 2,
+   "test dives": 0.0,
+   "test dives reach": 0.875,
+   "steep dives": 0.0,
+   "steep dives reach": 0.9583333333333334,
+   "shallow dives": 0.0,
+   "shallow dives reach": 0.75
+  },
+  {
+   "k": 64,
+   "bad_removed": 32,
+   "lookalike_removed": 4,
+   "test dives": 0.0,
+   "test dives reach": 0.5416666666666666,
+   "steep dives": 0.125,
+   "steep dives reach": 0.8333333333333334,
+   "shallow dives": 0.0,
+   "shallow dives reach": 0.7083333333333334
+  }
+ ]
+}

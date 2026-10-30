@@ -1,0 +1,51 @@
+{
+ "args": {
+  "fault": "lag100j8",
+  "seed": 2,
+  "betas": "10,1,100",
+  "smoke": false,
+  "k": 40,
+  "cheap": true
+ },
+ "spread": {},
+ "rows": [
+  {
+   "model": "faulty",
+   "test dives": 0.9583333333333334,
+   "test dives reach": 0.25,
+   "steep dives": 0.875,
+   "steep dives reach": 0.2916666666666667,
+   "shallow dives": 1.0,
+   "shallow dives reach": 0.7916666666666666
+  },
+  {
+   "model": "huber loss",
+   "test dives": 0.875,
+   "test dives reach": 0.5,
+   "steep dives": 0.7083333333333334,
+   "steep dives reach": 0.375,
+   "shallow dives": 0.9166666666666666,
+   "shallow dives reach": 0.8333333333333334
+  },
+  {
+   "model": "l1 loss",
+   "test dives": 0.7916666666666666,
+   "test dives reach": 0.7916666666666666,
+   "steep dives": 0.5833333333333334,
+   "steep dives reach": 0.7083333333333334,
+   "shallow dives": 0.3333333333333333,
+   "shallow dives reach": 0.8333333333333334
+  },
+  {
+   "model": "remove 40 worst-fit flights",
+   "bad_removed": 24,
+   "distr_removed": 0,
+   "test dives": 0.041666666666666664,
+   "test dives reach": 0.625,
+   "steep dives": 0.16666666666666666,
+   "steep dives reach": 0.5,
+   "shallow dives": 0.041666666666666664,
+   "shallow dives reach": 0.75
+  }
+ ]
+}

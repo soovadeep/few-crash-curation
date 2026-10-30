@@ -1,0 +1,27 @@
+{
+ "args": {
+  "seed": 5,
+  "vbad": 3.35,
+  "k": 76,
+  "w": 20,
+  "which": ""
+ },
+ "volts": 3.1,
+ "split": false,
+ "n_crash_dives": 15,
+ "n_bad": 76,
+ "rows": [
+  {
+   "model": "output-space from 3 dives, sign rule, and add them (W=20)",
+   "removed": 34,
+   "bad_removed": 22,
+   "mean_v_removed": 3.438729469191177,
+   "test dives": 0.0,
+   "test dives reach": 0.9583333333333334,
+   "steep dives": 0.041666666666666664,
+   "steep dives reach": 0.875,
+   "shallow dives": 0.041666666666666664,
+   "shallow dives reach": 0.9583333333333334
+  }
+ ]
+}

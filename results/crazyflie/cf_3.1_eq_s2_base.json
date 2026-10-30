@@ -1,0 +1,41 @@
+{
+ "args": {
+  "seed": 2,
+  "vbad": 3.35,
+  "k": 76,
+  "w": 20
+ },
+ "volts": 3.1,
+ "n_crash_dives": 18,
+ "n_bad": 76,
+ "rows": [
+  {
+   "model": "faulty (all flights)",
+   "test dives": 0.75,
+   "test dives reach": 0.25,
+   "steep dives": 0.5,
+   "steep dives reach": 0.5,
+   "shallow dives": 1.0,
+   "shallow dives reach": 0.125
+  },
+  {
+   "model": "huber loss",
+   "test dives": 0.8333333333333334,
+   "test dives reach": 0.20833333333333334,
+   "steep dives": 0.4583333333333333,
+   "steep dives reach": 0.5416666666666666,
+   "shallow dives": 1.0,
+   "shallow dives reach": 0.16666666666666666
+  },
+  {
+   "model": "l1 loss",
+   "test dives": 0.8333333333333334,
+   "test dives reach": 0.20833333333333334,
+   "steep dives": 0.6666666666666666,
+   "steep dives reach": 0.4583333333333333,
+   "shallow dives": 1.0,
+   "shallow dives reach": 0.20833333333333334
+  }
+ ],
+ "note": "faulty, huber, l1: fit on all flights for 12 epochs, the equal-steps budget"
+}
