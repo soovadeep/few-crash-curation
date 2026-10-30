@@ -5,7 +5,8 @@ The planner's model ignores battery voltage and is fit on all 105 flights; the d
 logs for this deployment: their thrust per command is higher than the low battery gives, consistently, and they
 are most of the data. Rows follow code/drone/work/mis_drone.py and base_drone.py: faulty, oracle (low-voltage
 flights only), failure-free cleaning (Huber, L1, worst-fit), a crude crash-like rule, adding the crash dives,
-and our curation (TracIn-cos on prediction loss along the crash dives, mean per flight; fixed k and sign rule).
+our curation (TracIn-cos on prediction loss along the crash dives, mean per flight; fixed k and sign rule), and
+the oracle given the same crash dives.
 
 usage: CF_VOLTS=3.1 python cf_table.py --seed 1
 """
@@ -195,6 +196,11 @@ for n in [1, 3]:
     Xa, Ra = augmented(n, ~np.isin(cf.FLIGHT, o[:det["n_positive"]]))
     add(f"ours from {det['n_dives']} dives, sign rule, and add them (W={args.w})",
         lambda: cf.fit(Xa, Ra, np.ones(len(Xa), bool), seed=args.seed))
+# the oracle given the same failure runs: the low-voltage flights plus the crash dives
+for n in [1, 3]:
+    if len(crash_xy) >= n:
+        Xa, Ra = augmented(n, ~bad)
+        add(f"oracle, and add {n} crash dives (W={args.w})", lambda: cf.fit(Xa, Ra, np.ones(len(Xa), bool), seed=args.seed))
 
 
 def l2rw_fit(n, add_w=False):
