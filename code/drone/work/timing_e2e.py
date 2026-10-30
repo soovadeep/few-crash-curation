@@ -4,11 +4,13 @@ Each timed run starts from the fault's logs (attr_data.setup) and the recorded c
 ends with the trained model: it includes building the training tensors, the failure's labels, any scoring, and the
 whole training. Flying the faulty model (which produced the crash) and evaluating the result are not included.
   plain         a fit on all logs (12 epochs, the standard routine)
+  add           the crash dive added to the logs with weight W=20, then the standard routine
   fact          FACT: scoring by one backward pass per batch (timing_fact_fast.py), sign rule, refit on the kept
                 logs with the standard routine (12 epochs over the kept logs: the default schedule)
   fact_matched  the same, retrained for as many updates as a fit on all logs (matched updates)
   l2rw_la       learning to reweight with Ren et al.'s look-ahead weights, as many updates as a fit on all logs
   l2rw_jvp      the same weights from one forward-mode product per batch
+  l2rw          the same weights from per-sample gradients (propeller only, one repeat: about 12 minutes)
 Models and update loops are those of reach_drone.py, which flies them. Median of 3 repeats per fault (seed 1).
 
 usage (from code/drone/, idle machine): NT=1 python work/timing_e2e.py
@@ -19,7 +21,7 @@ import time
 
 import numpy as np
 import torch
-from torch.func import functional_call, jvp
+from torch.func import functional_call, grad, jvp, vmap
 
 import attr_data as AD
 import drone as Dr
@@ -120,13 +122,27 @@ def run(method, fault, net, S, U):
         _, d = jvp(lambda q: ((functional_call(m, q, (x,)) - y) ** 2).sum(1), (pd,), (dict(zip(pd, v)),))
         return d.clamp(min=0)
 
+    def w_per_sample(m, x, y):
+        pd = {k: v.detach() for k, v in m.named_parameters()}
+        pg = {k: v.clone().requires_grad_(True) for k, v in pd.items()}
+        v = torch.cat([g.flatten() for g in torch.autograd.grad(((functional_call(m, pg, (fx,)) - fy) ** 2).sum(-1).mean(),
+                                                                 list(pg.values()))])
+        f = lambda q, a, b: ((functional_call(m, q, (a[None],))[0] - b) ** 2).sum()
+        G = vmap(grad(f), in_dims=(None, 0, 0))(pd, x, y)
+        return (torch.cat([G[k].flatten(1) for k in pd], 1) @ v).clamp(min=0)
+
     if method == "plain":
         return Dr.fit(Xf, Rf, np.ones(len(Xf), bool), seed=SEED)
+    if method == "add":
+        xs, ys = fx * Dr.SD + Dr.MU, fy * Dr.RS
+        Xa = np.concatenate([Xf] + [xs.numpy()] * 20); Ra = np.concatenate([Rf] + [ys.numpy()] * 20)
+        return Dr.fit(Xa, Ra, np.ones(len(Xa), bool), seed=SEED)
     if method == "fact":
         return Dr.fit(Xf, Rf, fact_keep(net, Xn, Yn, fx, fy), seed=SEED)
     if method == "fact_matched":
         return train(Xn, Yn, np.where(fact_keep(net, Xn, Yn, fx, fy))[0])
-    return train(Xn, Yn, np.arange(len(Xn)), w_lookahead if method == "l2rw_la" else w_jvp)
+    weigher = {"l2rw_la": w_lookahead, "l2rw_jvp": w_jvp, "l2rw": w_per_sample}[method]
+    return train(Xn, Yn, np.arange(len(Xn)), weigher)
 
 
 res = dict(hardware=dict(cpu=open("/proc/cpuinfo").read().split("model name")[1].split("\n")[0].strip(": \t"),
@@ -135,9 +151,9 @@ res = dict(hardware=dict(cpu=open("/proc/cpuinfo").read().split("model name")[1]
 for fault in FAULTS:
     net, S, U = crash_record(fault)
     res["seconds"][fault] = {}
-    for method in ["plain", "fact", "fact_matched", "l2rw_la", "l2rw_jvp"]:
+    for method in ["plain", "add", "fact", "fact_matched", "l2rw_la", "l2rw_jvp"] + (["l2rw"] if fault == "prop50j8" else []):
         T = []
-        for _ in range(3):
+        for _ in range(1 if method == "l2rw" else 3):
             t0 = time.perf_counter()
             run(method, fault, net, S, U)
             T.append(time.perf_counter() - t0)

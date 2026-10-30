@@ -15,7 +15,6 @@ the plant produced):
   failure   the crash dive, up to impact
   routine   ordinary successful operation: the faulty model's first wall-stop run that does not crash (the full run,
             thinned evenly to the crash dive's length)
-  level     the same for level flights (wall-stop runs with the goal at the start height)
   hover     the faulty model's planner holding its start position (no axial descent at all)
   expert    the crash dive's start and goal flown by a planner that uses the plant as its model (standing in for a
             pilot or a conservative controller), over the crash dive's duration
@@ -42,7 +41,7 @@ import drone as Dr
 p = argparse.ArgumentParser()
 p.add_argument("--fault", default="prop50j8")
 p.add_argument("--model", choices=["unfixed", "oracle", "add", "fact", "fact_matched", "l2rw", "l2rw_la"])
-p.add_argument("--ref", choices=["failure", "routine", "level", "hover", "expert"], default="failure")
+p.add_argument("--ref", choices=["failure", "routine", "hover", "expert"], default="failure")
 p.add_argument("--seed", type=int, default=1)
 p.add_argument("--smoke", action="store_true", help="one dive per task, no output")
 args = p.parse_args()
@@ -66,9 +65,9 @@ with torch.no_grad():
             xs, ys = AD.realized_residual(S[:t_c + 1], U[:t_c], CFG["c_hi"])
             break
     ref_info = dict(ref=args.ref, transitions=len(xs))
-    if args.ref in ("routine", "level", "hover"):
+    if args.ref in ("routine", "hover"):
         for i, (kind, a, b) in enumerate(Dr.tasks(24, seed=11, kinds=("wall",))):
-            b = {"routine": b, "level": (b[0], b[1], a[2]), "hover": a}[args.ref]
+            b = {"routine": b, "hover": a}[args.ref]
             s0 = torch.tensor([*a, 0, 0, 0, *Dr.Q0, 0, 0, 0])
             S, U = AD.run_cl(s0, torch.tensor(b), net, seed=i)
             if Dr.clearance(S[:, :3]).min() >= 0:

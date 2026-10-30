@@ -51,6 +51,7 @@ for fault, models in out.items():
         pooled.setdefault(fault, {})[tag] = p
         print(f"{fault:10s} {tag:22s} n={len(seeds)} crash {p['crash']:5.1f}+-{p['crash_se']:4.1f} "
               f"safe {p.get('safe', float('nan')):5.1f}+-{p.get('safe_se', float('nan')):4.1f}"
-              + (f"  removed {p['removed']:.1f} bad {p['bad_removed']:.1f} AUROC {p['auroc']:.2f}" if "removed" in p else "")
+              + (f"  removed {p['removed']:.1f} bad {p['bad_removed']:.1f}" if "removed" in p else "")
+              + (f" AUROC {p['auroc']:.2f}" if "auroc" in p else "")
               + (f"  coverage {p['ref_axial_descent_share']:.2f}" if "ref_axial_descent_share" in p else ""))
 json.dump(pooled, open("work/pool_reach.json", "w"), indent=1)

@@ -1,0 +1,43 @@
+{
+ "args": {
+  "variant": "differenced",
+  "fault": "prop50j8",
+  "seed": 2,
+  "fly": true
+ },
+ "info": {
+  "rms_change": [
+   0.16804564153796678,
+   0.13401816321257162,
+   0.11716502220187887
+  ],
+  "rms_target": [
+   1.4560982538124077,
+   1.5870240512030924,
+   8.07473631302074
+  ],
+  "crash_dive": 0,
+  "crash_transitions": 95,
+  "removed": 38,
+  "bad_removed": 32,
+  "bad_flights": 32,
+  "auroc": 0.9975198412698413
+ },
+ "summary": {
+  "test dives": {
+   "crash": 0.0,
+   "reach": 0.625,
+   "safe": 0.625
+  },
+  "steep dives": {
+   "crash": 0.041666666666666664,
+   "reach": 0.6666666666666666,
+   "safe": 0.6666666666666666
+  },
+  "shallow dives": {
+   "crash": 0.0,
+   "reach": 0.5,
+   "safe": 0.5
+  }
+ }
+}
