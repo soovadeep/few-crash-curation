@@ -29,7 +29,8 @@ supervisor took over) whose transitions are observations of the deployed dynamic
 
 Scoring is one pass over the data. For a linear layer the per-sample gradient is an outer product, so the norms and
 inner products need one backward pass per batch (`code/drone/work/timing_fact_fast.py`). A gradient-free variant,
-`phi_i = -<mean failure error, e_i>`, is used as an ablation.
+`phi_i = -<mean failure error, e_i>`, needs only forward passes; on the quadrotor it does nearly as well as TracIn
+(Table 2), and the gradient matters on the car (Table 8).
 
 ## Main results
 
@@ -46,14 +47,16 @@ Re-flown with every dive recorded (Table 2), FACT reaches the goal without crash
 learning to reweight completes more dives safely, with a smaller margin above the floor, and crashes more on the
 thrust-gain fault. What the failure contributes is coverage of the regime where the logs are wrong: a correctly labelled
 expert dive or routine flight through that regime works as the reference too, a hover record does not (Table 4).
+A gradient-free score that compares each sample's error with the failure's mean error does nearly as well on the
+quadrotor (1.4–3.9% crashes against 0.9–3.1%), so the reference, not the gradient, does most of the work there.
 
 On the Crazyflie battery fault built from real NanoBench logs (Table 9), curation alone does not help (50–52% crashes),
 and three failure runs help mostly as added training data: 10.0% added alone, 5.6% curated and then added, 5.3% with
 the gradient-free score, and 1.7% added to the oracle's flights (12.5% for the oracle alone, 73.6% unfixed).
 
 On one CPU thread a complete fix on the propeller benchmark, from the logs and the crash record to a trained model,
-takes 12 s with FACT (18 s with as many updates as a full-data training), 19 s for an ordinary training, and 46–62 s
-with learning to reweight implemented efficiently (578 s with per-sample gradients).
+takes 7 s with FACT (12 s with as many updates as a full-data training), 6 s with the gradient-free score, 11 s for an
+ordinary training, and 27–31 s with learning to reweight implemented efficiently (443 s with per-sample gradients).
 
 ## Layout
 
@@ -103,8 +106,8 @@ first needs its faulty and oracle models: `python work/nat_probe.py <fault> <see
 |---|---|---|
 | Table 1, Fig. 2 (a–c) | `mis_drone.py --fault F --seed S --k 40`, then `sign3add_drone.py --fault F --seed S`; `base_drone.py --fault F --seed S --k 40`; `cupid_drone.py --fault F --seed S` (propeller, look-alikes); `sup_drone.py --fault F --seed S --fly`. Pooled by `pool_quadrotor.py` | `drone/mis_*`, `base_*`, `cupid_*`, `sup_*` |
 | Table 3 | `controls_drone.py --fault F --seed S` (thrust gain and look-alikes: `--only l2rw,add_5050,add_w2000,ft_replay,fact_matched,random_matched,unnorm`) | `drone/controls_*` |
-| Table 2 (safe completion) | `reach_drone.py --fault F --model M --seed S` for `M` in `unfixed oracle add fact fact_matched l2rw l2rw_la`; pooled by `pool_reach.py` | `drone/reach_*` |
-| Table 2 (time), Sec. 7.3 and App. B (cost) | On an idle machine: `NT=1 python work/timing_e2e.py` (complete fixes), `NT=1 python work/timing_l2rw.py` (per update), `NT=1 python work/timing_fact_fast.py` | `drone/timing_e2e.json`, `timing_l2rw.json` |
+| Table 2 (safe completion) | `reach_drone.py --fault F --model M --seed S` for `M` in `unfixed oracle add fact fact_matched gradfree l2rw l2rw_la`; pooled by `pool_reach.py` | `drone/reach_*` |
+| Table 2 (time), Sec. 7.3 and App. B (cost) | On an idle machine: `NT=1 python work/timing_e2e.py` (complete fixes; `--methods M ...` times only those and merges them into an existing `work/timing_e2e.json`), `NT=1 python work/timing_l2rw.py` (per update), `NT=1 python work/timing_fact_fast.py` | `drone/timing_e2e.json`, `timing_l2rw.json` |
 | Table 4 (which reference) | `reach_drone.py --fault F --model fact --ref R --seed S` for `R` in `expert routine hover` (the crash-dive rows are Table 2's); `reference_stats.py --fault prop50j8` for the crash dive's coverage and error on the propeller fault | `drone/reach_fact-*`, `reference_failure_prop50j8.json` |
 | Measurement pipeline sensitivity (App. B) | `pipeline_drone.py --variant V --seed S --fly` for `V` in `filtered shifted differenced` | `drone/pipeline_*` |
 | Supervised failure runs (Sec. 7.4) | `sup_drone.py` above | `drone/sup_*` |

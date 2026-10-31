@@ -8,14 +8,19 @@ whole training. Flying the faulty model (which produced the crash) and evaluatin
   fact          FACT: scoring by one backward pass per batch (timing_fact_fast.py), sign rule, refit on the kept
                 logs with the standard routine (12 epochs over the kept logs: the default schedule)
   fact_matched  the same, retrained for as many updates as a fit on all logs (matched updates)
+  gradfree      the gradient-free score -<mean failure error, e_i>, sign rule, refit as fact
   l2rw_la       learning to reweight with Ren et al.'s look-ahead weights, as many updates as a fit on all logs
   l2rw_jvp      the same weights from one forward-mode product per batch
-  l2rw          the same weights from per-sample gradients (propeller only, one repeat: about 12 minutes)
-Models and update loops are those of reach_drone.py, which flies them. Median of 3 repeats per fault (seed 1).
+  l2rw          the same weights from per-sample gradients (propeller only, one repeat: several minutes)
+Models and update loops are those of reach_drone.py, which flies them. Median of 3 repeats per fault (seed 1). The share
+of samples kept by FACT's and the gradient-free score's sign rule is recorded as kept_share.
 
-usage (from code/drone/, idle machine): NT=1 python work/timing_e2e.py
+usage (from code/drone/, idle machine): NT=1 python work/timing_e2e.py [--methods gradfree ...]
+(with --methods, only those are timed and merged into an existing work/timing_e2e.json)
 """
+import argparse
 import json
+import os
 import platform
 import time
 
@@ -103,6 +108,16 @@ def train(Xn, Yn, pool, weigher=None):
     return m
 
 
+def gradfree_keep(net, Xn, Yn, fx, fy):
+    with torch.no_grad():
+        ebar = (net(fx) - fy).mean(0)
+        sc = torch.cat([-((net(Xn[s:s + BATCH]) - Yn[s:s + BATCH]) @ ebar) for s in range(0, len(Xn), BATCH)])
+    flights = np.unique(Dr.FLIGHT)
+    fidx = np.searchsorted(flights, Dr.FLIGHT)
+    rm = np.bincount(fidx, sc.numpy(), minlength=len(flights)) / np.bincount(fidx, minlength=len(flights)) > 0
+    return ~rm[fidx]
+
+
 def run(method, fault, net, S, U):
     Xf, Rf, Xn, Yn, fx, fy = prepare(fault, S, U)
 
@@ -139,19 +154,30 @@ def run(method, fault, net, S, U):
         return Dr.fit(Xa, Ra, np.ones(len(Xa), bool), seed=SEED)
     if method == "fact":
         return Dr.fit(Xf, Rf, fact_keep(net, Xn, Yn, fx, fy), seed=SEED)
+    if method == "gradfree":
+        return Dr.fit(Xf, Rf, gradfree_keep(net, Xn, Yn, fx, fy), seed=SEED)
     if method == "fact_matched":
         return train(Xn, Yn, np.where(fact_keep(net, Xn, Yn, fx, fy))[0])
     weigher = {"l2rw_la": w_lookahead, "l2rw_jvp": w_jvp, "l2rw": w_per_sample}[method]
     return train(Xn, Yn, np.arange(len(Xn)), weigher)
 
 
+ap = argparse.ArgumentParser()
+ap.add_argument("--methods", nargs="+")
+args = ap.parse_args()
 res = dict(hardware=dict(cpu=open("/proc/cpuinfo").read().split("model name")[1].split("\n")[0].strip(": \t"),
                          threads=torch.get_num_threads(), torch=torch.__version__, python=platform.python_version()),
            seed=SEED, repeats=3, seconds={})
+if args.methods and os.path.exists("work/timing_e2e.json"):
+    old = json.load(open("work/timing_e2e.json"))
+    res["seconds"], res["kept_share"] = old["seconds"], old.get("kept_share", {})
 for fault in FAULTS:
     net, S, U = crash_record(fault)
-    res["seconds"][fault] = {}
-    for method in ["plain", "add", "fact", "fact_matched", "l2rw_la", "l2rw_jvp"] + (["l2rw"] if fault == "prop50j8" else []):
+    res["seconds"].setdefault(fault, {})
+    _, _, Xn, Yn, fx, fy = prepare(fault, S, U)  # share of samples each sign rule keeps (not timed)
+    res.setdefault("kept_share", {})[fault] = {"fact": float(fact_keep(net, Xn, Yn, fx, fy).mean()),
+                                               "gradfree": float(gradfree_keep(net, Xn, Yn, fx, fy).mean())}
+    for method in args.methods or ["plain", "add", "fact", "fact_matched", "gradfree", "l2rw_la", "l2rw_jvp"] + (["l2rw"] if fault == "prop50j8" else []):
         T = []
         for _ in range(1 if method == "l2rw" else 3):
             t0 = time.perf_counter()

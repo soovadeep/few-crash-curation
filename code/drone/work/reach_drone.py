@@ -6,6 +6,8 @@ Models (one crash dive is the failure run, as in mis_drone.py):
   add           the crash dive added to training with weight W=20, 12 epochs (Dr.fit)
   fact          sign rule, refit with Dr.fit (12 epochs over the kept logs)
   fact_matched  sign rule, retrained for the full-data number of updates (as controls_drone.py)
+  gradfree      sign rule with the gradient-free score -<mean failure error, e_i> (the identity in place of the
+                tangent kernel), refit with Dr.fit as fact
   l2rw          learning to reweight with the crash dive as clean set, weights from per-sample gradients
   l2rw_la       the same, weights from Ren et al.'s look-ahead (one perturbed SGD step, double backpropagation)
 Both reweighting models take the full-data number of updates; timing_e2e.py times complete runs of each fix.
@@ -40,7 +42,7 @@ import drone as Dr
 
 p = argparse.ArgumentParser()
 p.add_argument("--fault", default="prop50j8")
-p.add_argument("--model", choices=["unfixed", "oracle", "add", "fact", "fact_matched", "l2rw", "l2rw_la"])
+p.add_argument("--model", choices=["unfixed", "oracle", "add", "fact", "fact_matched", "gradfree", "l2rw", "l2rw_la"])
 p.add_argument("--ref", choices=["failure", "routine", "hover", "expert"], default="failure")
 p.add_argument("--seed", type=int, default=1)
 p.add_argument("--smoke", action="store_true", help="one dive per task, no output")
@@ -143,13 +145,19 @@ def train(pool, weigher=None):
     return m
 
 
-def sign_rule():
+def sign_rule(gradient_free=False):
     params = {k: v.detach() for k, v in net.named_parameters()}
-    tg = val_grad(net, params)
     sc = torch.zeros(N)
-    for s in range(0, N, BATCH):
-        G = per_sample_grads(net, params, Xn[s:s + BATCH], Yn[s:s + BATCH])
-        sc[s:s + BATCH] = -(G @ tg) / (G.norm(dim=1) + 1e-12)
+    if gradient_free:
+        with torch.no_grad():
+            ebar = (net(fx) - fy).mean(0)
+            for s in range(0, N, BATCH):
+                sc[s:s + BATCH] = -((net(Xn[s:s + BATCH]) - Yn[s:s + BATCH]) @ ebar)
+    else:
+        tg = val_grad(net, params)
+        for s in range(0, N, BATCH):
+            G = per_sample_grads(net, params, Xn[s:s + BATCH], Yn[s:s + BATCH])
+            sc[s:s + BATCH] = -(G @ tg) / (G.norm(dim=1) + 1e-12)
     flights = np.unique(Dr.FLIGHT)
     fidx = np.searchsorted(flights, Dr.FLIGHT)
     fs = np.bincount(fidx, sc.numpy(), minlength=len(flights)) / np.bincount(fidx, minlength=len(flights))
@@ -168,10 +176,10 @@ elif args.model == "oracle":
 elif args.model == "add":
     Xa = np.concatenate([Xf] + [xs.numpy()] * 20); Ra = np.concatenate([Rf] + [ys.numpy()] * 20)
     m = Dr.fit(Xa, Ra, np.ones(len(Xa), bool), seed=args.seed)
-elif args.model in ("fact", "fact_matched"):
-    keep, info = sign_rule()
+elif args.model in ("fact", "fact_matched", "gradfree"):
+    keep, info = sign_rule(gradient_free=args.model == "gradfree")
     info["reference"] = ref_info
-    m = Dr.fit(Xf, Rf, keep, seed=args.seed) if args.model == "fact" else train(np.where(keep)[0])
+    m = train(np.where(keep)[0]) if args.model == "fact_matched" else Dr.fit(Xf, Rf, keep, seed=args.seed)
 else:
     m = train(np.arange(N), w_per_sample if args.model == "l2rw" else w_lookahead)
 info["build_s_shared_machine"] = round(time.time() - t1, 1)

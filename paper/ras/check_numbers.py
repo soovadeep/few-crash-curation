@@ -180,8 +180,8 @@ D = {b: drone(b) for b, _ in BENCH}
 print("== Table tab:major")
 MAJOR_ROWS = {("None (all logs)", "0"): "none", ("Oracle (bad logs removed)", "--"): "oracle", ("Huber loss", "0"): "huber",
       ("L1 loss", "0"): "l1", ("Remove $k$ worst-fit logs", "0"): "worst", ("Drop $k$ most crash-like logs", "0$^\\S$"): "crashlike",
-      ("Drop all descent data", "0$^\\S$"): "dropdesc", ("CUPID, label-free surrogate", "100"): "cupid_sq",
-      ("CUPID, REINFORCE", "100"): "cupid_pg", ("Add crash dives, $W=20$", "1"): "add1", ("Add crash dives, $W=20$", "3"): "add3",
+      ("Drop all descent data", "0$^\\S$"): "dropdesc", ("CUPID (adapted), label-free", "100"): "cupid_sq",
+      ("CUPID (adapted), REINFORCE", "100"): "cupid_pg", ("Add crash dives, $W=20$", "1"): "add1", ("Add crash dives, $W=20$", "3"): "add3",
       ("Add crash dives, $W=20$", "24"): "add24", ("\\textbf{\\method{}}, sign rule", "1"): "sign1",
       ("\\textbf{\\method{}}, sign rule", "3"): "sign3", ("\\method{}, sign rule, then add, $W=20$", "1"): "sign1add",
       ("\\method{}, supervised run, sign rule", "1$^\\P$"): "sup", ("\\method{}, remove top $k$ (count known)", "1"): "topk"}
@@ -404,29 +404,40 @@ if not ok:
 
 print("== Timing (Table tab:safe, Section sec:reweight cost paragraph, Appendix app:protocol), results/drone/timing_e2e.json and timing_l2rw.json")
 tm = json.load(open(os.path.join(RES, "drone", "timing_l2rw.json")))
-te = json.load(open(os.path.join(RES, "drone", "timing_e2e.json")))["seconds"]
+te_all = json.load(open(os.path.join(RES, "drone", "timing_e2e.json")))
+te, KS = te_all["seconds"], te_all["kept_share"]
 TP = te["prop50j8"]
+m = re.search(r"\\textbf\{Timing\.\} One core of an Intel Xeon at ([\d.]+)~GHz", TEX)
+ghz = [float(re.search(r"@ ([\d.]+)GHz", h["cpu"]).group(1)) for h in (tm["hardware"], te_all["hardware"])]
+ok = m is not None and ghz[0] == ghz[1] == float(m.group(1)) and abs(KS["prop50j8"]["fact"] - tm["fact_kept_samples"] / tm["samples"]) < 1e-4
+print(("  ok   " if ok else "  DIFF ") + f"timing hardware: paper {m and m.group(1)} GHz, timing_l2rw / timing_e2e {ghz}; same kept share for FACT")
+if not ok:
+    BAD.append("timing hardware")
 m = re.search(r"An ordinary training takes (\d+)~s and adding the crash dive (\d+)~s\. \\method\{\} takes (\d+)~s with its default schedule, "
-              r"of which ([\d.]+)~s is scoring, and (\d+)~s with as many updates as the full-data model\. Learning to reweight takes (\d+)~s with "
+              r"of which ([\d.]+)~s is scoring, and (\d+)~s with as many updates as the full-data model; with the gradient-free score the fix "
+              r"takes (\d+)~s\. Learning to reweight takes (\d+)~s with "
               r"the look-ahead of \\citet\{ren2018l2rw\}, (\d+)~s with one forward-mode product per batch, and (\d+)~s with per-sample gradients", TEX)
 p = [float(x) for x in m.groups()]
 data = [round(TP["plain"]), round(TP["add"]), round(TP["fact"]), round(tm["fact_scoring_fast_s"], 1), round(TP["fact_matched"]),
-        round(TP["l2rw_la"]), round(TP["l2rw_jvp"]), round(TP["l2rw"])]
+        round(TP["gradfree"]), round(TP["l2rw_la"]), round(TP["l2rw_jvp"]), round(TP["l2rw"])]
 ok = p == [float(x) for x in data]
 print(("  ok   " if ok else "  DIFF ") + f"cost paragraph: paper {p} data {data}")
 if not ok:
     BAD.append("cost paragraph")
 rng = lambda k: (lambda v: "%d" % v[0] if v[0] == v[1] else "%d--%d" % v)((min(round(te[b][k]) for b, _ in BENCH), max(round(te[b][k]) for b, _ in BENCH)))
-m = re.search(r"an ordinary training takes ([\d-]+)~s, \\method\{\} ([\d-]+)~s \(([\d-]+)~s with matched updates\), and learning to reweight "
+m = re.search(r"an ordinary training takes ([\d-]+)~s, \\method\{\} ([\d-]+)~s \(([\d-]+)~s with matched updates\), the gradient-free "
+              r"score ([\d-]+)~s, and learning to reweight "
               r"([\d-]+)~s with the look-ahead and ([\d-]+)~s with forward-mode products; with per-sample gradients it takes (\d+)~s on the "
               r"propeller benchmark\. That benchmark has ([\d,]+) samples; the MLP has ([\d,]+) parameters, and a full-data training takes "
               r"([\d,]+) updates of batch ([\d,]+)\..*?largest relative difference \$2\\times10\^\{-7\}\$.*?scoring takes (\d+)~s with per-sample "
-              r"gradients, or ([\d.]+)~s using.*?scores equal to \$2\\times10\^\{-5\}\$\); the sign rule keeps (\d+)\\% of the samples", TEX, re.S)
+              r"gradients, or ([\d.]+)~s using.*?scores equal to \$3\\times10\^\{-5\}\$\); the sign rule keeps (\d+)\\% of the samples "
+              r"\((\d+)\\% with the gradient-free score\)", TEX, re.S)
 p = list(m.groups())
-data = [rng("plain"), rng("fact"), rng("fact_matched"), rng("l2rw_la"), rng("l2rw_jvp"), "%d" % round(TP["l2rw"]),
+data = [rng("plain"), rng("fact"), rng("fact_matched"), rng("gradfree"), rng("l2rw_la"), rng("l2rw_jvp"), "%d" % round(TP["l2rw"]),
         f"{tm['samples']:,}", f"{tm['params']:,}", f"{tm['updates_per_training']:,}", f"{tm['batch']:,}",
-        "%d" % round(tm["fact_scoring_s"]), "%.1f" % tm["fact_scoring_fast_s"], "%d" % round(100 * tm["fact_kept_samples"] / tm["samples"])]
-ok = p == data and round(max(tm["max_rel_weight_diff"].values()), 7) == 2e-7 and round(tm["fact_scoring_fast_max_abs_diff"], 5) == 2e-5
+        "%d" % round(tm["fact_scoring_s"]), "%.1f" % tm["fact_scoring_fast_s"], "%d" % round(100 * tm["fact_kept_samples"] / tm["samples"]),
+        "%d" % round(100 * KS["prop50j8"]["gradfree"])]
+ok = p == data and round(max(tm["max_rel_weight_diff"].values()), 7) == 2e-7 and round(tm["fact_scoring_fast_max_abs_diff"], 5) == 3e-5
 print(("  ok   " if ok else "  DIFF ") + f"app:protocol timing: paper {p} data {data}")
 if not ok:
     BAD.append("app:protocol timing")
@@ -482,11 +493,12 @@ def reach(tag, bench):
 
 
 R = {(tag, b): reach(tag, b) for b, _ in BENCH
-     for tag in ("unfixed", "oracle", "add", "fact", "fact_matched", "l2rw", "l2rw_la",
+     for tag in ("unfixed", "oracle", "add", "fact", "fact_matched", "gradfree", "l2rw", "l2rw_la",
                  "fact-expert", "fact-routine", "fact-hover")}
 TE = json.load(open(os.path.join(RES, "drone", "timing_e2e.json")))["seconds"]["prop50j8"]
 SAFE_ROWS = {"None (all logs)": "unfixed", "Oracle (bad logs removed)": "oracle", "Add crash dive, $W=20$": "add",
              "\\method{}, sign rule": "fact", "\\quad 2,640 updates": "fact_matched",
+             "Gradient-free score, sign rule": "gradfree",
              "Learning to reweight, look-ahead": "l2rw_la", "\\quad per-sample gradients": "l2rw"}
 for lab, c0, cells in table("tab:safe"):
     tag = SAFE_ROWS[lab]
@@ -613,5 +625,38 @@ ok = p == [float(x) for x in data]
 print(("  ok   " if ok else "  DIFF ") + f"pipeline sensitivity: paper {p} data {data}")
 if not ok:
     BAD.append("pipeline sensitivity")
+
+print("== Gradient-free score on the quadrotor (Section sec:scores, Table tab:assume), results/drone/reach_gradfree_*.json")
+G = {b: R[("gradfree", b)] for b, _ in BENCH}
+m = re.search(r"It removes (\d+)--(\d+) flights on the propeller benchmarks, (\d+)--(\d+) of them bad \(AUROC ([\d.]+)--([\d.]+)\), and exactly "
+              r"\\method\{\}'s (\d+) on thrust gain, and it crashes in ([\d.]+)--([\d.]+)\\% of dives against \\method\{\}'s ([\d.]+)--([\d.]+)\\%\. "
+              r"It needs only forward passes, and on the propeller benchmark it keeps (\d+)\\% of the samples against (\d+)\\%, so the whole fix "
+              r"takes (\d+)~s against \\method\{\}'s (\d+)~s\..*?told the count, \\method\{\} separates the bad logs from the look-alikes where the "
+              r"gradient-free score cannot \(([\d.]+)\\% against ([\d.]+)\\%\), and it finds (\d+)--(\d+) of a minority fault's 100 bad logs against "
+              r"(\d+)--(\d+) \(Section~\\ref\{sec:car\}\)\. On the Crazyflie the two do the same \(([\d.]+)\\% and ([\d.]+)\\%", TEX, re.S)
+p = [float(x) for x in m.groups()]
+pi = [i for b in ("prop50j8", "prop50j8m") for i in G[b]["info"]]
+gi, fi = G["gain40j8"]["info"], R[("fact", "gain40j8")]["info"]
+same_gain = all(i["removed"] == i["bad_removed"] == 32 for i in gi + fi) and len(gi) == len(fi)
+gc = [G[b]["crash"] for b, _ in BENCH]
+fc = [R[("fact", b)]["crash"] for b, _ in BENCH]
+mm = re.search(r"the gradient-free score finds (\d+)--(\d+) of the bad logs against (\d+)--(\d+) for TracIn", TEX)
+data = [min(i["removed"] for i in pi), max(i["removed"] for i in pi), min(i["bad_removed"] for i in pi), max(i["bad_removed"] for i in pi),
+        round(min(i["auroc"] for i in pi), 2), round(max(i["auroc"] for i in pi), 2), 32 if same_gain else -1,
+        round(min(gc), 1), round(max(gc), 1), round(min(fc), 1), round(max(fc), 1),
+        round(100 * KS["prop50j8"]["gradfree"]), round(100 * KS["prop50j8"]["fact"]), round(TP["gradfree"]), round(TP["fact"]),
+        round(C["ours from 3 runs, remove 360"]["crash"], 1), round(C["output-space from 3 runs, remove 360"]["crash"], 1),
+        int(mm.group(3)), int(mm.group(4)), int(mm.group(1)), int(mm.group(2)),
+        round(F["ours from 3 dives, sign rule, and add them (W=20)"]["crash"], 1),
+        round(F["output-space from 3 dives, sign rule, and add them (W=20)"]["crash"], 1)]
+ok = p == [float(x) for x in data]
+print(("  ok   " if ok else "  DIFF ") + f"sec:scores gradient-free: paper {p} data {data}")
+if not ok:
+    BAD.append("sec:scores gradient-free")
+m = re.search(r"the gradient-free score, whose kernel meets \(iv\), crashes in ([\d.]+)--([\d.]+) \(Section~\\ref\{sec:scores\}\)", TEX)
+ok = m is not None and (float(m.group(1)), float(m.group(2))) == (round(min(gc), 1), round(max(gc), 1))
+print(("  ok   " if ok else "  DIFF ") + f"tab:assume gradient-free row (iv): paper {m and m.groups()} data {round(min(gc), 1)}--{round(max(gc), 1)}")
+if not ok:
+    BAD.append("tab:assume identity kernel")
 
 print("\n" +(f"{len(BAD)} MISMATCHES: " + ", ".join(BAD) if BAD else "all checked numbers match the result files"))
