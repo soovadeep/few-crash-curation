@@ -46,7 +46,7 @@ Crash rates (% of dives or runs, mean over seeds) with one failure run, from the
 Re-flown with every dive recorded (Table 2), FACT reaches the goal without crashing about as often as the oracle;
 learning to reweight completes more dives safely, with a smaller margin above the floor, and crashes more on the
 thrust-gain fault. What the failure contributes is coverage of the regime where the logs are wrong: a correctly labelled
-expert dive or routine flight through that regime works as the reference too, a hover record does not (Table 4).
+expert dive or routine flight through that regime works as the reference too, hover does not suffice for the descent-specific propeller faults (Table 4).
 A gradient-free score that compares each sample's error with the failure's mean error does nearly as well on the
 quadrotor (1.4–3.9% crashes against 0.9–3.1%), so the reference, not the gradient, does most of the work there.
 

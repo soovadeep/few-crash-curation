@@ -2,4 +2,4 @@
 - A failure run is used as a reference for the deployed dynamics, not as training data
 - FACT removes every log whose gradient opposes the failure's, with no count to tune
 - One crash dive cuts a quadrotor's crash rate from 99% to 3.1%; adding it leaves 95%
-- Each assumption is mapped to the experiments where it fails and what FACT does there
+- Each assumption is mapped to where it holds, where it fails and what FACT does there
