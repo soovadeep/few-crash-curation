@@ -14,7 +14,7 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 OUT = HERE / "submission"
-FIGS = {"../figs/fig_failures.pdf": "Figure_2.pdf", "../figs/fig_scores.pdf": "Figure_3.pdf"}
+FIGS = {"../figs/fig_failures.pdf": "Figure_2.pdf", "../figs/fig_scores.pdf": "Figure_3.pdf", "../figs/fig_cost_sensitivity.pdf": "Figure_4.pdf"}
 
 FIG1 = r"""\documentclass[12pt,border=4pt]{standalone}
 \usepackage[T1]{fontenc}
@@ -39,6 +39,8 @@ def main():
         shutil.rmtree(OUT)
     OUT.mkdir()
     tex = (HERE / "main.tex").read_text()
+    for name in ("supplement_numbers", "cost_table"):
+        tex = tex.replace("\\input{" + name + "}", (HERE / (name + ".tex")).read_text())
 
     # Figure 1: the TikZ picture, with the equation reference resolved from main.aux
     eq = re.search(r"\\newlabel\{eq:score\}\{\{(\d+)\}", (HERE / "main.aux").read_text()).group(1)

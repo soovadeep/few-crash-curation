@@ -29,12 +29,13 @@ supervisor took over) whose transitions are observations of the deployed dynamic
 
 Scoring is one pass over the data. For a linear layer the per-sample gradient is an outer product, so the norms and
 inner products need one backward pass per batch (`code/drone/work/timing_fact_fast.py`). A gradient-free variant,
-`phi_i = -<mean failure error, e_i>`, needs only forward passes; on the quadrotor it does nearly as well as TracIn
-(Table 2), and the gradient matters on the car (Table 8).
+`phi_i = -<mean failure error, e_i>`, needs only forward passes; on the quadrotor its crash rates are close to TracIn
+(Table 2), but TracIn improves safe completion on the look-alike fault by 9.3 percentage
+points. The gradient also matters on the car (Table 9).
 
 ## Main results
 
-Crash rates (% of dives or runs, mean over seeds) with one failure run, from the paper's Tables 1, 3 and 8.
+Crash rates (% of dives or runs, mean over seeds) with one failure run, from the paper's Tables 1, 3 and 9.
 
 | Benchmark | No fix | Add the failure to training | FACT, sign rule | Learning to reweight, failure as clean set | Oracle (bad logs removed) |
 |---|---|---|---|---|---|
@@ -46,11 +47,11 @@ Crash rates (% of dives or runs, mean over seeds) with one failure run, from the
 Re-flown with every dive recorded (Table 2), FACT reaches the goal without crashing about as often as the oracle;
 learning to reweight completes more dives safely, with a smaller margin above the floor, and crashes more on the
 thrust-gain fault. What the failure contributes is coverage of the regime where the logs are wrong: a correctly labelled
-expert dive or routine flight through that regime works as the reference too, hover does not suffice for the descent-specific propeller faults (Table 4).
-A gradient-free score that compares each sample's error with the failure's mean error does nearly as well on the
-quadrotor (1.4–3.9% crashes against 0.9–3.1%), so the reference, not the gradient, does most of the work there.
+expert dive or routine flight through that regime works as the reference too, hover does not suffice for the descent-specific propeller faults (Table 5).
+A gradient-free score that compares each sample's error with the failure's mean error has similar
+quadrotor crash rates (1.4–3.9% against 0.9–3.1%), while safe completion differs on look-alikes.
 
-On the Crazyflie battery fault built from real NanoBench logs (Table 9), curation alone does not help (50–52% crashes),
+On the Crazyflie battery fault built from real NanoBench logs (Table 10), curation alone does not help (50–52% crashes),
 and three failure runs help mostly as added training data: 10.0% added alone, 5.6% curated and then added, 5.3% with
 the gradient-free score, and 1.7% added to the oracle's flights (12.5% for the oracle alone, 73.6% unfixed).
 
@@ -108,27 +109,27 @@ first needs its faulty and oracle models: `python work/nat_probe.py <fault> <see
 | Table 3 | `controls_drone.py --fault F --seed S` (thrust gain and look-alikes: `--only l2rw,add_5050,add_w2000,ft_replay,fact_matched,random_matched,unnorm`) | `drone/controls_*` |
 | Table 2 (safe completion) | `reach_drone.py --fault F --model M --seed S` for `M` in `unfixed oracle add fact fact_matched gradfree l2rw l2rw_la`; pooled by `pool_reach.py` | `drone/reach_*` |
 | Table 2 (time), Sec. 7.3 and App. B (cost) | On an idle machine: `NT=1 python work/timing_e2e.py` (complete fixes; `--methods M ...` times only those and merges them into an existing `work/timing_e2e.json`), `NT=1 python work/timing_l2rw.py` (per update), `NT=1 python work/timing_fact_fast.py` | `drone/timing_e2e.json`, `timing_l2rw.json` |
-| Table 4 (which reference) | `reach_drone.py --fault F --model fact --ref R --seed S` for `R` in `expert routine hover` (the crash-dive rows are Table 2's); `reference_stats.py --fault prop50j8` for the crash dive's coverage and error on the propeller fault | `drone/reach_fact-*`, `reference_failure_prop50j8.json` |
+| Table 5 (which reference) | `reach_drone.py --fault F --model fact --ref R --seed S` for `R` in `expert routine hover` (the crash-dive rows are Table 2's); `reference_stats.py --fault prop50j8` for the crash dive's coverage and error on the propeller fault | `drone/reach_fact-*`, `reference_failure_prop50j8.json` |
 | Measurement pipeline sensitivity (App. B) | `pipeline_drone.py --variant V --seed S --fly` for `V` in `filtered shifted differenced` | `drone/pipeline_*` |
 | Supervised failure runs (Sec. 7.4) | `sup_drone.py` above | `drone/sup_*` |
-| Other plants and imperfect failure records (Sec. 7.6, Table 5) | `plant_panel.py --plant {wide,subset,gbt,mismatch,heldout} --seed S`; `failrec_drone.py --seed S` and `failrec_drone.py --sweep 35,8,4 --seed S`; then `pool_robust.py` and `fill_robust.py ../../paper/ras/main.tex` | `drone/plant_*`, `failrec_*`, `pool_robust.json` |
-| Severity, faulty share, look-alikes (Sec. 7.6, Table 6) | `sweep_drone.py --sev V --nper N --look L --seed S --fly` and `stress_ref.py` with the same arguments; then `fill_sweep.py ../../paper/ras/main.tex` (runs `pool_sweep.py`) and `pool_stress.py` | `drone/sweep_*`, `stressref_*`, `pool_stress.json` |
-| Fault that starts mid-flight (Sec. 7.7, Table 7) | `local_drone.py --seed S`, `diag_local.py --seed S`, `iter_local.py --seed S` (also `--unit windows`, and `--nofly`); then `pool_local.py` and `fill_local.py ../../paper/ras/main.tex` | `drone/local*`, `pool_local_*` |
+| Other plants and imperfect failure records (Sec. 7.6, Table 6) | `plant_panel.py --plant {wide,subset,gbt,mismatch,heldout} --seed S`; `failrec_drone.py --seed S` and `failrec_drone.py --sweep 35,8,4 --seed S`; then `pool_robust.py` and `fill_robust.py ../../paper/ras/main.tex` | `drone/plant_*`, `failrec_*`, `pool_robust.json` |
+| Severity, faulty share, look-alikes (Sec. 7.6, Table 7) | `sweep_drone.py --sev V --nper N --look L --seed S --fly` and `stress_ref.py` with the same arguments; then `fill_sweep.py ../../paper/ras/main.tex` (runs `pool_sweep.py`) and `pool_stress.py` | `drone/sweep_*`, `stressref_*`, `pool_stress.json` |
+| Fault that starts mid-flight (Sec. 7.7, Table 8) | `local_drone.py --seed S`, `diag_local.py --seed S`, `iter_local.py --seed S` (also `--unit windows`, and `--nofly`); then `pool_local.py` and `fill_local.py ../../paper/ras/main.tex` | `drone/local*`, `pool_local_*` |
 | Removal count, checkpoint and rating (Sec. 7.2) | `ksens_drone.py --fault F --seed S --fly 24,32,48,64`; `ckpt_drone.py --fault F --seed S`; the rating rows are in `mis_*` | `drone/ksens_*`, `ckpt_*` |
 | Sign errors per sample, window and flight (Sec. 4.2, after Proposition 5) | `agg_check.py --fault F --seed 1` | `drone/agg_*` |
 | How far TracIn is from the theory (Sec. 4.3) | `margin_drone.py --fault F --seed S` and `margin_drone.py --sweep V,N,L --seed S`; then `pool_margin.py` | `drone/margin_*`, `pooled_margin.txt` |
 | Fig. 3 | `fig_scores.py prop50j8m 1` | `drone/fig_scores_prop50j8m_s1.json` |
 | Minority and inconsistent faults (Sec. 7.10) | `mis_drone.py` and `base_drone.py` with `--fault prop50mv --k 20` and `--fault lag100j8 --k 40`; pooled by `pool_drone.py` (`--base` for the baselines) | `drone/mis_prop50mv_*`, `base_prop50mv_*`, `mis_lag100j8_*`, `base_lag100j8_*` |
-| Table 8 (car) | `mj_major.py --logs logs_V2.5_dry300_m100.npz --seed S --k 360`; `mj_crude.py --seed S --k 360`; `mj_out.py --mode major --logs logs_V2.5_dry300_m100.npz --seed S --k 360 --tl 40` | `mujoco/major_*`, `crude_*`, `out_major_*` |
+| Table 9 (car) | `mj_major.py --logs logs_V2.5_dry300_m100.npz --seed S --k 360`; `mj_crude.py --seed S --k 360`; `mj_out.py --mode major --logs logs_V2.5_dry300_m100.npz --seed S --k 360 --tl 40` | `mujoco/major_*`, `crude_*`, `out_major_*` |
 | The car in detail (Sec. 7.8) | `mj_sign_ana.py --seed S`; minority fault: `mj_seeds.py --logs logs_V2.5_dry100.npz --seed S --rs 1` and `mj_out.py --mode seeds --logs logs_V2.5_dry100.npz --seed S --k 100 --tl 10` | `mujoco/signana_*`, `seeds_*`, `out_seeds_*` |
-| Table 9, Fig. 2 (d) (Crazyflie) | All with `CF_VOLTS=3.1 CF_EQ=1` (every model takes the same number of gradient steps): `cf_table.py --seed S` (`CF_ONLY` picks rows by regex, `CF_TAG` names the output file; the oracle-plus-crashes row is `CF_ONLY=^oracle,.and.add CF_TAG=O`), `cf_extra.py --seed S`, `cf_outfly.py --seed S`; pooled by `pool_eq.py` and `pool_cmp.py`; add `CF_SPLIT=1` for the held-out plant (`pool_eq.py --split`) | `crazyflie/cf_3.1_eq_*`, `cfsplit_*` |
+| Table 10, Fig. 2 (d) (Crazyflie) | All with `CF_VOLTS=3.1 CF_EQ=1` (every model takes the same number of gradient steps): `cf_table.py --seed S` (`CF_ONLY` picks rows by regex, `CF_TAG` names the output file; the oracle-plus-crashes row is `CF_ONLY=^oracle,.and.add CF_TAG=O`), `cf_extra.py --seed S`, `cf_outfly.py --seed S`; pooled by `pool_eq.py` and `pool_cmp.py`; add `CF_SPLIT=1` for the held-out plant (`pool_eq.py --split`) | `crazyflie/cf_3.1_eq_*`, `cfsplit_*` |
 
 ### Checking the numbers and building the paper
 
-- `python paper/ras/check_numbers.py` recomputes, from `results/`, every number in Tables 1–4, 8 and 9 and Fig. 2 and
+- `python paper/ras/check_numbers.py` recomputes, from `results/`, every number in Tables 1–5, 9 and 10 and Fig. 2 and
   the numbers quoted in the related work, Sections 4.2, 7.1–7.5 and 7.9 and Appendix B, and lists any that differ from
   `paper/ras/main.tex`.
-- The `fill_*` scripts above rewrite Tables 5–7 from `results/drone/`; run on the current results they leave the paper
+- The `fill_*` scripts above rewrite Tables 6–8 from `results/drone/`; run on the current results they leave the paper
   unchanged.
 - `python paper/make_figs.py` redraws Figs. 2 and 3 from `results/`; Fig. 1 is drawn in the paper with TikZ.
 - Build with `pdflatex main && bibtex main && pdflatex main && pdflatex main` in `paper/ras/` (TeX Live with the
@@ -147,3 +148,23 @@ which side it ends on.
 
 If you use this code, please cite the paper; the reference will be added here on publication. Questions go to the
 corresponding author, Soovadeep Bakshi (The University of Texas at Austin).
+
+## RAS revision: controller-cost sensitivity
+
+The revised manuscript is [paper/ras/ras_manuscript_revised.pdf](paper/ras/ras_manuscript_revised.pdf).
+Section 7.3.1, Table 4 and Figure 4 add 2,160 paired evaluation dives on thrust gain.
+Across obstacle-penalty multipliers 0.5, 1 and 2, FACT has lower mean crash rates
+and look-ahead reweighting has higher safe completion. This is a tradeoff, not
+matched-risk superiority. The existing look-alike ablation also shows a 9.3-point
+safe-completion advantage for the gradient score over gradient-free curation.
+
+All new outcomes and reproduction details are in
+[results/drone/ras_cost](results/drone/ras_cost/README.md).
+`python paper/ras/supplement_results.py` regenerates the new table, numerical
+macros and figure; `python paper/ras/check_numbers.py` checks original results
+and the new numerical artifacts. These scripts require NumPy and SciPy;
+figure generation additionally requires Matplotlib.
+
+Build the revised paper from `paper/ras` with `tectonic main.tex`, or the existing
+pdflatex/bibtex sequence. Both generated TeX inputs must accompany `main.tex`;
+`make_submission.py` inlines them when creating the flat submission bundle.
