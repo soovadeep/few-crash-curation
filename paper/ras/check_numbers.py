@@ -661,7 +661,7 @@ if not ok:
 
 print("\n" +(f"{len(BAD)} MISMATCHES: " + ", ".join(BAD) if BAD else "all checked numbers match the result files"))
 
-# The revision's table and confidence intervals are generated from per-dive data.
+# Table 4 and the Section 7.3.1 intervals are generated from per-dive data.
 import subprocess
 subprocess.run([sys.executable, os.path.join(os.path.dirname(__file__), "supplement_results.py"), "--check"], check=True)
 sys.exit(bool(BAD))

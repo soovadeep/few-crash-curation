@@ -1,4 +1,4 @@
-"""Fixed, paired controller-cost sensitivity experiment for the RAS revision.
+"""Fixed, paired controller-cost sensitivity experiment (Table 4, Fig. 4).
 
 Run from code/drone: python work/ras_supplement.py --root PATH --seed 1 [--pilot]
 Training and attribution follow reach_drone.py; only evaluation obstacle cost varies.

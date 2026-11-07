@@ -63,7 +63,7 @@ ordinary training, and 27–31 s with learning to reweight implemented efficient
 
 | Path | What |
 |---|---|
-| `paper/ras/` | `main.tex` (the paper, Elsevier `elsarticle` class), `highlights.txt`, `check_numbers.py` (recomputes the paper's numbers from `results/`), `make_submission.py` (assembles the upload files) |
+| `paper/ras/` | `main.tex` (the paper, Elsevier `elsarticle` class), `highlights.txt`, `check_numbers.py` (recomputes the paper's numbers from `results/`), `supplement_results.py` (writes Table 4, Fig. 4 and the numbers in Sec. 7.3.1 from `results/drone/ras_cost/`), `make_submission.py` (assembles the upload files) |
 | `paper/` | `refs.bib`, `make_figs.py` and the figures it writes to `figs/` |
 | `code/drone/work/` | Quadrotor with a plant learned from NeuroBEM logs: `drone.py` (plant, model, MPPI, evaluation), `attr_data.py` (fault definitions), one script per experiment, and the `pool_*` and `fill_*` scripts that pool results into tables |
 | `code/mujoco/` | MuSHR car in MuJoCo with an icy corner: `env.py`, `core.py`, `attrlib.py`, log builders and experiments |
@@ -109,6 +109,7 @@ first needs its faulty and oracle models: `python work/nat_probe.py <fault> <see
 | Table 3 | `controls_drone.py --fault F --seed S` (thrust gain and look-alikes: `--only l2rw,add_5050,add_w2000,ft_replay,fact_matched,random_matched,unnorm`) | `drone/controls_*` |
 | Table 2 (safe completion) | `reach_drone.py --fault F --model M --seed S` for `M` in `unfixed oracle add fact fact_matched gradfree l2rw l2rw_la`; pooled by `pool_reach.py` | `drone/reach_*` |
 | Table 2 (time), Sec. 7.3 and App. B (cost) | On an idle machine: `NT=1 python work/timing_e2e.py` (complete fixes; `--methods M ...` times only those and merges them into an existing `work/timing_e2e.json`), `NT=1 python work/timing_l2rw.py` (per update), `NT=1 python work/timing_fact_fast.py` | `drone/timing_e2e.json`, `timing_l2rw.json` |
+| Table 4, Fig. 4 (controller cost) | `PYTHONPATH=. python work/ras_supplement.py --root R --seed S` for `S` in 1–5 (trains FACT and look-ahead reweighting once on thrust gain, then flies 72 dives at obstacle-penalty multipliers 0.5, 1 and 2); `python paper/ras/supplement_results.py` writes Table 4, Fig. 4 and the Sec. 7.3.1 numbers | `drone/ras_cost/` |
 | Table 5 (which reference) | `reach_drone.py --fault F --model fact --ref R --seed S` for `R` in `expert routine hover` (the crash-dive rows are Table 2's); `reference_stats.py --fault prop50j8` for the crash dive's coverage and error on the propeller fault | `drone/reach_fact-*`, `reference_failure_prop50j8.json` |
 | Measurement pipeline sensitivity (App. B) | `pipeline_drone.py --variant V --seed S --fly` for `V` in `filtered shifted differenced` | `drone/pipeline_*` |
 | Supervised failure runs (Sec. 7.4) | `sup_drone.py` above | `drone/sup_*` |
@@ -148,23 +149,3 @@ which side it ends on.
 
 If you use this code, please cite the paper; the reference will be added here on publication. Questions go to the
 corresponding author, Soovadeep Bakshi (The University of Texas at Austin).
-
-## RAS revision: controller-cost sensitivity
-
-The revised manuscript is [paper/ras/ras_manuscript_revised.pdf](paper/ras/ras_manuscript_revised.pdf).
-Section 7.3.1, Table 4 and Figure 4 add 2,160 paired evaluation dives on thrust gain.
-Across obstacle-penalty multipliers 0.5, 1 and 2, FACT has lower mean crash rates
-and look-ahead reweighting has higher safe completion. This is a tradeoff, not
-matched-risk superiority. The existing look-alike ablation also shows a 9.3-point
-safe-completion advantage for the gradient score over gradient-free curation.
-
-All new outcomes and reproduction details are in
-[results/drone/ras_cost](results/drone/ras_cost/README.md).
-`python paper/ras/supplement_results.py` regenerates the new table, numerical
-macros and figure; `python paper/ras/check_numbers.py` checks original results
-and the new numerical artifacts. These scripts require NumPy and SciPy;
-figure generation additionally requires Matplotlib.
-
-Build the revised paper from `paper/ras` with `tectonic main.tex`, or the existing
-pdflatex/bibtex sequence. Both generated TeX inputs must accompany `main.tex`;
-`make_submission.py` inlines them when creating the flat submission bundle.

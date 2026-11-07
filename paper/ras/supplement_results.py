@@ -1,4 +1,4 @@
-"""Generate revision table, numerical macros and figure from stored dive outcomes.
+"""Write Table 4, the Section 7.3.1 numbers and Fig. 4 from the stored controller-cost dives.
 
 Run: python paper/ras/supplement_results.py [--check]
 Requires numpy, scipy and matplotlib. --check checks the numerical TeX artifacts.
@@ -49,8 +49,23 @@ def main():
     for scale, prefix in ((0.5, "Low"), (1, "Default"), (2, "High")):
         for index, metric in enumerate(("Crash", "Safe")):
             mean, _, lo, hi = stats(data[scale, "l2rw_la"][:, index] - data[scale, "fact"][:, index])
-            macros[prefix + metric + "Gap"] = f"{mean:.2f}"
-            macros[prefix + metric + "CI"] = f"[{lo:.2f},{hi:.2f}]"
+            macros[prefix + metric + "Gap"] = f"{mean:.1f}"
+            macros[prefix + metric + "CI"] = f"[{lo:.1f},{hi:.1f}]"
+    # The default multiplier against the same models' dives in Table 2 (reach_*), flown on another host.
+    for method, name in (("fact", "Fact"), ("l2rw_la", "RW")):
+        same = 0
+        stored = []
+        for seed in range(1, 6):
+            old = json.loads((RESULTS / f"reach_{method}_gain40j8_s{seed}.json").read_text())["runs"]
+            new = json.loads((RESULTS / "ras_cost" / f"seed-{seed}" / f"{method}-cost1.json").read_text())["runs"]
+            old_rows = [(task, i, r) for task, group in old.items() for i, r in enumerate(group)]
+            assert [(task, i) for task, i, _ in old_rows] == [(r["task"], r["task_index"]) for r in new]
+            same += sum((a["crash"], a["safe"]) == (b["crash"], b["safe"]) for (_, _, a), b in zip(old_rows, new))
+            stored.append(rates([r for _, _, r in old_rows]))
+        macros["RerunSame" + name] = str(same)
+        macros["RerunCrash" + name] = f"{data[1, method][:, 0].mean():.1f}"
+        macros["StoredCrash" + name] = f"{np.mean(stored, axis=0)[0]:.1f}"
+    macros["RerunDives"] = str(5 * 72)
     ablation = {}
     for method in ("fact", "gradfree"):
         ablation[method] = np.array([
@@ -74,7 +89,7 @@ Multiplier & Method & Crash (\%) & Safe completion (\%) \\
     for scale in SCALES:
         for method, label in (("fact", r"\method{}"), ("l2rw_la", "Reweighting (look-ahead)")):
             cells = [stats(data[scale, method][:, index]) for index in (0, 1)]
-            table += f"{scale:g} & {label} & " + " & ".join(f"${m:.2f} \\pm {se:.2f}$" for m, se, _, _ in cells) + r" \\" + "\n"
+            table += f"{scale:g} & {label} & " + " & ".join(f"${m:.1f} \\pm {se:.1f}$" for m, se, _, _ in cells) + r" \\" + "\n"
     table += "\\bottomrule\n\\end{tabular}\n\\end{table}\n"
     for name, content in (("supplement_numbers.tex", numbers), ("cost_table.tex", table)):
         if args.check:
