@@ -1,0 +1,1624 @@
+{
+  "protocol": {
+    "fault": "gain40j8",
+    "attribution_task_seed": 11,
+    "evaluation_task_seed": 7,
+    "n_each": 24,
+    "K": 512,
+    "H": 40,
+    "T": 250,
+    "dt": 0.02,
+    "delay": 3,
+    "every": 3,
+    "goal_radius": 0.5,
+    "c_hi": 14.0,
+    "methods": [
+      "fact",
+      "l2rw_la"
+    ],
+    "cost_scales": [
+      0.5,
+      1.0,
+      2.0,
+      4.0,
+      8.0,
+      16.0
+    ]
+  },
+  "seed": 1,
+  "method": "l2rw_la",
+  "scale": 2.0,
+  "pilot": false,
+  "summary": {
+    "crash": 0.09722222222222222,
+    "reach": 0.75,
+    "safe": 0.6944444444444444
+  },
+  "runs": [
+    {
+      "task": "test dives",
+      "task_index": 0,
+      "start": [
+        0.6541141414711609,
+        1.5007637328373358,
+        4.5
+      ],
+      "goal": [
+        3.1045285214523446,
+        3.677710407756604,
+        0.7
+      ],
+      "crash": false,
+      "reach": true,
+      "safe": true,
+      "final_dist": 1.0206094980239868,
+      "min_dist": 0.34829530119895935,
+      "min_clearance": 0.30000001192092896,
+      "steps": 251,
+      "first_reach": 153
+    },
+    {
+      "task": "test dives",
+      "task_index": 1,
+      "start": [
+        -3.9684081726065514,
+        -1.0986697207101965,
+        4.5
+      ],
+      "goal": [
+        -0.3259513358410189,
+        3.488427563170095,
+        0.7
+      ],
+      "crash": true,
+      "reach": false,
+      "safe": false,
+      "final_dist": 0.9385358095169067,
+      "min_dist": 0.9190412759780884,
+      "min_clearance": -0.00418110191822052,
+      "steps": 251,
+      "first_reach": null
+    },
+    {
+      "task": "test dives",
+      "task_index": 2,
+      "start": [
+        -2.181805439084119,
+        2.87655543001637,
+        4.5
+      ],
+      "goal": [
+        0.3750457851174276,
+        0.2434796227497662,
+        0.7
+      ],
+      "crash": false,
+      "reach": true,
+      "safe": true,
+      "final_dist": 0.5525732636451721,
+      "min_dist": 0.45220983028411865,
+      "min_clearance": 0.30000001192092896,
+      "steps": 251,
+      "first_reach": 228
+    },
+    {
+      "task": "test dives",
+      "task_index": 3,
+      "start": [
+        -0.9727104462522802,
+        -1.4610432987670032,
+        4.5
+      ],
+      "goal": [
+        2.1342842578967045,
+        0.06061044706117258,
+        0.7
+      ],
+      "crash": false,
+      "reach": false,
+      "safe": false,
+      "final_dist": 1.8633902072906494,
+      "min_dist": 0.9772223234176636,
+      "min_clearance": 0.30000001192092896,
+      "steps": 251,
+      "first_reach": null
+    },
+    {
+      "task": "test dives",
+      "task_index": 4,
+      "start": [
+        -0.2669246233530238,
+        4.464002267475141,
+        4.5
+      ],
+      "goal": [
+        3.710995672010746,
+        2.8412953537100245,
+        0.7
+      ],
+      "crash": false,
+      "reach": false,
+      "safe": false,
+      "final_dist": 1.4396954774856567,
+      "min_dist": 0.7082249522209167,
+      "min_clearance": 0.22795425355434418,
+      "steps": 251,
+      "first_reach": null
+    },
+    {
+      "task": "test dives",
+      "task_index": 5,
+      "start": [
+        -0.3247623743618151,
+        -1.7775304141152084,
+        4.5
+      ],
+      "goal": [
+        1.7631216415609519,
+        -2.2183037291372436,
+        0.7
+      ],
+      "crash": false,
+      "reach": false,
+      "safe": false,
+      "final_dist": 1.0725187063217163,
+      "min_dist": 0.649137020111084,
+      "min_clearance": 0.13894979655742645,
+      "steps": 251,
+      "first_reach": null
+    },
+    {
+      "task": "test dives",
+      "task_index": 6,
+      "start": [
+        -1.2027638480482654,
+        -3.214557769811231,
+        4.5
+      ],
+      "goal": [
+        2.631571698337439,
+        0.6191105621709623,
+        0.7
+      ],
+      "crash": false,
+      "reach": true,
+      "safe": true,
+      "final_dist": 0.33163952827453613,
+      "min_dist": 0.33163952827453613,
+      "min_clearance": 0.30000001192092896,
+      "steps": 251,
+      "first_reach": 166
+    },
+    {
+      "task": "test dives",
+      "task_index": 7,
+      "start": [
+        -1.0187593876389744,
+        1.5338100359280835,
+        4.5
+      ],
+      "goal": [
+        1.476270456415687,
+        0.6129411727961109,
+        0.7
+      ],
+      "crash": false,
+      "reach": true,
+      "safe": true,
+      "final_dist": 0.2306254357099533,
+      "min_dist": 0.20614390075206757,
+      "min_clearance": 0.30000001192092896,
+      "steps": 251,
+      "first_reach": 131
+    },
+    {
+      "task": "test dives",
+      "task_index": 8,
+      "start": [
+        0.15219272529103556,
+        -3.405647795659953,
+        4.5
+      ],
+      "goal": [
+        2.553406173265026,
+        -1.960782848117515,
+        0.7
+      ],
+      "crash": false,
+      "reach": true,
+      "safe": true,
+      "final_dist": 0.4305081069469452,
+      "min_dist": 0.33158424496650696,
+      "min_clearance": 0.30000001192092896,
+      "steps": 251,
+      "first_reach": 235
+    },
+    {
+      "task": "test dives",
+      "task_index": 9,
+      "start": [
+        0.9802863788104732,
+        -0.5437095151823463,
+        4.5
+      ],
+      "goal": [
+        3.2892085409333527,
+        -3.4701260635833924,
+        0.7
+      ],
+      "crash": false,
+      "reach": true,
+      "safe": true,
+      "final_dist": 0.2828056812286377,
+      "min_dist": 0.2828056812286377,
+      "min_clearance": 0.30000001192092896,
+      "steps": 251,
+      "first_reach": 126
+    },
+    {
+      "task": "test dives",
+      "task_index": 10,
+      "start": [
+        -0.9412551407894609,
+        -1.3592055634897164,
+        4.5
+      ],
+      "goal": [
+        2.7530453519422777,
+        3.542657231846629,
+        0.7
+      ],
+      "crash": false,
+      "reach": false,
+      "safe": false,
+      "final_dist": 0.785485029220581,
+      "min_dist": 0.785485029220581,
+      "min_clearance": 0.30000001192092896,
+      "steps": 251,
+      "first_reach": null
+    },
+    {
+      "task": "test dives",
+      "task_index": 11,
+      "start": [
+        -3.451026369621726,
+        1.6177373355402098,
+        4.5
+      ],
+      "goal": [
+        -0.3687387268687483,
+        2.434167578894857,
+        0.7
+      ],
+      "crash": false,
+      "reach": true,
+      "safe": true,
+      "final_dist": 0.9645724892616272,
+      "min_dist": 0.053318772464990616,
+      "min_clearance": 0.24211840331554413,
+      "steps": 251,
+      "first_reach": 156
+    },
+    {
+      "task": "test dives",
+      "task_index": 12,
+      "start": [
+        -1.8324156459150545,
+        0.5621778904027996,
+        4.5
+      ],
+      "goal": [
+        1.3639524884993715,
+        3.470715013543045,
+        0.7
+      ],
+      "crash": false,
+      "reach": true,
+      "safe": true,
+      "final_dist": 0.29265305399894714,
+      "min_dist": 0.2371470183134079,
+      "min_clearance": 0.30000001192092896,
+      "steps": 251,
+      "first_reach": 242
+    },
+    {
+      "task": "test dives",
+      "task_index": 13,
+      "start": [
+        -2.06178192245076,
+        -3.025986861235971,
+        4.5
+      ],
+      "goal": [
+        0.23861753569014343,
+        -0.3989455911141704,
+        0.7
+      ],
+      "crash": false,
+      "reach": false,
+      "safe": false,
+      "final_dist": 0.7528306841850281,
+      "min_dist": 0.7528306841850281,
+      "min_clearance": 0.30000001192092896,
+      "steps": 251,
+      "first_reach": null
+    },
+    {
+      "task": "test dives",
+      "task_index": 14,
+      "start": [
+        1.8724873064673293,
+        3.0307048305526054,
+        4.5
+      ],
+      "goal": [
+        5.05247069248855,
+        -0.4644306275975003,
+        0.7
+      ],
+      "crash": false,
+      "reach": true,
+      "safe": true,
+      "final_dist": 0.778034508228302,
+      "min_dist": 0.4473299980163574,
+      "min_clearance": 0.30000001192092896,
+      "steps": 251,
+      "first_reach": 183
+    },
+    {
+      "task": "test dives",
+      "task_index": 15,
+      "start": [
+        0.05870146287672995,
+        1.3404500306388103,
+        4.5
+      ],
+      "goal": [
+        2.360277501213467,
+        1.6039726463066577,
+        0.7
+      ],
+      "crash": false,
+      "reach": true,
+      "safe": true,
+      "final_dist": 0.6727560758590698,
+      "min_dist": 0.21196362376213074,
+      "min_clearance": 0.30000001192092896,
+      "steps": 251,
+      "first_reach": 155
+    },
+    {
+      "task": "test dives",
+      "task_index": 16,
+      "start": [
+        -1.58501021137611,
+        0.02250773750550028,
+        4.5
+      ],
+      "goal": [
+        0.6083979764873813,
+        -1.5834883053638134,
+        0.7
+      ],
+      "crash": false,
+      "reach": true,
+      "safe": true,
+      "final_dist": 0.47978532314300537,
+      "min_dist": 0.4248427450656891,
+      "min_clearance": 0.30000001192092896,
+      "steps": 251,
+      "first_reach": 171
+    },
+    {
+      "task": "test dives",
+      "task_index": 17,
+      "start": [
+        0.030590975667709408,
+        4.242624408390571,
+        4.5
+      ],
+      "goal": [
+        2.63143113862585,
+        -1.7799677011529598,
+        0.7
+      ],
+      "crash": false,
+      "reach": true,
+      "safe": true,
+      "final_dist": 0.36728623509407043,
+      "min_dist": 0.2794143557548523,
+      "min_clearance": 0.30000001192092896,
+      "steps": 251,
+      "first_reach": 167
+    },
+    {
+      "task": "test dives",
+      "task_index": 18,
+      "start": [
+        -3.210305105150166,
+        3.4926162091960355,
+        4.5
+      ],
+      "goal": [
+        0.4798435365989402,
+        1.7977179067076303,
+        0.7
+      ],
+      "crash": false,
+      "reach": true,
+      "safe": true,
+      "final_dist": 0.3570117652416229,
+      "min_dist": 0.3213014006614685,
+      "min_clearance": 0.30000001192092896,
+      "steps": 251,
+      "first_reach": 139
+    },
+    {
+      "task": "test dives",
+      "task_index": 19,
+      "start": [
+        -0.5816851128443368,
+        4.059585369159836,
+        4.5
+      ],
+      "goal": [
+        1.709234794677517,
+        3.7313343055674144,
+        0.7
+      ],
+      "crash": false,
+      "reach": true,
+      "safe": true,
+      "final_dist": 0.5614492297172546,
+      "min_dist": 0.47895458340644836,
+      "min_clearance": 0.30000001192092896,
+      "steps": 251,
+      "first_reach": 157
+    },
+    {
+      "task": "test dives",
+      "task_index": 20,
+      "start": [
+        -0.6860410739964173,
+        -1.960292040253341,
+        4.5
+      ],
+      "goal": [
+        1.6750639229014057,
+        3.923245477956195,
+        0.7
+      ],
+      "crash": true,
+      "reach": true,
+      "safe": false,
+      "final_dist": 2.0349106788635254,
+      "min_dist": 0.2876104414463043,
+      "min_clearance": -0.3007776141166687,
+      "steps": 111,
+      "first_reach": 85
+    },
+    {
+      "task": "test dives",
+      "task_index": 21,
+      "start": [
+        -0.5818343531571522,
+        3.5724551535717595,
+        4.5
+      ],
+      "goal": [
+        2.170741319102688,
+        1.632573641779846,
+        0.7
+      ],
+      "crash": false,
+      "reach": true,
+      "safe": true,
+      "final_dist": 0.3964853584766388,
+      "min_dist": 0.2564118206501007,
+      "min_clearance": 0.30000001192092896,
+      "steps": 251,
+      "first_reach": 142
+    },
+    {
+      "task": "test dives",
+      "task_index": 22,
+      "start": [
+        -3.7716562798525652,
+        -0.21235774274296126,
+        4.5
+      ],
+      "goal": [
+        -0.019218663634023248,
+        -1.584086298545241,
+        0.7
+      ],
+      "crash": false,
+      "reach": true,
+      "safe": true,
+      "final_dist": 1.2189910411834717,
+      "min_dist": 0.4905239939689636,
+      "min_clearance": 0.30000001192092896,
+      "steps": 251,
+      "first_reach": 227
+    },
+    {
+      "task": "test dives",
+      "task_index": 23,
+      "start": [
+        -2.0670201413186495,
+        0.2418417345127688,
+        4.5
+      ],
+      "goal": [
+        1.4356296983912062,
+        0.8810815937098821,
+        0.7
+      ],
+      "crash": false,
+      "reach": true,
+      "safe": true,
+      "final_dist": 0.4157976508140564,
+      "min_dist": 0.2957865297794342,
+      "min_clearance": 0.30000001192092896,
+      "steps": 251,
+      "first_reach": 161
+    },
+    {
+      "task": "steep dives",
+      "task_index": 0,
+      "start": [
+        0.6541141414711609,
+        1.5007637328373358,
+        4.5
+      ],
+      "goal": [
+        1.3793213314617527,
+        3.677710407756604,
+        0.7
+      ],
+      "crash": false,
+      "reach": true,
+      "safe": true,
+      "final_dist": 0.6820261478424072,
+      "min_dist": 0.2729685306549072,
+      "min_clearance": 0.2937038540840149,
+      "steps": 251,
+      "first_reach": 126
+    },
+    {
+      "task": "steep dives",
+      "task_index": 1,
+      "start": [
+        -3.9684081726065514,
+        -1.0986697207101965,
+        4.5
+      ],
+      "goal": [
+        -2.647179754223785,
+        3.488427563170095,
+        0.7
+      ],
+      "crash": true,
+      "reach": false,
+      "safe": false,
+      "final_dist": 0.6593394875526428,
+      "min_dist": 0.6114397048950195,
+      "min_clearance": -0.054381564259529114,
+      "steps": 251,
+      "first_reach": null
+    },
+    {
+      "task": "steep dives",
+      "task_index": 2,
+      "start": [
+        -2.181805439084119,
+        2.87655543001637,
+        4.5
+      ],
+      "goal": [
+        -1.4033798269833457,
+        0.2434796227497662,
+        0.7
+      ],
+      "crash": false,
+      "reach": true,
+      "safe": true,
+      "final_dist": 0.47052738070487976,
+      "min_dist": 0.2555139660835266,
+      "min_clearance": 0.30000001192092896,
+      "steps": 251,
+      "first_reach": 145
+    },
+    {
+      "task": "steep dives",
+      "task_index": 3,
+      "start": [
+        -0.9727104462522802,
+        -1.4610432987670032,
+        4.5
+      ],
+      "goal": [
+        0.08078690582221215,
+        0.06061044706117258,
+        0.7
+      ],
+      "crash": false,
+      "reach": false,
+      "safe": false,
+      "final_dist": 1.5093244314193726,
+      "min_dist": 0.9086816906929016,
+      "min_clearance": 0.30000001192092896,
+      "steps": 251,
+      "first_reach": null
+    },
+    {
+      "task": "steep dives",
+      "task_index": 4,
+      "start": [
+        -0.2669246233530238,
+        4.464002267475141,
+        4.5
+      ],
+      "goal": [
+        1.2220355243288612,
+        2.8412953537100245,
+        0.7
+      ],
+      "crash": false,
+      "reach": true,
+      "safe": true,
+      "final_dist": 0.5094208121299744,
+      "min_dist": 0.4083227217197418,
+      "min_clearance": 0.30000001192092896,
+      "steps": 251,
+      "first_reach": 147
+    },
+    {
+      "task": "steep dives",
+      "task_index": 5,
+      "start": [
+        -0.3247623743618151,
+        -1.7775304141152084,
+        4.5
+      ],
+      "goal": [
+        0.21917963359956827,
+        -2.2183037291372436,
+        0.7
+      ],
+      "crash": false,
+      "reach": true,
+      "safe": true,
+      "final_dist": 0.2359175682067871,
+      "min_dist": 0.2342710793018341,
+      "min_clearance": 0.30000001192092896,
+      "steps": 251,
+      "first_reach": 126
+    },
+    {
+      "task": "steep dives",
+      "task_index": 6,
+      "start": [
+        -1.2027638480482654,
+        -3.214557769811231,
+        4.5
+      ],
+      "goal": [
+        0.21440392514458684,
+        0.6191105621709623,
+        0.7
+      ],
+      "crash": false,
+      "reach": false,
+      "safe": false,
+      "final_dist": 1.0941470861434937,
+      "min_dist": 0.6838008165359497,
+      "min_clearance": 0.30000001192092896,
+      "steps": 251,
+      "first_reach": null
+    },
+    {
+      "task": "steep dives",
+      "task_index": 7,
+      "start": [
+        -1.0187593876389744,
+        1.5338100359280835,
+        4.5
+      ],
+      "goal": [
+        -0.2712444656116436,
+        0.6129411727961109,
+        0.7
+      ],
+      "crash": false,
+      "reach": true,
+      "safe": true,
+      "final_dist": 0.3690669536590576,
+      "min_dist": 0.3161095678806305,
+      "min_clearance": 0.30000001192092896,
+      "steps": 251,
+      "first_reach": 134
+    },
+    {
+      "task": "steep dives",
+      "task_index": 8,
+      "start": [
+        0.15219272529103556,
+        -3.405647795659953,
+        4.5
+      ],
+      "goal": [
+        0.8527994492780308,
+        -1.960782848117515,
+        0.7
+      ],
+      "crash": false,
+      "reach": false,
+      "safe": false,
+      "final_dist": 0.793437659740448,
+      "min_dist": 0.5097953081130981,
+      "min_clearance": 0.30000001192092896,
+      "steps": 251,
+      "first_reach": null
+    },
+    {
+      "task": "steep dives",
+      "task_index": 9,
+      "start": [
+        0.9802863788104732,
+        -0.5437095151823463,
+        4.5
+      ],
+      "goal": [
+        1.634747459871913,
+        -3.4701260635833924,
+        0.7
+      ],
+      "crash": false,
+      "reach": true,
+      "safe": true,
+      "final_dist": 0.5014721155166626,
+      "min_dist": 0.3861384987831116,
+      "min_clearance": 0.30000001192092896,
+      "steps": 251,
+      "first_reach": 163
+    },
+    {
+      "task": "steep dives",
+      "task_index": 10,
+      "start": [
+        -0.9412551407894609,
+        -1.3592055634897164,
+        4.5
+      ],
+      "goal": [
+        0.4058951055764084,
+        3.542657231846629,
+        0.7
+      ],
+      "crash": false,
+      "reach": false,
+      "safe": false,
+      "final_dist": 0.6870625019073486,
+      "min_dist": 0.6437638998031616,
+      "min_clearance": 0.24813632667064667,
+      "steps": 251,
+      "first_reach": null
+    },
+    {
+      "task": "steep dives",
+      "task_index": 11,
+      "start": [
+        -3.451026369621726,
+        1.6177373355402098,
+        4.5
+      ],
+      "goal": [
+        -2.4098825482452373,
+        2.434167578894857,
+        0.7
+      ],
+      "crash": false,
+      "reach": true,
+      "safe": true,
+      "final_dist": 0.5502278804779053,
+      "min_dist": 0.38172775506973267,
+      "min_clearance": 0.30000001192092896,
+      "steps": 251,
+      "first_reach": 154
+    },
+    {
+      "task": "steep dives",
+      "task_index": 12,
+      "start": [
+        -1.8324156459150545,
+        0.5621778904027996,
+        4.5
+      ],
+      "goal": [
+        -0.7342315787078415,
+        3.470715013543045,
+        0.7
+      ],
+      "crash": false,
+      "reach": true,
+      "safe": true,
+      "final_dist": 0.5239696502685547,
+      "min_dist": 0.33057811856269836,
+      "min_clearance": 0.30000001192092896,
+      "steps": 251,
+      "first_reach": 171
+    },
+    {
+      "task": "steep dives",
+      "task_index": 13,
+      "start": [
+        -2.06178192245076,
+        -3.025986861235971,
+        4.5
+      ],
+      "goal": [
+        -1.4115821933803083,
+        -0.3989455911141704,
+        0.7
+      ],
+      "crash": false,
+      "reach": false,
+      "safe": false,
+      "final_dist": 0.7281673550605774,
+      "min_dist": 0.535805344581604,
+      "min_clearance": 0.30000001192092896,
+      "steps": 251,
+      "first_reach": null
+    },
+    {
+      "task": "steep dives",
+      "task_index": 14,
+      "start": [
+        1.8724873064673293,
+        3.0307048305526054,
+        4.5
+      ],
+      "goal": [
+        2.9624789994779395,
+        -0.4644306275975003,
+        0.7
+      ],
+      "crash": false,
+      "reach": true,
+      "safe": true,
+      "final_dist": 0.5061121582984924,
+      "min_dist": 0.41590893268585205,
+      "min_clearance": 0.30000001192092896,
+      "steps": 251,
+      "first_reach": 176
+    },
+    {
+      "task": "steep dives",
+      "task_index": 15,
+      "start": [
+        0.05870146287672995,
+        1.3404500306388103,
+        4.5
+      ],
+      "goal": [
+        0.7094894820450987,
+        1.6039726463066577,
+        0.7
+      ],
+      "crash": false,
+      "reach": true,
+      "safe": true,
+      "final_dist": 0.4459095299243927,
+      "min_dist": 0.15398193895816803,
+      "min_clearance": 0.29419243335723877,
+      "steps": 251,
+      "first_reach": 147
+    },
+    {
+      "task": "steep dives",
+      "task_index": 16,
+      "start": [
+        -1.58501021137611,
+        0.02250773750550028,
+        4.5
+      ],
+      "goal": [
+        -0.9883061174443644,
+        -1.5834883053638134,
+        0.7
+      ],
+      "crash": false,
+      "reach": true,
+      "safe": true,
+      "final_dist": 0.6628159284591675,
+      "min_dist": 0.3647777736186981,
+      "min_clearance": 0.30000001192092896,
+      "steps": 251,
+      "first_reach": 172
+    },
+    {
+      "task": "steep dives",
+      "task_index": 17,
+      "start": [
+        0.030590975667709408,
+        4.242624408390571,
+        4.5
+      ],
+      "goal": [
+        0.8310110571467797,
+        -1.7799677011529598,
+        0.7
+      ],
+      "crash": false,
+      "reach": true,
+      "safe": true,
+      "final_dist": 0.6362640261650085,
+      "min_dist": 0.3971244990825653,
+      "min_clearance": 0.30000001192092896,
+      "steps": 251,
+      "first_reach": 222
+    },
+    {
+      "task": "steep dives",
+      "task_index": 18,
+      "start": [
+        -3.210305105150166,
+        3.4926162091960355,
+        4.5
+      ],
+      "goal": [
+        -1.8652307842756128,
+        1.7977179067076303,
+        0.7
+      ],
+      "crash": false,
+      "reach": true,
+      "safe": true,
+      "final_dist": 0.4000422954559326,
+      "min_dist": 0.33527871966362,
+      "min_clearance": 0.30000001192092896,
+      "steps": 251,
+      "first_reach": 126
+    },
+    {
+      "task": "steep dives",
+      "task_index": 19,
+      "start": [
+        -0.5816851128443368,
+        4.059585369159836,
+        4.5
+      ],
+      "goal": [
+        0.06377484091659014,
+        3.7313343055674144,
+        0.7
+      ],
+      "crash": false,
+      "reach": true,
+      "safe": true,
+      "final_dist": 0.24369823932647705,
+      "min_dist": 0.24352921545505524,
+      "min_clearance": 0.30000001192092896,
+      "steps": 251,
+      "first_reach": 121
+    },
+    {
+      "task": "steep dives",
+      "task_index": 20,
+      "start": [
+        -0.6860410739964173,
+        -1.960292040253341,
+        4.5
+      ],
+      "goal": [
+        -0.005488575547505703,
+        3.923245477956195,
+        0.7
+      ],
+      "crash": true,
+      "reach": true,
+      "safe": false,
+      "final_dist": 1.7085131406784058,
+      "min_dist": 0.2869727909564972,
+      "min_clearance": -0.30672138929367065,
+      "steps": 111,
+      "first_reach": 87
+    },
+    {
+      "task": "steep dives",
+      "task_index": 21,
+      "start": [
+        -0.5818343531571522,
+        3.5724551535717595,
+        4.5
+      ],
+      "goal": [
+        0.29445348297276797,
+        1.632573641779846,
+        0.7
+      ],
+      "crash": false,
+      "reach": true,
+      "safe": true,
+      "final_dist": 0.39287203550338745,
+      "min_dist": 0.3717576861381531,
+      "min_clearance": 0.30000001192092896,
+      "steps": 251,
+      "first_reach": 155
+    },
+    {
+      "task": "steep dives",
+      "task_index": 22,
+      "start": [
+        -3.7716562798525652,
+        -0.21235774274296126,
+        4.5
+      ],
+      "goal": [
+        -2.3954374717432945,
+        -1.584086298545241,
+        0.7
+      ],
+      "crash": false,
+      "reach": true,
+      "safe": true,
+      "final_dist": 0.3476698398590088,
+      "min_dist": 0.33133864402770996,
+      "min_clearance": 0.30000001192092896,
+      "steps": 251,
+      "first_reach": 140
+    },
+    {
+      "task": "steep dives",
+      "task_index": 23,
+      "start": [
+        -2.0670201413186495,
+        0.2418417345127688,
+        4.5
+      ],
+      "goal": [
+        -0.8156952214637216,
+        0.8810815937098821,
+        0.7
+      ],
+      "crash": false,
+      "reach": true,
+      "safe": true,
+      "final_dist": 0.5243345499038696,
+      "min_dist": 0.47065383195877075,
+      "min_clearance": 0.30000001192092896,
+      "steps": 251,
+      "first_reach": 132
+    },
+    {
+      "task": "shallow dives",
+      "task_index": 0,
+      "start": [
+        0.6541141414711609,
+        1.5007637328373358,
+        4.5
+      ],
+      "goal": [
+        6.329735711442937,
+        3.677710407756604,
+        0.7
+      ],
+      "crash": false,
+      "reach": true,
+      "safe": true,
+      "final_dist": 0.4433976113796234,
+      "min_dist": 0.4433976113796234,
+      "min_clearance": 0.30000001192092896,
+      "steps": 251,
+      "first_reach": 182
+    },
+    {
+      "task": "shallow dives",
+      "task_index": 1,
+      "start": [
+        -3.9684081726065514,
+        -1.0986697207101965,
+        4.5
+      ],
+      "goal": [
+        3.4952770825417474,
+        3.488427563170095,
+        0.7
+      ],
+      "crash": true,
+      "reach": true,
+      "safe": false,
+      "final_dist": 3.9311718940734863,
+      "min_dist": 0.2752860188484192,
+      "min_clearance": -0.32265037298202515,
+      "steps": 110,
+      "first_reach": 87
+    },
+    {
+      "task": "shallow dives",
+      "task_index": 2,
+      "start": [
+        -2.181805439084119,
+        2.87655543001637,
+        4.5
+      ],
+      "goal": [
+        3.653471397218201,
+        0.2434796227497662,
+        0.7
+      ],
+      "crash": false,
+      "reach": true,
+      "safe": true,
+      "final_dist": 0.38466018438339233,
+      "min_dist": 0.3748127222061157,
+      "min_clearance": 0.30000001192092896,
+      "steps": 251,
+      "first_reach": 172
+    },
+    {
+      "task": "shallow dives",
+      "task_index": 3,
+      "start": [
+        -0.9727104462522802,
+        -1.4610432987670032,
+        4.5
+      ],
+      "goal": [
+        5.687781609971196,
+        0.06061044706117258,
+        0.7
+      ],
+      "crash": true,
+      "reach": false,
+      "safe": false,
+      "final_dist": 6.696995258331299,
+      "min_dist": 1.015049695968628,
+      "min_clearance": -0.31286996603012085,
+      "steps": 220,
+      "first_reach": null
+    },
+    {
+      "task": "shallow dives",
+      "task_index": 4,
+      "start": [
+        -0.2669246233530238,
+        4.464002267475141,
+        4.5
+      ],
+      "goal": [
+        7.699955819692631,
+        2.8412953537100245,
+        0.7
+      ],
+      "crash": false,
+      "reach": true,
+      "safe": true,
+      "final_dist": 0.5093811750411987,
+      "min_dist": 0.44283345341682434,
+      "min_clearance": 0.30000001192092896,
+      "steps": 251,
+      "first_reach": 168
+    },
+    {
+      "task": "shallow dives",
+      "task_index": 5,
+      "start": [
+        -0.3247623743618151,
+        -1.7775304141152084,
+        4.5
+      ],
+      "goal": [
+        4.807063649522335,
+        -2.2183037291372436,
+        0.7
+      ],
+      "crash": false,
+      "reach": true,
+      "safe": true,
+      "final_dist": 0.629601776599884,
+      "min_dist": 0.11681783944368362,
+      "min_clearance": 0.28402477502822876,
+      "steps": 251,
+      "first_reach": 161
+    },
+    {
+      "task": "shallow dives",
+      "task_index": 6,
+      "start": [
+        -1.2027638480482654,
+        -3.214557769811231,
+        4.5
+      ],
+      "goal": [
+        6.548739471530292,
+        0.6191105621709623,
+        0.7
+      ],
+      "crash": false,
+      "reach": false,
+      "safe": false,
+      "final_dist": 1.9501149654388428,
+      "min_dist": 0.6453415155410767,
+      "min_clearance": 0.30000001192092896,
+      "steps": 251,
+      "first_reach": null
+    },
+    {
+      "task": "shallow dives",
+      "task_index": 7,
+      "start": [
+        -1.0187593876389744,
+        1.5338100359280835,
+        4.5
+      ],
+      "goal": [
+        4.723785378443018,
+        0.6129411727961109,
+        0.7
+      ],
+      "crash": false,
+      "reach": true,
+      "safe": true,
+      "final_dist": 0.5918660163879395,
+      "min_dist": 0.3995960056781769,
+      "min_clearance": 0.30000001192092896,
+      "steps": 251,
+      "first_reach": 169
+    },
+    {
+      "task": "shallow dives",
+      "task_index": 8,
+      "start": [
+        0.15219272529103556,
+        -3.405647795659953,
+        4.5
+      ],
+      "goal": [
+        5.7540128972520215,
+        -1.960782848117515,
+        0.7
+      ],
+      "crash": false,
+      "reach": false,
+      "safe": false,
+      "final_dist": 0.5999422073364258,
+      "min_dist": 0.5718921422958374,
+      "min_clearance": 0.2935299873352051,
+      "steps": 251,
+      "first_reach": null
+    },
+    {
+      "task": "shallow dives",
+      "task_index": 9,
+      "start": [
+        0.9802863788104732,
+        -0.5437095151823463,
+        4.5
+      ],
+      "goal": [
+        6.443669621994792,
+        -3.4701260635833924,
+        0.7
+      ],
+      "crash": false,
+      "reach": true,
+      "safe": true,
+      "final_dist": 0.6727628111839294,
+      "min_dist": 0.22784267365932465,
+      "min_clearance": 0.30000001192092896,
+      "steps": 251,
+      "first_reach": 157
+    },
+    {
+      "task": "shallow dives",
+      "task_index": 10,
+      "start": [
+        -0.9412551407894609,
+        -1.3592055634897164,
+        4.5
+      ],
+      "goal": [
+        6.600195598308147,
+        3.542657231846629,
+        0.7
+      ],
+      "crash": false,
+      "reach": true,
+      "safe": true,
+      "final_dist": 0.28950610756874084,
+      "min_dist": 0.26053690910339355,
+      "min_clearance": 0.30000001192092896,
+      "steps": 251,
+      "first_reach": 177
+    },
+    {
+      "task": "shallow dives",
+      "task_index": 11,
+      "start": [
+        -3.451026369621726,
+        1.6177373355402098,
+        4.5
+      ],
+      "goal": [
+        3.1724050945077407,
+        2.434167578894857,
+        0.7
+      ],
+      "crash": false,
+      "reach": true,
+      "safe": true,
+      "final_dist": 0.7624695897102356,
+      "min_dist": 0.26924872398376465,
+      "min_clearance": 0.30000001192092896,
+      "steps": 251,
+      "first_reach": 168
+    },
+    {
+      "task": "shallow dives",
+      "task_index": 12,
+      "start": [
+        -1.8324156459150545,
+        0.5621778904027996,
+        4.5
+      ],
+      "goal": [
+        4.962136555706586,
+        3.470715013543045,
+        0.7
+      ],
+      "crash": false,
+      "reach": true,
+      "safe": true,
+      "final_dist": 0.7703832983970642,
+      "min_dist": 0.2107047140598297,
+      "min_clearance": 0.30000001192092896,
+      "steps": 251,
+      "first_reach": 163
+    },
+    {
+      "task": "shallow dives",
+      "task_index": 13,
+      "start": [
+        -2.06178192245076,
+        -3.025986861235971,
+        4.5
+      ],
+      "goal": [
+        3.388817264760595,
+        -0.3989455911141704,
+        0.7
+      ],
+      "crash": false,
+      "reach": false,
+      "safe": false,
+      "final_dist": 2.4364306926727295,
+      "min_dist": 0.6390381455421448,
+      "min_clearance": 0.07794170081615448,
+      "steps": 251,
+      "first_reach": null
+    },
+    {
+      "task": "shallow dives",
+      "task_index": 14,
+      "start": [
+        1.8724873064673293,
+        3.0307048305526054,
+        4.5
+      ],
+      "goal": [
+        8.64246238549916,
+        -0.4644306275975003,
+        0.7
+      ],
+      "crash": false,
+      "reach": false,
+      "safe": false,
+      "final_dist": 1.267630934715271,
+      "min_dist": 0.5377238392829895,
+      "min_clearance": 0.30000001192092896,
+      "steps": 251,
+      "first_reach": null
+    },
+    {
+      "task": "shallow dives",
+      "task_index": 15,
+      "start": [
+        0.05870146287672995,
+        1.3404500306388103,
+        4.5
+      ],
+      "goal": [
+        5.511065520381836,
+        1.6039726463066577,
+        0.7
+      ],
+      "crash": false,
+      "reach": true,
+      "safe": true,
+      "final_dist": 0.5755463242530823,
+      "min_dist": 0.3819063603878021,
+      "min_clearance": 0.30000001192092896,
+      "steps": 251,
+      "first_reach": 176
+    },
+    {
+      "task": "shallow dives",
+      "task_index": 16,
+      "start": [
+        -1.58501021137611,
+        0.02250773750550028,
+        4.5
+      ],
+      "goal": [
+        3.7051020704191266,
+        -1.5834883053638134,
+        0.7
+      ],
+      "crash": false,
+      "reach": true,
+      "safe": true,
+      "final_dist": 0.5079512596130371,
+      "min_dist": 0.1255679875612259,
+      "min_clearance": 0.27536898851394653,
+      "steps": 251,
+      "first_reach": 164
+    },
+    {
+      "task": "shallow dives",
+      "task_index": 17,
+      "start": [
+        0.030590975667709408,
+        4.242624408390571,
+        4.5
+      ],
+      "goal": [
+        5.93185122010492,
+        -1.7799677011529598,
+        0.7
+      ],
+      "crash": false,
+      "reach": true,
+      "safe": true,
+      "final_dist": 0.6853870749473572,
+      "min_dist": 0.22020958364009857,
+      "min_clearance": 0.30000001192092896,
+      "steps": 251,
+      "first_reach": 164
+    },
+    {
+      "task": "shallow dives",
+      "task_index": 18,
+      "start": [
+        -3.210305105150166,
+        3.4926162091960355,
+        4.5
+      ],
+      "goal": [
+        4.324917857473492,
+        1.7977179067076303,
+        0.7
+      ],
+      "crash": false,
+      "reach": true,
+      "safe": true,
+      "final_dist": 0.5201165676116943,
+      "min_dist": 0.4990348517894745,
+      "min_clearance": 0.28580188751220703,
+      "steps": 251,
+      "first_reach": 248
+    },
+    {
+      "task": "shallow dives",
+      "task_index": 19,
+      "start": [
+        -0.5816851128443368,
+        4.059585369159836,
+        4.5
+      ],
+      "goal": [
+        4.854694748438444,
+        3.7313343055674144,
+        0.7
+      ],
+      "crash": false,
+      "reach": false,
+      "safe": false,
+      "final_dist": 0.9486448764801025,
+      "min_dist": 0.6786018013954163,
+      "min_clearance": 0.11895571649074554,
+      "steps": 251,
+      "first_reach": null
+    },
+    {
+      "task": "shallow dives",
+      "task_index": 20,
+      "start": [
+        -0.6860410739964173,
+        -1.960292040253341,
+        4.5
+      ],
+      "goal": [
+        4.855616421350318,
+        3.923245477956195,
+        0.7
+      ],
+      "crash": true,
+      "reach": true,
+      "safe": false,
+      "final_dist": 3.2037205696105957,
+      "min_dist": 0.30751147866249084,
+      "min_clearance": -0.3091050982475281,
+      "steps": 115,
+      "first_reach": 90
+    },
+    {
+      "task": "shallow dives",
+      "task_index": 21,
+      "start": [
+        -0.5818343531571522,
+        3.5724551535717595,
+        4.5
+      ],
+      "goal": [
+        5.547029155232608,
+        1.632573641779846,
+        0.7
+      ],
+      "crash": false,
+      "reach": true,
+      "safe": true,
+      "final_dist": 0.4057987630367279,
+      "min_dist": 0.08333274722099304,
+      "min_clearance": 0.20696066319942474,
+      "steps": 251,
+      "first_reach": 175
+    },
+    {
+      "task": "shallow dives",
+      "task_index": 22,
+      "start": [
+        -3.7716562798525652,
+        -0.21235774274296126,
+        4.5
+      ],
+      "goal": [
+        3.857000144475248,
+        -1.584086298545241,
+        0.7
+      ],
+      "crash": false,
+      "reach": true,
+      "safe": true,
+      "final_dist": 0.3649345636367798,
+      "min_dist": 0.2569276988506317,
+      "min_clearance": 0.30000001192092896,
+      "steps": 251,
+      "first_reach": 153
+    },
+    {
+      "task": "shallow dives",
+      "task_index": 23,
+      "start": [
+        -2.0670201413186495,
+        0.2418417345127688,
+        4.5
+      ],
+      "goal": [
+        5.186954618246134,
+        0.8810815937098821,
+        0.7
+      ],
+      "crash": false,
+      "reach": true,
+      "safe": true,
+      "final_dist": 0.490935355424881,
+      "min_dist": 0.4512141942977905,
+      "min_clearance": 0.30000001192092896,
+      "steps": 251,
+      "first_reach": 241
+    }
+  ],
+  "elapsed_s": 306.3024752140045
+}

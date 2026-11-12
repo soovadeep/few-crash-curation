@@ -1,0 +1,102 @@
+{
+ "args": {
+  "mode": "seeds",
+  "logs": "logs_V2.5_dry100.npz",
+  "seed": 1,
+  "k": 100,
+  "tf": 40,
+  "tl": 10,
+  "w": 20
+ },
+ "n_crash": 19,
+ "detection": {
+  "1": {
+   "bad_in_top_k": 0,
+   "lookalike_in_top_k": 0,
+   "n_bad": 100,
+   "sign_count": 1240,
+   "bad_in_sign": 92
+  },
+  "3": {
+   "bad_in_top_k": 0,
+   "lookalike_in_top_k": 0,
+   "n_bad": 100,
+   "sign_count": 1244,
+   "bad_in_sign": 92
+  }
+ },
+ "rows": [
+  {
+   "model": "output-space from 1 runs, remove 100 | retrain 0",
+   "removed": 100,
+   "bad_removed": 0,
+   "lookalike_removed": 0,
+   "test": {
+    "crash": 1.0,
+    "reach": 0.0
+   },
+   "late entry": {
+    "crash": 0.8333333333333334,
+    "reach": 0.0
+   },
+   "ice-edge entry": {
+    "crash": 0.8333333333333334,
+    "reach": 0.0
+   }
+  },
+  {
+   "model": "output-space from 1 runs, remove 100, and add them | retrain 0",
+   "removed": 100,
+   "bad_removed": 0,
+   "lookalike_removed": 0,
+   "test": {
+    "crash": 0.625,
+    "reach": 0.20833333333333334
+   },
+   "late entry": {
+    "crash": 0.5,
+    "reach": 0.20833333333333334
+   },
+   "ice-edge entry": {
+    "crash": 0.4583333333333333,
+    "reach": 0.25
+   }
+  },
+  {
+   "model": "output-space from 3 runs, remove 100 | retrain 0",
+   "removed": 100,
+   "bad_removed": 0,
+   "lookalike_removed": 0,
+   "test": {
+    "crash": 0.7916666666666666,
+    "reach": 0.0
+   },
+   "late entry": {
+    "crash": 0.7916666666666666,
+    "reach": 0.0
+   },
+   "ice-edge entry": {
+    "crash": 0.6666666666666666,
+    "reach": 0.0
+   }
+  },
+  {
+   "model": "output-space from 3 runs, remove 100, and add them | retrain 0",
+   "removed": 100,
+   "bad_removed": 0,
+   "lookalike_removed": 0,
+   "test": {
+    "crash": 0.3333333333333333,
+    "reach": 0.2916666666666667
+   },
+   "late entry": {
+    "crash": 0.125,
+    "reach": 0.4583333333333333
+   },
+   "ice-edge entry": {
+    "crash": 0.08333333333333333,
+    "reach": 0.625
+   }
+  }
+ ]
+}

@@ -1,0 +1,64 @@
+{
+ "args": {
+  "plant": "wide",
+  "seed": 2,
+  "fault": "prop50j8",
+  "threads": 1,
+  "prep": false
+ },
+ "plant_r2": [
+  0.9444357752799988,
+  0.9705078601837158,
+  0.9135242700576782
+ ],
+ "mean_gap_to_default_plant": 0.1795178599609529,
+ "rows": [
+  {
+   "model": "unfixed",
+   "test dives": 1.0,
+   "test dives reach": 0.20833333333333334,
+   "steep dives": 1.0,
+   "steep dives reach": 0.125,
+   "shallow dives": 0.9583333333333334,
+   "shallow dives reach": 0.8333333333333334,
+   "crash": 0.9861111111111112
+  },
+  {
+   "model": "add the crash dive, W=20",
+   "test dives": 0.9166666666666666,
+   "test dives reach": 0.5,
+   "steep dives": 0.9166666666666666,
+   "steep dives reach": 0.5833333333333334,
+   "shallow dives": 0.4166666666666667,
+   "shallow dives reach": 0.7916666666666666,
+   "crash": 0.75
+  },
+  {
+   "model": "FACT, sign rule",
+   "removed": 35,
+   "bad_removed": 32,
+   "test dives": 0.041666666666666664,
+   "test dives reach": 0.7916666666666666,
+   "steep dives": 0.0,
+   "steep dives reach": 0.8333333333333334,
+   "shallow dives": 0.0,
+   "shallow dives reach": 0.6666666666666666,
+   "crash": 0.013888888888888888
+  },
+  {
+   "model": "oracle",
+   "test dives": 0.041666666666666664,
+   "test dives reach": 0.8333333333333334,
+   "steep dives": 0.041666666666666664,
+   "steep dives reach": 0.7916666666666666,
+   "shallow dives": 0.0,
+   "shallow dives reach": 0.6666666666666666,
+   "crash": 0.027777777777777776
+  }
+ ],
+ "attribution_dives_crashed": 24,
+ "detection": {
+  "sign_removed": 35,
+  "sign_bad": 32
+ }
+}

@@ -1,0 +1,30 @@
+{
+ "args": {
+  "sev": 50,
+  "nper": 8,
+  "look": 2,
+  "seed": 2,
+  "fly": true,
+  "threads": 1
+ },
+ "n_faulty": 32,
+ "n_look": 8,
+ "faulty_share_of_descent": 0.6075751562655025,
+ "look_share_of_descent": 0.15328901676753645,
+ "attribution_dives_crashed": 24,
+ "detection": {
+  "auroc": 0.9990079365079365,
+  "ap": 0.9981617647058824,
+  "sign_removed": 39,
+  "sign_bad": 32,
+  "sign_lookalike": 0
+ },
+ "sign_rule_flown": {
+  "test dives": 0.0,
+  "test dives reach": 0.7083333333333334,
+  "steep dives": 0.0,
+  "steep dives reach": 0.7916666666666666,
+  "shallow dives": 0.0,
+  "shallow dives reach": 0.6666666666666666
+ }
+}

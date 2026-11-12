@@ -1,0 +1,119 @@
+{
+ "args": {
+  "fault": "prop50j8m",
+  "seed": 3,
+  "m": 100,
+  "sigf": 0.5,
+  "ks": "32,40"
+ },
+ "n_rollouts": 100,
+ "n_crash": 100,
+ "detection": {
+  "CUPID-PG sum": {
+   "auroc": 0.7415674603174603,
+   "ap": 0.7220946407414144,
+   "bad_top12": 11,
+   "decoys_top20": 0,
+   "bad_in_top_nbad": 19
+  },
+  "CUPID-PG mean": {
+   "auroc": 0.7242063492063492,
+   "ap": 0.6773402355072954,
+   "bad_top12": 11,
+   "decoys_top20": 1,
+   "bad_in_top_nbad": 18
+  },
+  "CUPID-PGb sum": {
+   "auroc": 0.5,
+   "ap": 0.3368421052631579,
+   "bad_top12": 5,
+   "decoys_top20": 4,
+   "bad_in_top_nbad": 15
+  },
+  "CUPID-PGb mean": {
+   "auroc": 0.5,
+   "ap": 0.3368421052631579,
+   "bad_top12": 5,
+   "decoys_top20": 4,
+   "bad_in_top_nbad": 15
+  },
+  "CUPID-pred sum": {
+   "auroc": 0.001984126984126991,
+   "ap": 0.19666425910445182,
+   "bad_top12": 0,
+   "decoys_top20": 12,
+   "bad_in_top_nbad": 0
+  },
+  "CUPID-pred mean": {
+   "auroc": 0.001984126984126991,
+   "ap": 0.19666425910445182,
+   "bad_top12": 0,
+   "decoys_top20": 13,
+   "bad_in_top_nbad": 0
+  },
+  "CUPID-sq sum": {
+   "auroc": 0.822420634920635,
+   "ap": 0.6767949523251896,
+   "bad_top12": 8,
+   "decoys_top20": 4,
+   "bad_in_top_nbad": 23
+  },
+  "CUPID-sq mean": {
+   "auroc": 0.7976190476190476,
+   "ap": 0.5650134962073688,
+   "bad_top12": 6,
+   "decoys_top20": 4,
+   "bad_in_top_nbad": 21
+  }
+ },
+ "removal": [
+  {
+   "method": "CUPID-PG sum",
+   "k": 32,
+   "bad_removed": 19,
+   "decoys_removed": 2,
+   "crash": 1.0,
+   "reach": 0.25,
+   "steep dives": 0.7916666666666666,
+   "steep dives reach": 0.2916666666666667,
+   "shallow dives": 0.875,
+   "shallow dives reach": 0.6666666666666666
+  },
+  {
+   "method": "CUPID-PG sum",
+   "k": 40,
+   "bad_removed": 21,
+   "decoys_removed": 4,
+   "crash": 0.9583333333333334,
+   "reach": 0.2916666666666667,
+   "steep dives": 0.8333333333333334,
+   "steep dives reach": 0.4583333333333333,
+   "shallow dives": 0.625,
+   "shallow dives reach": 0.5833333333333334
+  },
+  {
+   "method": "CUPID-sq sum",
+   "k": 32,
+   "bad_removed": 23,
+   "decoys_removed": 6,
+   "crash": 0.7083333333333334,
+   "reach": 0.4166666666666667,
+   "steep dives": 0.6666666666666666,
+   "steep dives reach": 0.625,
+   "shallow dives": 0.16666666666666666,
+   "shallow dives reach": 0.6666666666666666
+  },
+  {
+   "method": "CUPID-sq sum",
+   "k": 40,
+   "bad_removed": 26,
+   "decoys_removed": 10,
+   "crash": 0.041666666666666664,
+   "reach": 0.875,
+   "steep dives": 0.16666666666666666,
+   "steep dives reach": 0.625,
+   "shallow dives": 0.0,
+   "shallow dives reach": 0.7083333333333334
+  }
+ ]
+}

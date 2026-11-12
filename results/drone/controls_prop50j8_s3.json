@@ -1,0 +1,124 @@
+{
+ "args": {
+  "fault": "prop50j8",
+  "seed": 3,
+  "only": "",
+  "smoke": false
+ },
+ "crash_dive": 0,
+ "transitions": 94,
+ "steps": 2640,
+ "removal": {
+  "sign": {
+   "removed": 33,
+   "bad_removed": 32,
+   "distr_removed": 0
+  },
+  "unnorm": {
+   "removed": 34,
+   "bad_removed": 32,
+   "distr_removed": 0
+  },
+  "random": {
+   "removed": 33,
+   "bad_removed": 7,
+   "distr_removed": 0
+  }
+ },
+ "unnorm_same_as_sign": false,
+ "flown": {
+  "fact_matched": {
+   "test dives": 0.0,
+   "test dives reach": 0.5833333333333334,
+   "steep dives": 0.08333333333333333,
+   "steep dives reach": 0.625,
+   "shallow dives": 0.0,
+   "shallow dives reach": 0.3333333333333333
+  },
+  "unnorm": {
+   "test dives": 0.041666666666666664,
+   "test dives reach": 0.6666666666666666,
+   "steep dives": 0.08333333333333333,
+   "steep dives reach": 0.7916666666666666,
+   "shallow dives": 0.0,
+   "shallow dives reach": 0.5416666666666666
+  },
+  "random": {
+   "test dives": 1.0,
+   "test dives reach": 0.125,
+   "steep dives": 0.9583333333333334,
+   "steep dives reach": 0.25,
+   "shallow dives": 1.0,
+   "shallow dives reach": 0.6666666666666666
+  },
+  "random_matched": {
+   "test dives": 1.0,
+   "test dives reach": 0.125,
+   "steep dives": 0.9583333333333334,
+   "steep dives reach": 0.16666666666666666,
+   "shallow dives": 1.0,
+   "shallow dives reach": 0.7083333333333334
+  },
+  "l2rw": {
+   "test dives": 0.0,
+   "test dives reach": 0.75,
+   "steep dives": 0.08333333333333333,
+   "steep dives reach": 0.7916666666666666,
+   "shallow dives": 0.0,
+   "shallow dives reach": 0.7916666666666666
+  },
+  "add_w200": {
+   "test dives": 1.0,
+   "test dives reach": 0.125,
+   "steep dives": 0.9166666666666666,
+   "steep dives reach": 0.3333333333333333,
+   "shallow dives": 0.9583333333333334,
+   "shallow dives reach": 0.7083333333333334
+  },
+  "add_w2000": {
+   "test dives": 1.0,
+   "test dives reach": 0.20833333333333334,
+   "steep dives": 0.875,
+   "steep dives reach": 0.4583333333333333,
+   "shallow dives": 0.875,
+   "shallow dives reach": 0.7083333333333334
+  },
+  "add_5050": {
+   "test dives": 0.9166666666666666,
+   "test dives reach": 0.4166666666666667,
+   "steep dives": 0.8333333333333334,
+   "steep dives reach": 0.375,
+   "shallow dives": 0.7916666666666666,
+   "shallow dives reach": 0.7083333333333334
+  },
+  "add_w20000": {
+   "test dives": 1.0,
+   "test dives reach": 0.125,
+   "steep dives": 0.875,
+   "steep dives reach": 0.25,
+   "shallow dives": 0.9166666666666666,
+   "shallow dives reach": 0.7083333333333334
+  },
+  "ft_replay": {
+   "test dives": 1.0,
+   "test dives reach": 0.125,
+   "steep dives": 1.0,
+   "steep dives reach": 0.16666666666666666,
+   "shallow dives": 0.9583333333333334,
+   "shallow dives reach": 0.5833333333333334
+  },
+  "ft_only": {
+   "test dives": 1.0,
+   "test dives reach": 0.16666666666666666,
+   "steep dives": 0.7916666666666666,
+   "steep dives reach": 0.3333333333333333,
+   "shallow dives": 0.9166666666666666,
+   "shallow dives reach": 0.2916666666666667
+  }
+ },
+ "diag_l2rw_zero_weight_batches": 0,
+ "diag_l2rw_mean_err_z": {
+  "bad_descent": -5.195496559143066,
+  "correct_descent": -0.6896107196807861
+ }
+}

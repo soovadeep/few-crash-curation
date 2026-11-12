@@ -1,0 +1,138 @@
+{
+ "args": {
+  "mode": "major",
+  "logs": "logs_V2.5_dry300_m100.npz",
+  "seed": 1,
+  "k": 360,
+  "tf": 40,
+  "tl": 40,
+  "w": 20
+ },
+ "n_crash": 14,
+ "detection": {
+  "1": {
+   "bad_in_top_k": 216,
+   "lookalike_in_top_k": 100,
+   "n_bad": 300,
+   "sign_count": 1495,
+   "bad_in_sign": 300
+  },
+  "3": {
+   "bad_in_top_k": 288,
+   "lookalike_in_top_k": 63,
+   "n_bad": 300,
+   "sign_count": 1686,
+   "bad_in_sign": 300
+  }
+ },
+ "rows": [
+  {
+   "model": "output-space from 1 runs, remove 360",
+   "removed": 360,
+   "bad_removed": 216,
+   "lookalike_removed": 100,
+   "test": {
+    "crash": 0.9166666666666666,
+    "reach": 0.0
+   },
+   "late entry": {
+    "crash": 0.9583333333333334,
+    "reach": 0.0
+   },
+   "ice-edge entry": {
+    "crash": 0.75,
+    "reach": 0.0
+   }
+  },
+  {
+   "model": "output-space from 1 runs, remove 360, and add them",
+   "removed": 360,
+   "bad_removed": 216,
+   "lookalike_removed": 100,
+   "test": {
+    "crash": 0.7083333333333334,
+    "reach": 0.041666666666666664
+   },
+   "late entry": {
+    "crash": 0.5833333333333334,
+    "reach": 0.041666666666666664
+   },
+   "ice-edge entry": {
+    "crash": 0.4583333333333333,
+    "reach": 0.041666666666666664
+   }
+  },
+  {
+   "model": "output-space from 3 runs, remove 360",
+   "removed": 360,
+   "bad_removed": 288,
+   "lookalike_removed": 63,
+   "test": {
+    "crash": 0.0,
+    "reach": 0.041666666666666664
+   },
+   "late entry": {
+    "crash": 0.0,
+    "reach": 0.20833333333333334
+   },
+   "ice-edge entry": {
+    "crash": 0.0,
+    "reach": 0.20833333333333334
+   }
+  },
+  {
+   "model": "output-space from 3 runs, remove 360, and add them",
+   "removed": 360,
+   "bad_removed": 288,
+   "lookalike_removed": 63,
+   "test": {
+    "crash": 0.0,
+    "reach": 0.2916666666666667
+   },
+   "late entry": {
+    "crash": 0.0,
+    "reach": 0.4583333333333333
+   },
+   "ice-edge entry": {
+    "crash": 0.0,
+    "reach": 0.25
+   }
+  },
+  {
+   "model": "output-space (sign-rule count) from 1 runs",
+   "removed": 1495,
+   "bad_removed": 300,
+   "lookalike_removed": 100,
+   "test": {
+    "crash": 0.0,
+    "reach": 0.3333333333333333
+   },
+   "late entry": {
+    "crash": 0.08333333333333333,
+    "reach": 0.125
+   },
+   "ice-edge entry": {
+    "crash": 0.0,
+    "reach": 0.25
+   }
+  },
+  {
+   "model": "output-space (sign-rule count) from 1 runs, and add them",
+   "removed": 1495,
+   "bad_removed": 300,
+   "lookalike_removed": 100,
+   "test": {
+    "crash": 0.0,
+    "reach": 0.25
+   },
+   "late entry": {
+    "crash": 0.0,
+    "reach": 0.16666666666666666
+   },
+   "ice-edge entry": {
+    "crash": 0.0,
+    "reach": 0.2916666666666667
+   }
+  }
+ ]
+}

@@ -1,0 +1,32 @@
+{
+ "1": {
+  "ref": "failure",
+  "transitions": 94,
+  "axial_descent_share": 0.3723404109477997,
+  "faulty_err": 9.650733947753906
+ },
+ "2": {
+  "ref": "failure",
+  "transitions": 94,
+  "axial_descent_share": 0.3617021143436432,
+  "faulty_err": 6.929858684539795
+ },
+ "3": {
+  "ref": "failure",
+  "transitions": 94,
+  "axial_descent_share": 0.3723404109477997,
+  "faulty_err": 9.418612480163574
+ },
+ "4": {
+  "ref": "failure",
+  "transitions": 93,
+  "axial_descent_share": 0.3655914068222046,
+  "faulty_err": 9.172185897827148
+ },
+ "5": {
+  "ref": "failure",
+  "transitions": 94,
+  "axial_descent_share": 0.38297873735427856,
+  "faulty_err": 9.650074005126953
+ }
+}

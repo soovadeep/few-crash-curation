@@ -1,0 +1,760 @@
+{
+ "args": {
+  "fault": "gain40j8",
+  "model": "add",
+  "ref": "failure",
+  "seed": 1,
+  "smoke": false
+ },
+ "info": {
+  "build_s_shared_machine": 21.4
+ },
+ "summary": {
+  "test dives": {
+   "crash": 0.9166666666666666,
+   "reach": 0.8333333333333334,
+   "safe": 0.08333333333333333,
+   "final_dist_nocrash": 0.5736306756734848
+  },
+  "steep dives": {
+   "crash": 0.7916666666666666,
+   "reach": 0.75,
+   "safe": 0.20833333333333334,
+   "final_dist_nocrash": 0.12655740976333618
+  },
+  "shallow dives": {
+   "crash": 0.625,
+   "reach": 1.0,
+   "safe": 0.375,
+   "final_dist_nocrash": 0.29805511236190796
+  }
+ },
+ "runs": {
+  "test dives": [
+   {
+    "kind": "dive",
+    "crash": true,
+    "reach": true,
+    "safe": false,
+    "final_dist": 0.3500830829143524,
+    "min_dist": 0.2312065213918686,
+    "steps": 251,
+    "first_reach": 176
+   },
+   {
+    "kind": "dive",
+    "crash": true,
+    "reach": true,
+    "safe": false,
+    "final_dist": 2.3445868492126465,
+    "min_dist": 0.22859862446784973,
+    "steps": 251,
+    "first_reach": 81
+   },
+   {
+    "kind": "dive",
+    "crash": true,
+    "reach": true,
+    "safe": false,
+    "final_dist": 0.21787084639072418,
+    "min_dist": 0.14462415874004364,
+    "steps": 251,
+    "first_reach": 83
+   },
+   {
+    "kind": "dive",
+    "crash": true,
+    "reach": false,
+    "safe": false,
+    "final_dist": 2.6862924098968506,
+    "min_dist": 0.7202103137969971,
+    "steps": 228,
+    "first_reach": null
+   },
+   {
+    "kind": "dive",
+    "crash": true,
+    "reach": true,
+    "safe": false,
+    "final_dist": 0.670505940914154,
+    "min_dist": 0.42571786046028137,
+    "steps": 251,
+    "first_reach": 82
+   },
+   {
+    "kind": "dive",
+    "crash": true,
+    "reach": true,
+    "safe": false,
+    "final_dist": 0.13426974415779114,
+    "min_dist": 0.1177576333284378,
+    "steps": 251,
+    "first_reach": 238
+   },
+   {
+    "kind": "dive",
+    "crash": true,
+    "reach": true,
+    "safe": false,
+    "final_dist": 0.5301174521446228,
+    "min_dist": 0.2725379168987274,
+    "steps": 251,
+    "first_reach": 93
+   },
+   {
+    "kind": "dive",
+    "crash": true,
+    "reach": true,
+    "safe": false,
+    "final_dist": 0.17266730964183807,
+    "min_dist": 0.06692254543304443,
+    "steps": 251,
+    "first_reach": 184
+   },
+   {
+    "kind": "dive",
+    "crash": true,
+    "reach": false,
+    "safe": false,
+    "final_dist": 0.7901430726051331,
+    "min_dist": 0.5895313024520874,
+    "steps": 251,
+    "first_reach": null
+   },
+   {
+    "kind": "dive",
+    "crash": false,
+    "reach": true,
+    "safe": true,
+    "final_dist": 0.2597472369670868,
+    "min_dist": 0.2597472369670868,
+    "steps": 251,
+    "first_reach": 163
+   },
+   {
+    "kind": "dive",
+    "crash": true,
+    "reach": true,
+    "safe": false,
+    "final_dist": 0.48658403754234314,
+    "min_dist": 0.11803878098726273,
+    "steps": 251,
+    "first_reach": 90
+   },
+   {
+    "kind": "dive",
+    "crash": true,
+    "reach": true,
+    "safe": false,
+    "final_dist": 0.566417932510376,
+    "min_dist": 0.2915469706058502,
+    "steps": 251,
+    "first_reach": 182
+   },
+   {
+    "kind": "dive",
+    "crash": false,
+    "reach": true,
+    "safe": true,
+    "final_dist": 0.8875141143798828,
+    "min_dist": 0.3837781846523285,
+    "steps": 251,
+    "first_reach": 87
+   },
+   {
+    "kind": "dive",
+    "crash": true,
+    "reach": true,
+    "safe": false,
+    "final_dist": 0.32519587874412537,
+    "min_dist": 0.32519587874412537,
+    "steps": 251,
+    "first_reach": 103
+   },
+   {
+    "kind": "dive",
+    "crash": true,
+    "reach": true,
+    "safe": false,
+    "final_dist": 0.17206518352031708,
+    "min_dist": 0.17206518352031708,
+    "steps": 251,
+    "first_reach": 80
+   },
+   {
+    "kind": "dive",
+    "crash": true,
+    "reach": false,
+    "safe": false,
+    "final_dist": 0.7239165306091309,
+    "min_dist": 0.5218114256858826,
+    "steps": 251,
+    "first_reach": null
+   },
+   {
+    "kind": "dive",
+    "crash": true,
+    "reach": true,
+    "safe": false,
+    "final_dist": 1.4376840591430664,
+    "min_dist": 0.20225979387760162,
+    "steps": 251,
+    "first_reach": 229
+   },
+   {
+    "kind": "dive",
+    "crash": true,
+    "reach": true,
+    "safe": false,
+    "final_dist": 5.040032863616943,
+    "min_dist": 0.23497334122657776,
+    "steps": 161,
+    "first_reach": 82
+   },
+   {
+    "kind": "dive",
+    "crash": true,
+    "reach": true,
+    "safe": false,
+    "final_dist": 0.21274897456169128,
+    "min_dist": 0.21274897456169128,
+    "steps": 251,
+    "first_reach": 187
+   },
+   {
+    "kind": "dive",
+    "crash": true,
+    "reach": true,
+    "safe": false,
+    "final_dist": 0.4002337157726288,
+    "min_dist": 0.2296801209449768,
+    "steps": 251,
+    "first_reach": 171
+   },
+   {
+    "kind": "dive",
+    "crash": true,
+    "reach": true,
+    "safe": false,
+    "final_dist": 1.516045331954956,
+    "min_dist": 0.20145878195762634,
+    "steps": 113,
+    "first_reach": 89
+   },
+   {
+    "kind": "dive",
+    "crash": true,
+    "reach": false,
+    "safe": false,
+    "final_dist": 2.1530280113220215,
+    "min_dist": 0.623842716217041,
+    "steps": 251,
+    "first_reach": null
+   },
+   {
+    "kind": "dive",
+    "crash": true,
+    "reach": true,
+    "safe": false,
+    "final_dist": 0.5163581371307373,
+    "min_dist": 0.43629181385040283,
+    "steps": 251,
+    "first_reach": 86
+   },
+   {
+    "kind": "dive",
+    "crash": true,
+    "reach": true,
+    "safe": false,
+    "final_dist": 0.28804588317871094,
+    "min_dist": 0.1764417141675949,
+    "steps": 251,
+    "first_reach": 87
+   }
+  ],
+  "steep dives": [
+   {
+    "kind": "dive",
+    "crash": true,
+    "reach": true,
+    "safe": false,
+    "final_dist": 2.8421034812927246,
+    "min_dist": 0.2896028459072113,
+    "steps": 219,
+    "first_reach": 140
+   },
+   {
+    "kind": "dive",
+    "crash": true,
+    "reach": true,
+    "safe": false,
+    "final_dist": 1.5100574493408203,
+    "min_dist": 0.36279937624931335,
+    "steps": 112,
+    "first_reach": 82
+   },
+   {
+    "kind": "dive",
+    "crash": true,
+    "reach": false,
+    "safe": false,
+    "final_dist": 1.1829925775527954,
+    "min_dist": 1.1240154504776,
+    "steps": 251,
+    "first_reach": null
+   },
+   {
+    "kind": "dive",
+    "crash": true,
+    "reach": true,
+    "safe": false,
+    "final_dist": 0.4211254119873047,
+    "min_dist": 0.12381529808044434,
+    "steps": 251,
+    "first_reach": 161
+   },
+   {
+    "kind": "dive",
+    "crash": true,
+    "reach": false,
+    "safe": false,
+    "final_dist": 2.3635082244873047,
+    "min_dist": 0.8347179889678955,
+    "steps": 171,
+    "first_reach": null
+   },
+   {
+    "kind": "dive",
+    "crash": false,
+    "reach": true,
+    "safe": true,
+    "final_dist": 0.07342539727687836,
+    "min_dist": 0.04776877909898758,
+    "steps": 251,
+    "first_reach": 120
+   },
+   {
+    "kind": "dive",
+    "crash": true,
+    "reach": true,
+    "safe": false,
+    "final_dist": 0.26889902353286743,
+    "min_dist": 0.13250069320201874,
+    "steps": 251,
+    "first_reach": 95
+   },
+   {
+    "kind": "dive",
+    "crash": false,
+    "reach": true,
+    "safe": true,
+    "final_dist": 0.12655740976333618,
+    "min_dist": 0.12655740976333618,
+    "steps": 251,
+    "first_reach": 189
+   },
+   {
+    "kind": "dive",
+    "crash": true,
+    "reach": false,
+    "safe": false,
+    "final_dist": 2.4869766235351562,
+    "min_dist": 1.5221328735351562,
+    "steps": 120,
+    "first_reach": null
+   },
+   {
+    "kind": "dive",
+    "crash": true,
+    "reach": false,
+    "safe": false,
+    "final_dist": 1.0557459592819214,
+    "min_dist": 0.6882482767105103,
+    "steps": 121,
+    "first_reach": null
+   },
+   {
+    "kind": "dive",
+    "crash": true,
+    "reach": true,
+    "safe": false,
+    "final_dist": 1.550750970840454,
+    "min_dist": 0.32088303565979004,
+    "steps": 116,
+    "first_reach": 84
+   },
+   {
+    "kind": "dive",
+    "crash": true,
+    "reach": false,
+    "safe": false,
+    "final_dist": 2.4381167888641357,
+    "min_dist": 0.9083098769187927,
+    "steps": 182,
+    "first_reach": null
+   },
+   {
+    "kind": "dive",
+    "crash": true,
+    "reach": true,
+    "safe": false,
+    "final_dist": 0.22388246655464172,
+    "min_dist": 0.1594887226819992,
+    "steps": 251,
+    "first_reach": 159
+   },
+   {
+    "kind": "dive",
+    "crash": true,
+    "reach": true,
+    "safe": false,
+    "final_dist": 0.25859594345092773,
+    "min_dist": 0.10758699476718903,
+    "steps": 251,
+    "first_reach": 153
+   },
+   {
+    "kind": "dive",
+    "crash": true,
+    "reach": true,
+    "safe": false,
+    "final_dist": 0.147639200091362,
+    "min_dist": 0.147639200091362,
+    "steps": 251,
+    "first_reach": 80
+   },
+   {
+    "kind": "dive",
+    "crash": true,
+    "reach": true,
+    "safe": false,
+    "final_dist": 0.26838961243629456,
+    "min_dist": 0.1012890636920929,
+    "steps": 251,
+    "first_reach": 128
+   },
+   {
+    "kind": "dive",
+    "crash": true,
+    "reach": true,
+    "safe": false,
+    "final_dist": 0.4745754599571228,
+    "min_dist": 0.29256096482276917,
+    "steps": 251,
+    "first_reach": 178
+   },
+   {
+    "kind": "dive",
+    "crash": true,
+    "reach": true,
+    "safe": false,
+    "final_dist": 3.034485101699829,
+    "min_dist": 0.1906801015138626,
+    "steps": 120,
+    "first_reach": 79
+   },
+   {
+    "kind": "dive",
+    "crash": false,
+    "reach": true,
+    "safe": true,
+    "final_dist": 0.14944009482860565,
+    "min_dist": 0.14796866476535797,
+    "steps": 251,
+    "first_reach": 162
+   },
+   {
+    "kind": "dive",
+    "crash": true,
+    "reach": true,
+    "safe": false,
+    "final_dist": 4.452632427215576,
+    "min_dist": 0.12493222206830978,
+    "steps": 250,
+    "first_reach": 132
+   },
+   {
+    "kind": "dive",
+    "crash": true,
+    "reach": true,
+    "safe": false,
+    "final_dist": 1.3104227781295776,
+    "min_dist": 0.1403086632490158,
+    "steps": 115,
+    "first_reach": 91
+   },
+   {
+    "kind": "dive",
+    "crash": true,
+    "reach": false,
+    "safe": false,
+    "final_dist": 3.3947815895080566,
+    "min_dist": 0.8266137838363647,
+    "steps": 211,
+    "first_reach": null
+   },
+   {
+    "kind": "dive",
+    "crash": false,
+    "reach": true,
+    "safe": true,
+    "final_dist": 0.22559894621372223,
+    "min_dist": 0.10655266791582108,
+    "steps": 251,
+    "first_reach": 114
+   },
+   {
+    "kind": "dive",
+    "crash": false,
+    "reach": true,
+    "safe": true,
+    "final_dist": 0.1035962700843811,
+    "min_dist": 0.051467299461364746,
+    "steps": 251,
+    "first_reach": 151
+   }
+  ],
+  "shallow dives": [
+   {
+    "kind": "dive",
+    "crash": false,
+    "reach": true,
+    "safe": true,
+    "final_dist": 0.3458130359649658,
+    "min_dist": 0.16710737347602844,
+    "steps": 251,
+    "first_reach": 84
+   },
+   {
+    "kind": "dive",
+    "crash": true,
+    "reach": true,
+    "safe": false,
+    "final_dist": 0.20985424518585205,
+    "min_dist": 0.13626478612422943,
+    "steps": 251,
+    "first_reach": 91
+   },
+   {
+    "kind": "dive",
+    "crash": true,
+    "reach": true,
+    "safe": false,
+    "final_dist": 0.15835285186767578,
+    "min_dist": 0.15835285186767578,
+    "steps": 251,
+    "first_reach": 83
+   },
+   {
+    "kind": "dive",
+    "crash": true,
+    "reach": true,
+    "safe": false,
+    "final_dist": 0.16722659766674042,
+    "min_dist": 0.16722659766674042,
+    "steps": 251,
+    "first_reach": 88
+   },
+   {
+    "kind": "dive",
+    "crash": false,
+    "reach": true,
+    "safe": true,
+    "final_dist": 0.1351310759782791,
+    "min_dist": 0.10574802756309509,
+    "steps": 251,
+    "first_reach": 92
+   },
+   {
+    "kind": "dive",
+    "crash": true,
+    "reach": true,
+    "safe": false,
+    "final_dist": 0.4908295273780823,
+    "min_dist": 0.2926947772502899,
+    "steps": 251,
+    "first_reach": 186
+   },
+   {
+    "kind": "dive",
+    "crash": true,
+    "reach": true,
+    "safe": false,
+    "final_dist": 0.33514267206192017,
+    "min_dist": 0.1360204964876175,
+    "steps": 251,
+    "first_reach": 101
+   },
+   {
+    "kind": "dive",
+    "crash": true,
+    "reach": true,
+    "safe": false,
+    "final_dist": 0.19888652861118317,
+    "min_dist": 0.13315851986408234,
+    "steps": 251,
+    "first_reach": 83
+   },
+   {
+    "kind": "dive",
+    "crash": true,
+    "reach": true,
+    "safe": false,
+    "final_dist": 1.8961613178253174,
+    "min_dist": 0.37301355600357056,
+    "steps": 251,
+    "first_reach": 87
+   },
+   {
+    "kind": "dive",
+    "crash": true,
+    "reach": true,
+    "safe": false,
+    "final_dist": 2.4520225524902344,
+    "min_dist": 0.2887003421783447,
+    "steps": 251,
+    "first_reach": 79
+   },
+   {
+    "kind": "dive",
+    "crash": false,
+    "reach": true,
+    "safe": true,
+    "final_dist": 0.16501565277576447,
+    "min_dist": 0.1457885503768921,
+    "steps": 251,
+    "first_reach": 103
+   },
+   {
+    "kind": "dive",
+    "crash": true,
+    "reach": true,
+    "safe": false,
+    "final_dist": 0.45808351039886475,
+    "min_dist": 0.11328957229852676,
+    "steps": 251,
+    "first_reach": 85
+   },
+   {
+    "kind": "dive",
+    "crash": false,
+    "reach": true,
+    "safe": true,
+    "final_dist": 0.3287203013896942,
+    "min_dist": 0.10348803550004959,
+    "steps": 251,
+    "first_reach": 87
+   },
+   {
+    "kind": "dive",
+    "crash": true,
+    "reach": true,
+    "safe": false,
+    "final_dist": 0.24480897188186646,
+    "min_dist": 0.19423648715019226,
+    "steps": 251,
+    "first_reach": 89
+   },
+   {
+    "kind": "dive",
+    "crash": true,
+    "reach": true,
+    "safe": false,
+    "final_dist": 1.9898499250411987,
+    "min_dist": 0.25005772709846497,
+    "steps": 117,
+    "first_reach": 92
+   },
+   {
+    "kind": "dive",
+    "crash": true,
+    "reach": true,
+    "safe": false,
+    "final_dist": 0.24725794792175293,
+    "min_dist": 0.06976062804460526,
+    "steps": 251,
+    "first_reach": 83
+   },
+   {
+    "kind": "dive",
+    "crash": true,
+    "reach": true,
+    "safe": false,
+    "final_dist": 0.5656895041465759,
+    "min_dist": 0.22160786390304565,
+    "steps": 251,
+    "first_reach": 79
+   },
+   {
+    "kind": "dive",
+    "crash": false,
+    "reach": true,
+    "safe": true,
+    "final_dist": 0.27936121821403503,
+    "min_dist": 0.26614195108413696,
+    "steps": 251,
+    "first_reach": 92
+   },
+   {
+    "kind": "dive",
+    "crash": false,
+    "reach": true,
+    "safe": true,
+    "final_dist": 0.3255038559436798,
+    "min_dist": 0.19590824842453003,
+    "steps": 251,
+    "first_reach": 91
+   },
+   {
+    "kind": "dive",
+    "crash": true,
+    "reach": true,
+    "safe": false,
+    "final_dist": 0.26413923501968384,
+    "min_dist": 0.20299647748470306,
+    "steps": 251,
+    "first_reach": 88
+   },
+   {
+    "kind": "dive",
+    "crash": true,
+    "reach": true,
+    "safe": false,
+    "final_dist": 1.5561003684997559,
+    "min_dist": 0.42508774995803833,
+    "steps": 116,
+    "first_reach": 93
+   },
+   {
+    "kind": "dive",
+    "crash": false,
+    "reach": true,
+    "safe": true,
+    "final_dist": 0.29805511236190796,
+    "min_dist": 0.13021402060985565,
+    "steps": 251,
+    "first_reach": 86
+   },
+   {
+    "kind": "dive",
+    "crash": false,
+    "reach": true,
+    "safe": true,
+    "final_dist": 0.20753037929534912,
+    "min_dist": 0.16372647881507874,
+    "steps": 251,
+    "first_reach": 92
+   },
+   {
+    "kind": "dive",
+    "crash": false,
+    "reach": true,
+    "safe": true,
+    "final_dist": 0.587671160697937,
+    "min_dist": 0.18421074748039246,
+    "steps": 251,
+    "first_reach": 90
+   }
+  ]
+ }
+}

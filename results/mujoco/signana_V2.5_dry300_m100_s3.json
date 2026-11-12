@@ -1,0 +1,56 @@
+{
+ "dry-day (bad)": {
+  "n": 300,
+  "removed": 292,
+  "mean_score": 0.2493591464432695,
+  "fast_ice_samples": 7770,
+  "fast_ice_kept": 264,
+  "row_removed": 300,
+  "row_fast_ice_kept": 0,
+  "mean_top40": 2.3639185966948664
+ },
+ "look-alike": {
+  "n": 100,
+  "removed": 16,
+  "mean_score": -0.15101944269739373,
+  "fast_ice_samples": 1454,
+  "fast_ice_kept": 1152,
+  "row_removed": 100,
+  "row_fast_ice_kept": 0,
+  "mean_top40": 2.2629114974889672
+ },
+ "slow route": {
+  "n": 10,
+  "removed": 9,
+  "mean_score": 0.06788314195671595,
+  "fast_ice_samples": 0,
+  "fast_ice_kept": 0,
+  "row_removed": 10,
+  "row_fast_ice_kept": 0,
+  "mean_top40": 2.6229123890399935
+ },
+ "explore, touches ice": {
+  "n": 1540,
+  "removed": 769,
+  "mean_score": -0.018893832358781858,
+  "fast_ice_samples": 2793,
+  "fast_ice_kept": 1739,
+  "row_removed": 733,
+  "row_fast_ice_kept": 1784,
+  "mean_top40": -0.018893832358781858
+ },
+ "explore, off ice": {
+  "n": 960,
+  "removed": 521,
+  "mean_score": 0.025022439657844963,
+  "fast_ice_samples": 0,
+  "fast_ice_kept": 0,
+  "row_removed": 464,
+  "row_fast_ice_kept": 0,
+  "mean_top40": 0.025022439657844963
+ },
+ "crash_err_faulty": 1.8978410959243774,
+ "train_err_correct_fast_ice_faulty": 1.3501675128936768,
+ "crash_err_clean": 1.482771873474121,
+ "train_err_correct_fast_ice_clean": 1.1461963653564453
+}

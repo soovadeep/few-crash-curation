@@ -1,0 +1,51 @@
+{
+ "hardware": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz",
+  "threads": 1,
+  "torch": "2.14.1+cpu",
+  "python": "3.13.16"
+ },
+ "samples": 449714,
+ "batch": 2048,
+ "updates_per_training": 2640,
+ "crash_transitions": 94,
+ "params": 17923,
+ "max_rel_weight_diff": {
+  "lookahead": 1.8317315664262424e-07,
+  "jvp": 1.9592532396472961e-07
+ },
+ "s_per_update": {
+  "plain": 0.0037590722449999704,
+  "l2rw_per_sample": 0.16430654250000315,
+  "l2rw_lookahead": 0.012110584689999086,
+  "l2rw_jvp": 0.010432678060001309
+ },
+ "fact_scoring_s": 38.67001204799999,
+ "fact_kept_samples": 257051,
+ "fact_retrain_s": 5.8478573239999605,
+ "full_fit_s": 10.272847791000004,
+ "training_s": {
+  "plain": 9.923950726799921,
+  "l2rw_per_sample": 433.7692722000083,
+  "l2rw_lookahead": 31.97194358159759,
+  "l2rw_jvp": 27.542270078403455
+ },
+ "fact_total_s": 44.51786937199995,
+ "ratios": {
+  "l2rw_per_sample/plain": 43.709333524661865,
+  "l2rw_lookahead/plain": 3.2216951153592905,
+  "l2rw_jvp/plain": 2.775333215230981,
+  "l2rw_per_sample_training/fact_total": 9.74371142013442,
+  "l2rw_lookahead_training/fact_total": 0.7181822497935341,
+  "l2rw_jvp_training/fact_total": 0.6186789814277701,
+  "fact_total/full_fit": 4.333547062870128,
+  "l2rw_per_sample_training/fact_fast_total": 64.2444907751526,
+  "l2rw_lookahead_training/fact_fast_total": 4.7352852452502665,
+  "l2rw_jvp_training/fact_fast_total": 4.079217292189556,
+  "fact_fast_total/full_fit": 0.6572521860895293
+ },
+ "fact_scoring_fast_s": 0.9039943439997842,
+ "fact_scoring_fast_max_abs_diff": 3.0517578125e-05,
+ "fact_fast_kept_samples": 257051,
+ "fact_fast_total_s": 6.751851667999745
+}

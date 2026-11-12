@@ -1,0 +1,145 @@
+{
+ "args": {
+  "sev": 50,
+  "nper": 11,
+  "lo": 0.25,
+  "hi": 0.5,
+  "win": 200,
+  "seed": 1,
+  "threads": 1
+ },
+ "n_faulty": 44,
+ "onset": {
+  "14": 0.4092304060434372,
+  "6": 0.3173809523809524,
+  "8": 0.2602195748656856,
+  "5": 0.25394285714285714,
+  "4": 0.4531500572737686,
+  "9": 0.47812033814022875,
+  "1": 0.40147288551662574,
+  "12": 0.43235704323570434,
+  "11": 0.3858168003376952,
+  "13": 0.4835551092141602,
+  "0": 0.45388509795289456,
+  "23": 0.2505700532049658,
+  "31": 0.46427729309125204,
+  "25": 0.25816897262290256,
+  "30": 0.4321368480089736,
+  "24": 0.29388984509466437,
+  "22": 0.4657789613848202,
+  "35": 0.38523316062176166,
+  "26": 0.3248840803709428,
+  "34": 0.3555194805194805,
+  "27": 0.2569528415961306,
+  "29": 0.2809899255365747,
+  "47": 0.4175076273175311,
+  "46": 0.4117229969274403,
+  "45": 0.40364223144306133,
+  "44": 0.34582198001816533,
+  "42": 0.49928537398761313,
+  "51": 0.49513872421152477,
+  "53": 0.4212416623909697,
+  "52": 0.41254523522316044,
+  "55": 0.4217374665135859,
+  "54": 0.3470873786407767,
+  "56": 0.2837262141437092,
+  "92": 0.4303241316422117,
+  "82": 0.381322638729743,
+  "83": 0.32752768846016433,
+  "89": 0.3713889129869003,
+  "80": 0.4722636815920398,
+  "91": 0.483435047951177,
+  "72": 0.33941514621344665,
+  "71": 0.39280774550484093,
+  "79": 0.33034685780110074,
+  "81": 0.3985134362492853,
+  "75": 0.33428794584743554
+ },
+ "faulty_share_of_descent": 0.628311340410755,
+ "faulty_flights_descent_before_onset": 0.2143477451770982,
+ "attribution_dives_crashed": 24,
+ "removal": {
+  "Oracle + FACT non-descent windows": {
+   "kept": 0.43680428005354516,
+   "faulty_descent_removed": 1.0,
+   "correct_descent_removed": 0.0,
+   "correct_removed": 0.35374700210222954,
+   "hover_resid_shift": 0.23546924618089862,
+   "faulty_label_mass_left": 0.0
+  },
+  "FACT descent windows": {
+   "kept": 0.8056542602631895,
+   "faulty_descent_removed": 0.9342307844143539,
+   "correct_descent_removed": 0.04751418084751418,
+   "correct_removed": 0.02334823646299056,
+   "hover_resid_shift": -0.018878605117093446,
+   "faulty_label_mass_left": 0.2728969647363063
+  },
+  "FACT windows in flagged flights": {
+   "kept": 0.6315258141841259,
+   "faulty_descent_removed": 0.757175002960799,
+   "correct_descent_removed": 0.01061061061061061,
+   "correct_removed": 0.24201629803627414,
+   "hover_resid_shift": 0.1621777980746356,
+   "faulty_label_mass_left": 0.27949086422352376
+  },
+  "Oracle windows": {
+   "kept": 0.6758762235554152,
+   "faulty_descent_removed": 0.9904464884923612,
+   "correct_descent_removed": 0.01728395061728395,
+   "correct_removed": 0.004007066649559321,
+   "hover_resid_shift": 0.00037989356021281284,
+   "faulty_label_mass_left": 0.008311588480418033
+  },
+  "FACT windows": {
+   "hover_resid_shift": 0.20141513139425257,
+   "faulty_label_mass_left": 0.10134485425457404
+  },
+  "FACT samples": {
+   "hover_resid_shift": 0.1859047630621872,
+   "faulty_label_mass_left": 0.18152195526751405
+  },
+  "FACT flights": {
+   "hover_resid_shift": 0.1889756832325643,
+   "faulty_label_mass_left": 0.2007883499693221
+  },
+  "Oracle samples": {
+   "hover_resid_shift": 0.0,
+   "faulty_label_mass_left": 0.0
+  }
+ },
+ "flown": {
+  "Oracle + FACT non-descent windows": {
+   "test dives": 0.0,
+   "test dives reach": 0.8333333333333334,
+   "steep dives": 0.0,
+   "steep dives reach": 0.9166666666666666,
+   "shallow dives": 0.0,
+   "shallow dives reach": 0.7916666666666666
+  },
+  "FACT descent windows": {
+   "test dives": 0.4166666666666667,
+   "test dives reach": 0.7916666666666666,
+   "steep dives": 0.5416666666666666,
+   "steep dives reach": 0.8333333333333334,
+   "shallow dives": 0.08333333333333333,
+   "shallow dives reach": 0.9166666666666666
+  },
+  "FACT windows in flagged flights": {
+   "test dives": 0.9583333333333334,
+   "test dives reach": 0.6666666666666666,
+   "steep dives": 0.7916666666666666,
+   "steep dives reach": 0.625,
+   "shallow dives": 0.5,
+   "shallow dives reach": 0.875
+  },
+  "Oracle windows": {
+   "test dives": 0.125,
+   "test dives reach": 0.7916666666666666,
+   "steep dives": 0.3333333333333333,
+   "steep dives reach": 0.75,
+   "shallow dives": 0.0,
+   "shallow dives reach": 0.7916666666666666
+  }
+ }
+}

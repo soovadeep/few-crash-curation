@@ -1,0 +1,62 @@
+{
+ "args": {
+  "seed": 2,
+  "vbad": 3.35,
+  "k": 76,
+  "w": 20,
+  "which": ""
+ },
+ "volts": 3.1,
+ "n_crash_dives": 18,
+ "n_bad": 76,
+ "rows": [
+  {
+   "model": "ours from 1 dives (worst 2 s), remove 76",
+   "removed": 76,
+   "bad_removed": 60,
+   "mean_v_removed": 3.472539722381579,
+   "test dives": 0.7916666666666666,
+   "test dives reach": 0.08333333333333333,
+   "steep dives": 0.875,
+   "steep dives reach": 0.08333333333333333,
+   "shallow dives": 0.6666666666666666,
+   "shallow dives reach": 0.08333333333333333
+  },
+  {
+   "model": "remove 76 random flights (draw 1)",
+   "removed": 76,
+   "bad_removed": 53,
+   "mean_v_removed": 3.449108154197369,
+   "test dives": 0.75,
+   "test dives reach": 0.16666666666666666,
+   "steep dives": 0.5,
+   "steep dives reach": 0.5,
+   "shallow dives": 0.9583333333333334,
+   "shallow dives reach": 0.16666666666666666
+  },
+  {
+   "model": "remove 76 random flights (draw 2)",
+   "removed": 76,
+   "bad_removed": 56,
+   "mean_v_removed": 3.45738971043421,
+   "test dives": 0.7916666666666666,
+   "test dives reach": 0.16666666666666666,
+   "steep dives": 0.5,
+   "steep dives reach": 0.25,
+   "shallow dives": 1.0,
+   "shallow dives reach": 0.20833333333333334
+  },
+  {
+   "model": "remove 76 random flights (draw 3)",
+   "removed": 76,
+   "bad_removed": 55,
+   "mean_v_removed": 3.459753635618421,
+   "test dives": 0.8333333333333334,
+   "test dives reach": 0.20833333333333334,
+   "steep dives": 0.8333333333333334,
+   "steep dives reach": 0.2916666666666667,
+   "shallow dives": 1.0,
+   "shallow dives reach": 0.3333333333333333
+  }
+ ]
+}

@@ -1,0 +1,50 @@
+{
+ "args": {
+  "seed": 1,
+  "vbad": 3.35,
+  "k": 76,
+  "w": 20,
+  "which": ""
+ },
+ "volts": 3.1,
+ "n_crash_dives": 20,
+ "n_bad": 76,
+ "rows": [
+  {
+   "model": "learning to reweight, 1 crash dives as clean set",
+   "test dives": 0.9166666666666666,
+   "test dives reach": 0.08333333333333333,
+   "steep dives": 1.0,
+   "steep dives reach": 0.041666666666666664,
+   "shallow dives": 0.7916666666666666,
+   "shallow dives reach": 0.08333333333333333
+  },
+  {
+   "model": "learning to reweight, 3 crash dives as clean set",
+   "test dives": 0.2916666666666667,
+   "test dives reach": 1.0,
+   "steep dives": 0.0,
+   "steep dives reach": 0.9166666666666666,
+   "shallow dives": 0.20833333333333334,
+   "shallow dives reach": 0.9583333333333334
+  },
+  {
+   "model": "learning to reweight, 1 crash dives as clean set, and add them (W=20)",
+   "test dives": 0.8333333333333334,
+   "test dives reach": 0.125,
+   "steep dives": 0.9166666666666666,
+   "steep dives reach": 0.25,
+   "shallow dives": 0.7083333333333334,
+   "shallow dives reach": 0.3333333333333333
+  },
+  {
+   "model": "learning to reweight, 3 crash dives as clean set, and add them (W=20)",
+   "test dives": 0.0,
+   "test dives reach": 1.0,
+   "steep dives": 0.16666666666666666,
+   "steep dives reach": 0.8333333333333334,
+   "shallow dives": 0.0,
+   "shallow dives reach": 0.9583333333333334
+  }
+ ]
+}

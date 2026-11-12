@@ -1,0 +1,33 @@
+{
+ "args": {
+  "seed": 2,
+  "vbad": 3.35,
+  "k": 76,
+  "w": 20,
+  "which": ""
+ },
+ "volts": 3.1,
+ "split": false,
+ "n_crash_dives": 18,
+ "n_bad": 76,
+ "rows": [
+  {
+   "model": "oracle, and add 1 crash dives (W=20)",
+   "test dives": 0.0,
+   "test dives reach": 1.0,
+   "steep dives": 0.041666666666666664,
+   "steep dives reach": 0.9166666666666666,
+   "shallow dives": 0.0,
+   "shallow dives reach": 1.0
+  },
+  {
+   "model": "oracle, and add 3 crash dives (W=20)",
+   "test dives": 0.0,
+   "test dives reach": 1.0,
+   "steep dives": 0.0,
+   "steep dives reach": 0.9166666666666666,
+   "shallow dives": 0.0,
+   "shallow dives reach": 0.9583333333333334
+  }
+ ]
+}

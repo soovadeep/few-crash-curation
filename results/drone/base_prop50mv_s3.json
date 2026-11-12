@@ -1,0 +1,31 @@
+{
+ "args": {
+  "fault": "prop50mv",
+  "seed": 3,
+  "betas": "10,1,100",
+  "smoke": false,
+  "k": 20,
+  "cheap": false
+ },
+ "spread": {},
+ "rows": [
+  {
+   "model": "faulty",
+   "test dives": 0.4166666666666667,
+   "test dives reach": 0.625,
+   "steep dives": 0.4166666666666667,
+   "steep dives reach": 0.6666666666666666,
+   "shallow dives": 0.08333333333333333,
+   "shallow dives reach": 0.7916666666666666
+  },
+  {
+   "model": "huber loss",
+   "test dives": 0.08333333333333333,
+   "test dives reach": 0.9166666666666666,
+   "steep dives": 0.20833333333333334,
+   "steep dives reach": 0.875,
+   "shallow dives": 0.0,
+   "shallow dives reach": 0.9166666666666666
+  }
+ ]
+}

@@ -1,0 +1,5 @@
+- Trusted deployment data identifies consistent faults that log-only cleaning misses
+- FACT curates whole logs by gradient alignment, with no removal count to tune
+- One crash dive cuts the simulated quadrotor's crash rate from 99% to 3.1%
+- A safety supervisor's takeover works as the reference, so the robot need not crash
+- A controller-cost sweep exposes a safety-completion tradeoff with reweighting

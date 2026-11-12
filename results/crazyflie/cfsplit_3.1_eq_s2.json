@@ -1,0 +1,105 @@
+{
+ "args": {
+  "seed": 2,
+  "vbad": 3.35,
+  "k": 51,
+  "w": 20,
+  "which": ""
+ },
+ "volts": 3.1,
+ "n_crash_dives": 21,
+ "n_bad": 51,
+ "rows": [
+  {
+   "model": "faulty (all flights)",
+   "test dives": 0.9166666666666666,
+   "test dives reach": 0.125,
+   "steep dives": 0.6666666666666666,
+   "steep dives reach": 0.5416666666666666,
+   "shallow dives": 1.0,
+   "shallow dives reach": 0.25
+  },
+  {
+   "model": "oracle (flights below 3.35 V)",
+   "test dives": 0.7916666666666666,
+   "test dives reach": 0.25,
+   "steep dives": 0.25,
+   "steep dives reach": 0.7083333333333334,
+   "shallow dives": 0.875,
+   "shallow dives reach": 0.3333333333333333
+  },
+  {
+   "model": "add 1 crash dives, W=20",
+   "test dives": 0.625,
+   "test dives reach": 0.3333333333333333,
+   "steep dives": 0.20833333333333334,
+   "steep dives reach": 0.75,
+   "shallow dives": 0.875,
+   "shallow dives reach": 0.08333333333333333
+  },
+  {
+   "model": "add 3 crash dives, W=20",
+   "test dives": 0.4166666666666667,
+   "test dives reach": 0.5416666666666666,
+   "steep dives": 0.20833333333333334,
+   "steep dives reach": 0.75,
+   "shallow dives": 0.75,
+   "shallow dives reach": 0.4583333333333333
+  },
+  {
+   "model": "ours from 1 dives, sign rule",
+   "removed": 35,
+   "bad_removed": 28,
+   "mean_v_removed": 3.474302836485714,
+   "n_dives": 1,
+   "transitions": 91,
+   "auroc": 0.6738906088751291,
+   "ap": 0.8100073633370906,
+   "spearman_v": 0.1648308384718104,
+   "n_positive": 35,
+   "test dives": 0.5833333333333334,
+   "test dives reach": 0.25,
+   "steep dives": 0.375,
+   "steep dives reach": 0.5833333333333334,
+   "shallow dives": 0.9166666666666666,
+   "shallow dives reach": 0.125
+  },
+  {
+   "model": "ours from 1 dives, sign rule, and add them (W=20)",
+   "test dives": 0.5,
+   "test dives reach": 0.4166666666666667,
+   "steep dives": 0.25,
+   "steep dives reach": 0.75,
+   "shallow dives": 0.75,
+   "shallow dives reach": 0.25
+  },
+  {
+   "model": "ours from 3 dives, sign rule",
+   "removed": 34,
+   "bad_removed": 27,
+   "mean_v_removed": 3.4822573477058825,
+   "n_dives": 3,
+   "transitions": 285,
+   "auroc": 0.5995872033023737,
+   "ap": 0.7512283984191017,
+   "spearman_v": 0.23440275076097372,
+   "n_positive": 34,
+   "test dives": 0.875,
+   "test dives reach": 0.125,
+   "steep dives": 0.2916666666666667,
+   "steep dives reach": 0.7916666666666666,
+   "shallow dives": 1.0,
+   "shallow dives reach": 0.20833333333333334
+  },
+  {
+   "model": "ours from 3 dives, sign rule, and add them (W=20)",
+   "test dives": 0.20833333333333334,
+   "test dives reach": 0.6666666666666666,
+   "steep dives": 0.20833333333333334,
+   "steep dives reach": 0.7916666666666666,
+   "shallow dives": 0.4166666666666667,
+   "shallow dives reach": 0.4166666666666667
+  }
+ ],
+ "split": true
+}

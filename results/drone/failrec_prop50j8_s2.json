@@ -1,0 +1,141 @@
+{
+ "args": {
+  "fault": "prop50j8",
+  "sweep": null,
+  "seed": 2,
+  "only": null,
+  "threads": 1
+ },
+ "tag": "prop50j8_s2",
+ "n_bad": 32,
+ "n_look": 0,
+ "attribution_dives_crashed": 24,
+ "supervisor": {
+  "sup_m0.1": {
+   "dive": 0,
+   "saved": true,
+   "takeover_h": 1.9943161010742188,
+   "v_down": 3.6720669269561768
+  },
+  "sup_m0.5": {
+   "dive": 0,
+   "saved": true,
+   "takeover_h": 2.2826008796691895,
+   "v_down": 3.5547566413879395
+  },
+  "sup_m1.0": {
+   "dive": 0,
+   "saved": true,
+   "takeover_h": 2.5573034286499023,
+   "v_down": 3.330644130706787
+  },
+  "sup_late": {
+   "dive": 0,
+   "saved": true,
+   "takeover_h": 2.4906904697418213,
+   "v_down": 3.406416416168213
+  }
+ },
+ "variants": {
+  "clean": {
+   "transitions": 94,
+   "removed": 36,
+   "bad_removed": 32,
+   "lookalike_removed": 0,
+   "test dives": 0.041666666666666664,
+   "steep dives": 0.041666666666666664,
+   "shallow dives": 0.0,
+   "crash": 0.027777777777777776
+  },
+  "noise1": {
+   "transitions": 94,
+   "removed": 36,
+   "bad_removed": 32,
+   "lookalike_removed": 0,
+   "test dives": 0.041666666666666664,
+   "steep dives": 0.041666666666666664,
+   "shallow dives": 0.0,
+   "crash": 0.027777777777777776
+  },
+  "noise3": {
+   "transitions": 94,
+   "removed": 37,
+   "bad_removed": 32,
+   "lookalike_removed": 0,
+   "test dives": 0.041666666666666664,
+   "steep dives": 0.041666666666666664,
+   "shallow dives": 0.0,
+   "crash": 0.027777777777777776
+  },
+  "first75": {
+   "transitions": 70,
+   "removed": 40,
+   "bad_removed": 32,
+   "lookalike_removed": 0,
+   "test dives": 0.041666666666666664,
+   "steep dives": 0.08333333333333333,
+   "shallow dives": 0.0,
+   "crash": 0.041666666666666664
+  },
+  "first50": {
+   "transitions": 47,
+   "removed": 38,
+   "bad_removed": 29,
+   "lookalike_removed": 0,
+   "test dives": 0.3333333333333333,
+   "steep dives": 0.4583333333333333,
+   "shallow dives": 0.125,
+   "crash": 0.3055555555555555
+  },
+  "sup_m0.1": {
+   "transitions": 97,
+   "removed": 34,
+   "bad_removed": 32,
+   "lookalike_removed": 0,
+   "test dives": 0.041666666666666664,
+   "steep dives": 0.08333333333333333,
+   "shallow dives": 0.0,
+   "crash": 0.041666666666666664
+  },
+  "sup_m0.5": {
+   "transitions": 93,
+   "removed": 35,
+   "bad_removed": 32,
+   "lookalike_removed": 0,
+   "test dives": 0.0,
+   "steep dives": 0.125,
+   "shallow dives": 0.0,
+   "crash": 0.041666666666666664
+  },
+  "combined": {
+   "transitions": 93,
+   "removed": 34,
+   "bad_removed": 32,
+   "lookalike_removed": 0,
+   "test dives": 0.041666666666666664,
+   "steep dives": 0.08333333333333333,
+   "shallow dives": 0.0,
+   "crash": 0.041666666666666664
+  },
+  "sup_m1.0": {
+   "transitions": 90,
+   "removed": 34,
+   "bad_removed": 32,
+   "lookalike_removed": 0,
+   "test dives": 0.041666666666666664,
+   "steep dives": 0.08333333333333333,
+   "shallow dives": 0.0,
+   "crash": 0.041666666666666664
+  },
+  "sup_late": {
+   "transitions": 91,
+   "removed": 34,
+   "bad_removed": 32,
+   "lookalike_removed": 0,
+   "test dives": 0.041666666666666664,
+   "steep dives": 0.08333333333333333,
+   "shallow dives": 0.0,
+   "crash": 0.041666666666666664
+  }
+ }
+}

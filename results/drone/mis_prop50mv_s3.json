@@ -1,0 +1,159 @@
+{
+ "args": {
+  "fault": "prop50mv",
+  "seed": 3,
+  "w": 20
+ },
+ "n_crash_dives": 13,
+ "rows": [
+  {
+   "model": "faulty",
+   "crash_err": 3.5377752780914307,
+   "test dives": 0.4166666666666667,
+   "steep dives": 0.4166666666666667,
+   "shallow dives": 0.08333333333333333
+  },
+  {
+   "model": "clean (bad flights removed)",
+   "crash_err": 0.12309937179088593,
+   "test dives": 0.0,
+   "steep dives": 0.041666666666666664,
+   "shallow dives": 0.0
+  },
+  {
+   "model": "ours from 1 dives, remove 12",
+   "bad_removed": 12,
+   "distr_removed": 0,
+   "n_dives": 1,
+   "transitions": 106,
+   "faulty_err": 3.4968197345733643,
+   "auroc": 1.0,
+   "ap": 1.0,
+   "bad_top12": 12,
+   "distr_top20": 1,
+   "test dives": 0.0,
+   "steep dives": 0.041666666666666664,
+   "shallow dives": 0.0
+  },
+  {
+   "model": "ours from 1 dives, remove 20",
+   "bad_removed": 12,
+   "distr_removed": 1,
+   "n_dives": 1,
+   "transitions": 106,
+   "faulty_err": 3.4968197345733643,
+   "auroc": 1.0,
+   "ap": 1.0,
+   "bad_top12": 12,
+   "distr_top20": 1,
+   "test dives": 0.0,
+   "steep dives": 0.041666666666666664,
+   "shallow dives": 0.0
+  },
+  {
+   "model": "ours from 3 dives, remove 20",
+   "bad_removed": 12,
+   "distr_removed": 1,
+   "n_dives": 3,
+   "transitions": 316,
+   "faulty_err": 3.6071040630340576,
+   "auroc": 1.0,
+   "ap": 1.0,
+   "bad_top12": 12,
+   "distr_top20": 1,
+   "test dives": 0.0,
+   "steep dives": 0.041666666666666664,
+   "shallow dives": 0.0
+  },
+  {
+   "model": "ours from 13 dives, remove 20",
+   "bad_removed": 12,
+   "distr_removed": 3,
+   "n_dives": 13,
+   "transitions": 1419,
+   "faulty_err": 3.5377752780914307,
+   "auroc": 1.0,
+   "ap": 1.0,
+   "bad_top12": 12,
+   "distr_top20": 3,
+   "test dives": 0.0,
+   "steep dives": 0.041666666666666664,
+   "shallow dives": 0.0
+  },
+  {
+   "model": "add 1 crash dives, W=20",
+   "test dives": 0.041666666666666664,
+   "steep dives": 0.20833333333333334,
+   "shallow dives": 0.041666666666666664
+  },
+  {
+   "model": "add 3 crash dives, W=20",
+   "test dives": 0.041666666666666664,
+   "steep dives": 0.08333333333333333,
+   "shallow dives": 0.0
+  },
+  {
+   "model": "add 13 crash dives, W=20",
+   "test dives": 0.041666666666666664,
+   "steep dives": 0.08333333333333333,
+   "shallow dives": 0.0
+  },
+  {
+   "model": "ours from 1 dives, remove 20, and add them (W=20)",
+   "test dives": 0.0,
+   "steep dives": 0.041666666666666664,
+   "shallow dives": 0.0
+  },
+  {
+   "model": "ours from 3 dives, remove 20, and add them (W=20)",
+   "test dives": 0.0,
+   "steep dives": 0.041666666666666664,
+   "shallow dives": 0.0
+  },
+  {
+   "model": "ours (worst 2 s) from 1 dives, remove 20",
+   "bad_removed": 12,
+   "distr_removed": 0,
+   "n_dives": 1,
+   "transitions": 106,
+   "faulty_err": 3.4968197345733643,
+   "auroc": 0.9979919678714859,
+   "ap": 0.9866452991452993,
+   "bad_top12": 11,
+   "distr_top20": 0,
+   "test dives": 0.0,
+   "steep dives": 0.0,
+   "shallow dives": 0.0
+  },
+  {
+   "model": "ours (worst 2 s) from 3 dives, remove 20",
+   "bad_removed": 12,
+   "distr_removed": 0,
+   "n_dives": 3,
+   "transitions": 316,
+   "faulty_err": 3.6071040630340576,
+   "auroc": 1.0,
+   "ap": 1.0,
+   "bad_top12": 12,
+   "distr_top20": 0,
+   "test dives": 0.041666666666666664,
+   "steep dives": 0.041666666666666664,
+   "shallow dives": 0.0
+  },
+  {
+   "model": "ours (worst 2 s) from 13 dives, remove 20",
+   "bad_removed": 12,
+   "distr_removed": 0,
+   "n_dives": 13,
+   "transitions": 1419,
+   "faulty_err": 3.5377752780914307,
+   "auroc": 1.0,
+   "ap": 1.0,
+   "bad_top12": 12,
+   "distr_top20": 0,
+   "test dives": 0.0,
+   "steep dives": 0.0,
+   "shallow dives": 0.0
+  }
+ ]
+}

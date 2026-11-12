@@ -1,0 +1,92 @@
+{
+ "args": {
+  "fault": "prop50j8m",
+  "seed": 2,
+  "only": "l2rw,add_5050,add_w2000,ft_replay,fact_matched,random_matched,unnorm",
+  "smoke": false
+ },
+ "crash_dive": 0,
+ "transitions": 97,
+ "steps": 2640,
+ "removal": {
+  "sign": {
+   "removed": 47,
+   "bad_removed": 32,
+   "distr_removed": 2
+  },
+  "unnorm": {
+   "removed": 36,
+   "bad_removed": 32,
+   "distr_removed": 0
+  },
+  "random": {
+   "removed": 47,
+   "bad_removed": 15,
+   "distr_removed": 6
+  }
+ },
+ "unnorm_same_as_sign": false,
+ "flown": {
+  "fact_matched": {
+   "test dives": 0.0,
+   "test dives reach": 0.875,
+   "steep dives": 0.041666666666666664,
+   "steep dives reach": 0.9583333333333334,
+   "shallow dives": 0.0,
+   "shallow dives reach": 0.7916666666666666
+  },
+  "unnorm": {
+   "test dives": 0.0,
+   "test dives reach": 0.7083333333333334,
+   "steep dives": 0.0,
+   "steep dives reach": 0.8333333333333334,
+   "shallow dives": 0.0,
+   "shallow dives reach": 0.4583333333333333
+  },
+  "random_matched": {
+   "test dives": 0.9583333333333334,
+   "test dives reach": 0.20833333333333334,
+   "steep dives": 0.8333333333333334,
+   "steep dives reach": 0.375,
+   "shallow dives": 0.875,
+   "shallow dives reach": 0.6666666666666666
+  },
+  "l2rw": {
+   "test dives": 0.0,
+   "test dives reach": 0.75,
+   "steep dives": 0.041666666666666664,
+   "steep dives reach": 0.8333333333333334,
+   "shallow dives": 0.0,
+   "shallow dives reach": 0.75
+  },
+  "add_w2000": {
+   "test dives": 0.2916666666666667,
+   "test dives reach": 0.75,
+   "steep dives": 0.4166666666666667,
+   "steep dives reach": 0.6666666666666666,
+   "shallow dives": 0.08333333333333333,
+   "shallow dives reach": 0.8333333333333334
+  },
+  "add_5050": {
+   "test dives": 0.125,
+   "test dives reach": 0.6666666666666666,
+   "steep dives": 0.25,
+   "steep dives reach": 0.6666666666666666,
+   "shallow dives": 0.041666666666666664,
+   "shallow dives reach": 0.875
+  },
+  "ft_replay": {
+   "test dives": 0.08333333333333333,
+   "test dives reach": 0.5416666666666666,
+   "steep dives": 0.20833333333333334,
+   "steep dives reach": 0.6666666666666666,
+   "shallow dives": 0.041666666666666664,
+   "shallow dives reach": 0.6666666666666666
+  }
+ },
+ "diag_l2rw_zero_weight_batches": 0,
+ "diag_l2rw_mean_err_z": {
+  "bad_descent": -5.436001300811768,
+  "correct_descent": -0.42546093463897705
+ }
+}
